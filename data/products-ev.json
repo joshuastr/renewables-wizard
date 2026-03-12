@@ -1,0 +1,396 @@
+{
+    "categories": [
+        {
+            "id": "l2-residential",
+            "name": "Level 2 - Residential",
+            "description": "Home chargers, typically 7.7-11.5 kW, hardwired or plug-in"
+        },
+        {
+            "id": "l2-commercial",
+            "name": "Level 2 - Commercial",
+            "description": "Workplace and multi-unit chargers, 11.5-19.2 kW, networked"
+        },
+        {
+            "id": "dcfc-standard",
+            "name": "DC Fast Charger - Standard",
+            "description": "50-100 kW fast chargers for retail, fleet, and public use"
+        },
+        {
+            "id": "dcfc-high-power",
+            "name": "DC Fast Charger - High Power",
+            "description": "120-350 kW highway and corridor chargers"
+        },
+        {
+            "id": "fleet-depot",
+            "name": "Fleet & Depot",
+            "description": "Overnight fleet charging, load managed, multi-port"
+        }
+    ],
+    "chargers": [
+        {
+            "id": "cp-home-flex",
+            "manufacturer": "ChargePoint",
+            "model": "Home Flex",
+            "category": "l2-residential",
+            "power": "Up to 50A / 12 kW",
+            "amperage": "16-50A (adjustable)",
+            "voltage": "240V",
+            "connector": "J1772 / NACS",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, ChargePoint app",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "23 ft (7m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "ENERGY STAR"
+            ],
+            "msrp": "~$700 USD",
+            "features": [
+                "Adjustable amperage",
+                "App scheduling",
+                "Energy tracking"
+            ],
+            "notes": "The most popular residential charger in North America. Adjustable amperage means it works on most home electrical panels without an upgrade. Good starting point for homeowners."
+        },
+        {
+            "id": "cp-cpf50",
+            "manufacturer": "ChargePoint",
+            "model": "CPF50",
+            "category": "l2-commercial",
+            "power": "Up to 48A / 11.5 kW per port",
+            "amperage": "48A per port",
+            "voltage": "208/240V",
+            "connector": "J1772",
+            "mounting": "Pedestal or wall",
+            "connectivity": "WiFi, LTE, OCPP 1.6J",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "23 ft (7m)",
+            "warranty": "3 years (assure plan available)",
+            "certifications": [
+                "UL Listed",
+                "cUL",
+                "FCC"
+            ],
+            "msrp": "~$3,500-5,000 USD per dual port",
+            "features": [
+                "Dual port",
+                "Load management built-in",
+                "Payment ready",
+                "Access control"
+            ],
+            "notes": "Industry standard for workplace and multi-unit residential. The dual-port design reduces installation costs by sharing one circuit between two ports. OCPP support means you are not locked into the ChargePoint network if you want to switch providers later."
+        },
+        {
+            "id": "enel-juicebox",
+            "manufacturer": "Enel X",
+            "model": "JuiceBox 48A",
+            "category": "l2-residential",
+            "power": "48A / 11.5 kW",
+            "amperage": "48A",
+            "voltage": "240V",
+            "connector": "J1772",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, JuiceNet app",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "ENERGY STAR"
+            ],
+            "msrp": "~$600 USD",
+            "features": [
+                "Smart scheduling",
+                "Solar integration",
+                "Alexa/Google compatible"
+            ],
+            "notes": "Strong budget option for residential. The JuiceNet platform offers good energy management features. Longer cable than most competitors, helpful if your panel is far from the parking spot."
+        },
+        {
+            "id": "siemens-versicharge",
+            "manufacturer": "Siemens",
+            "model": "VersiCharge Gen 3",
+            "category": "l2-commercial",
+            "power": "Up to 48A / 11.5 kW",
+            "amperage": "48A",
+            "voltage": "208/240V",
+            "connector": "J1772",
+            "mounting": "Wall mount or pedestal",
+            "connectivity": "WiFi, Ethernet, OCPP 1.6",
+            "operatingTemp": "-35C to 50C",
+            "cableLength": "20 ft (6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$1,500-2,200 USD",
+            "features": [
+                "Power sharing (up to 20 units)",
+                "RFID access",
+                "Compact design"
+            ],
+            "notes": "Great for high-density deployments like parking garages. The power sharing feature can connect up to 20 chargers on one circuit, dramatically reducing electrical infrastructure costs."
+        },
+        {
+            "id": "abb-terra-ac",
+            "manufacturer": "ABB",
+            "model": "Terra AC W22-T-RD",
+            "category": "l2-commercial",
+            "power": "Up to 22 kW (three-phase)",
+            "amperage": "32A per phase",
+            "voltage": "400V three-phase / 230V single-phase",
+            "connector": "Type 2 socket",
+            "mounting": "Wall mount",
+            "connectivity": "4G/LTE, WiFi, Ethernet, OCPP 1.6J",
+            "operatingTemp": "-25C to 55C",
+            "cableLength": "User provides cable",
+            "warranty": "2 years (extended available)",
+            "certifications": [
+                "CE",
+                "IEC 61851"
+            ],
+            "msrp": "~$2,000-3,000 USD",
+            "features": [
+                "Dynamic load balancing",
+                "RFID authentication",
+                "Socket design for flexibility"
+            ],
+            "notes": "The socket design (no attached cable) is common in Europe and allows users to bring their own cable. 22 kW three-phase charging is standard in Europe but not available in most North American residential installations."
+        },
+        {
+            "id": "tritium-rtm75",
+            "manufacturer": "Tritium",
+            "model": "RTM 75",
+            "category": "dcfc-standard",
+            "power": "75 kW",
+            "amperage": "Up to 200A",
+            "voltage": "200-920V DC",
+            "connector": "CCS1 + CHAdeMO",
+            "mounting": "Pedestal (compact)",
+            "connectivity": "4G, Ethernet, WiFi, OCPP 1.6J/2.0",
+            "operatingTemp": "-35C to 50C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "2 years (extended available)",
+            "certifications": [
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$35,000-45,000 USD",
+            "features": [
+                "Smallest footprint in class",
+                "Liquid cooled",
+                "192-920V range"
+            ],
+            "notes": "Excellent for urban retail locations where space is limited. The compact size means you can install it where a full-size DCFC would not fit. Liquid cooling means consistent performance even in hot climates."
+        },
+        {
+            "id": "abb-terra-54",
+            "manufacturer": "ABB",
+            "model": "Terra 54",
+            "category": "dcfc-standard",
+            "power": "50 kW",
+            "amperage": "Up to 125A DC",
+            "voltage": "200-500V DC",
+            "connector": "CCS1 + CHAdeMO",
+            "mounting": "Floor standing",
+            "connectivity": "4G, Ethernet, OCPP 1.6J",
+            "operatingTemp": "-35C to 55C",
+            "cableLength": "Integrated, ~13 ft (4m)",
+            "warranty": "2 years",
+            "certifications": [
+                "UL",
+                "cUL",
+                "CE"
+            ],
+            "msrp": "~$30,000-40,000 USD",
+            "features": [
+                "Proven reliability",
+                "Wide install base",
+                "Service network"
+            ],
+            "notes": "ABB has the largest global installed base of DC fast chargers. The Terra 54 is their workhorse product. Strong service network and parts availability."
+        },
+        {
+            "id": "tritium-pk350",
+            "manufacturer": "Tritium",
+            "model": "PKM 150/350",
+            "category": "dcfc-high-power",
+            "power": "Up to 350 kW",
+            "amperage": "Up to 500A",
+            "voltage": "150-1000V DC",
+            "connector": "CCS1 or CCS2",
+            "mounting": "Floor standing (modular power cabinet)",
+            "connectivity": "4G, Ethernet, OCPP 2.0",
+            "operatingTemp": "-35C to 50C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "5 years",
+            "certifications": [
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$100,000-150,000 USD (power cabinet + dispensers)",
+            "features": [
+                "Scalable power modules",
+                "Liquid cooled cables",
+                "Dynamic power sharing"
+            ],
+            "notes": "The modular design lets you start at 150 kW and add power modules later to reach 350 kW without replacing the whole unit. Valuable for highway corridor deployments where utilization grows over time."
+        },
+        {
+            "id": "btc-gen4",
+            "manufacturer": "BTC Power",
+            "model": "Gen 4 180kW",
+            "category": "dcfc-high-power",
+            "power": "Up to 180 kW",
+            "amperage": "Up to 400A",
+            "voltage": "200-1000V DC",
+            "connector": "CCS1 + CHAdeMO",
+            "mounting": "Floor standing",
+            "connectivity": "4G, Ethernet, OCPP 1.6J",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed"
+            ],
+            "msrp": "~$60,000-80,000 USD",
+            "features": [
+                "Dual simultaneous charging",
+                "Power sharing between ports",
+                "Made in USA"
+            ],
+            "notes": "Strong value option for the mid-power DCFC segment. Made in the USA, which qualifies for Buy America provisions in federal grant programs."
+        },
+        {
+            "id": "tesla-wall-connector",
+            "manufacturer": "Tesla",
+            "model": "Wall Connector (Gen 3)",
+            "category": "l2-residential",
+            "power": "Up to 48A / 11.5 kW",
+            "amperage": "Up to 48A",
+            "voltage": "208/240V",
+            "connector": "NACS (Tesla)",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "24 ft (7.3m)",
+            "warranty": "4 years",
+            "certifications": [
+                "UL Listed"
+            ],
+            "msrp": "~$475 USD",
+            "features": [
+                "Power sharing (up to 6 units)",
+                "Sleek design",
+                "OTA updates"
+            ],
+            "notes": "Best value for Tesla owners. The NACS connector is now becoming the North American standard. Power sharing between up to 6 units is excellent for multi-car households or small commercial sites."
+        },
+        {
+            "id": "cp-express-plus",
+            "manufacturer": "ChargePoint",
+            "model": "Express Plus",
+            "category": "dcfc-high-power",
+            "power": "Up to 500 kW (modular)",
+            "amperage": "Up to 600A",
+            "voltage": "200-920V DC",
+            "connector": "CCS1 / NACS",
+            "mounting": "Floor standing (power block + dispensers)",
+            "connectivity": "4G, Ethernet, OCPP 1.6J",
+            "operatingTemp": "-35C to 50C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "Assure plan (included)",
+            "certifications": [
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$150,000-250,000 USD (full system)",
+            "features": [
+                "Modular power blocks",
+                "Up to 4 dispensers per block",
+                "Dynamic power allocation"
+            ],
+            "notes": "ChargePoint's flagship DC fast charging platform. The modular architecture means you deploy the power capacity you need today and expand later."
+        },
+        {
+            "id": "cp-6000",
+            "manufacturer": "ChargePoint",
+            "model": "CT6000 Series",
+            "category": "fleet-depot",
+            "power": "Up to 80A / 19.2 kW per port",
+            "amperage": "Up to 80A",
+            "voltage": "208/240V",
+            "connector": "J1772",
+            "mounting": "Wall or pedestal",
+            "connectivity": "Cellular, WiFi, OCPP",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "23 ft (7m)",
+            "warranty": "Assure plan",
+            "certifications": [
+                "UL Listed"
+            ],
+            "msrp": "~$2,500-4,000 USD per port",
+            "features": [
+                "Fleet management dashboard",
+                "Scheduled charging",
+                "Driver ID support"
+            ],
+            "notes": "Designed specifically for fleet depots and return-to-base operations. The fleet management dashboard shows charge status of every vehicle and can schedule charging during off-peak electricity hours."
+        },
+        {
+            "id": "siemens-versicharge-fleet",
+            "manufacturer": "Siemens",
+            "model": "VersiCharge XL Fleet",
+            "category": "fleet-depot",
+            "power": "Up to 48A / 19.2 kW",
+            "amperage": "Up to 48A (80A available)",
+            "voltage": "208/240V",
+            "connector": "J1772",
+            "mounting": "Wall mount (daisy chain)",
+            "connectivity": "Ethernet, WiFi, OCPP 2.0",
+            "operatingTemp": "-35C to 50C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$2,000-3,500 USD per port",
+            "features": [
+                "Daisy-chain up to 25 units",
+                "Automatic load management",
+                "Minimal install cost"
+            ],
+            "notes": "The daisy-chain installation means one home run from the electrical panel can serve up to 25 chargers, drastically cutting installation costs for large fleets."
+        },
+        {
+            "id": "abb-terra-360",
+            "manufacturer": "ABB",
+            "model": "Terra 360",
+            "category": "dcfc-high-power",
+            "power": "Up to 360 kW",
+            "amperage": "Up to 500A",
+            "voltage": "150-920V DC",
+            "connector": "CCS1 (multiple connectors)",
+            "mounting": "Floor standing",
+            "connectivity": "4G, Ethernet, OCPP 1.6J/2.0",
+            "operatingTemp": "-35C to 55C",
+            "cableLength": "Integrated",
+            "warranty": "2 years (extended available)",
+            "certifications": [
+                "UL",
+                "cUL",
+                "CE"
+            ],
+            "msrp": "~$150,000-200,000 USD",
+            "features": [
+                "Up to 4 vehicles simultaneously",
+                "360 kW peak single vehicle",
+                "Lighting display"
+            ],
+            "notes": "ABB's flagship charger can charge up to 4 vehicles at once with dynamic power sharing. 360 kW peak power can add about 100 km of range in under 3 minutes on compatible vehicles."
+        }
+    ]
+}

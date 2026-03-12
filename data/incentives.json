@@ -1,0 +1,835 @@
+{
+    "programs": [
+        {
+            "id": "us-itc",
+            "name": "Federal Investment Tax Credit (ITC)",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "30% of total installed cost",
+            "type": "Tax Credit",
+            "applies": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "description": "Dollar-for-dollar federal income tax reduction equal to 30% of the total installed cost of solar, storage, or microgrid systems. Available through 2032 at 30%, stepping down to 26% in 2033 and 22% in 2034. Bonus adders available for domestic content (+10%), energy communities (+10%), and low-income projects (+10-20%).",
+            "url": "https://www.energy.gov/eere/solar/federal-solar-tax-credits-businesses",
+            "tags": [
+                "federal",
+                "30 percent",
+                "solar",
+                "storage"
+            ]
+        },
+        {
+            "id": "us-macrs",
+            "name": "MACRS Accelerated Depreciation",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "5-year accelerated depreciation schedule",
+            "type": "Tax Benefit",
+            "applies": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "description": "Commercial solar and storage systems can be depreciated over 5 years, with bonus depreciation allowing up to 80% of the depreciable value in the first year. Combined with the 30% ITC, MACRS can reduce effective system cost by 50-60%.",
+            "url": "https://www.irs.gov/publications/p946",
+            "tags": [
+                "federal",
+                "depreciation",
+                "commercial"
+            ]
+        },
+        {
+            "id": "us-direct-pay",
+            "name": "IRA Direct Pay (Elective Pay)",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "30% direct cash payment",
+            "type": "Direct Payment",
+            "applies": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "description": "Tax-exempt entities (schools, hospitals, governments, nonprofits) can receive the ITC as a direct cash payment instead of a tax credit. Introduced by the Inflation Reduction Act in 2022.",
+            "url": "https://www.irs.gov/credits-deductions/elective-pay-and-transferability",
+            "tags": [
+                "federal",
+                "nonprofit",
+                "government",
+                "schools"
+            ]
+        },
+        {
+            "id": "us-reap",
+            "name": "USDA REAP Grant",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "Up to 50% of project cost (25% grant + 25% loan guarantee)",
+            "type": "Grant",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Rural Energy for America Program provides grants and loan guarantees to agricultural producers and rural small businesses. Can be combined with the ITC for total incentive coverage of 55-80%.",
+            "url": "https://www.rd.usda.gov/programs-services/energy-programs/rural-energy-america-program-renewable-energy-systems-energy-efficiency-improvement-guaranteed-loans",
+            "tags": [
+                "federal",
+                "agricultural",
+                "rural",
+                "grant"
+            ]
+        },
+        {
+            "id": "us-30c",
+            "name": "30C EV Charging Tax Credit",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "30% of costs, up to $100,000 per station",
+            "type": "Tax Credit",
+            "applies": [
+                "ev"
+            ],
+            "description": "Federal tax credit for EV charging equipment installed in eligible census tracts. Covers hardware, installation, and electrical upgrades. Extended through 2032 by the Inflation Reduction Act. $1,000 cap for residential installations.",
+            "url": "https://afdc.energy.gov/laws/federal/US/10513",
+            "tags": [
+                "federal",
+                "ev charging",
+                "30 percent"
+            ]
+        },
+        {
+            "id": "us-nevi",
+            "name": "NEVI Formula Program",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "Up to 80% of costs for highway corridor DCFC",
+            "type": "Grant",
+            "applies": [
+                "ev"
+            ],
+            "description": "National Electric Vehicle Infrastructure program distributes $5 billion over 5 years to states for DCFC along highway corridors. Minimum 4 ports of 150 kW each, with 97% uptime requirements.",
+            "url": "https://www.fhwa.dot.gov/environment/alternative_fuel_corridors/",
+            "tags": [
+                "federal",
+                "dcfc",
+                "highway",
+                "grant"
+            ]
+        },
+        {
+            "id": "us-cfi",
+            "name": "CFI Discretionary Grants",
+            "region": "US Federal",
+            "country": "US",
+            "state": null,
+            "amount": "Up to 80% of costs",
+            "type": "Grant",
+            "applies": [
+                "ev"
+            ],
+            "description": "Competitive federal grant program for EV charging projects in community locations. $2.5 billion total over 5 years.",
+            "url": "https://www.fhwa.dot.gov/environment/cfi/",
+            "tags": [
+                "federal",
+                "community",
+                "public",
+                "grant"
+            ]
+        },
+        {
+            "id": "us-ca-sgip",
+            "name": "Self-Generation Incentive Program (SGIP)",
+            "region": "California",
+            "country": "US",
+            "state": "CA",
+            "amount": "$200-$1,000 per kWh of storage capacity",
+            "type": "Rebate",
+            "applies": [
+                "storage"
+            ],
+            "description": "California rebate program for energy storage systems. General market incentive is approximately $200/kWh. Equity categories receive $850-$1,000/kWh, which can cover 85-100% of battery system cost.",
+            "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+            "tags": [
+                "california",
+                "storage",
+                "rebate",
+                "equity"
+            ]
+        },
+        {
+            "id": "us-ca-nem3",
+            "name": "Net Billing Tariff (NEM 3.0)",
+            "region": "California",
+            "country": "US",
+            "state": "CA",
+            "amount": "Export rate varies by time of day and utility",
+            "type": "Net Metering",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "California's updated net metering policy pays reduced export rates but strongly incentivizes battery storage to maximize self-consumption and shift exports to peak hours.",
+            "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/net-energy-metering",
+            "tags": [
+                "california",
+                "net metering",
+                "solar"
+            ]
+        },
+        {
+            "id": "us-ca-calevip",
+            "name": "CALeVIP EV Charging Rebates",
+            "region": "California",
+            "country": "US",
+            "state": "CA",
+            "amount": "Up to $80,000 per DCFC, $6,500 per L2",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "California Electric Vehicle Infrastructure Project provides rebates for EV charger installations at workplaces, multi-unit dwellings, and public locations. Funding varies by region.",
+            "url": "https://calevip.org/",
+            "tags": [
+                "california",
+                "ev charging",
+                "rebate"
+            ]
+        },
+        {
+            "id": "us-ca-property-tax",
+            "name": "California Solar Property Tax Exclusion",
+            "region": "California",
+            "country": "US",
+            "state": "CA",
+            "amount": "100% property tax exclusion for solar",
+            "type": "Tax Exemption",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Solar energy systems are excluded from property tax assessment in California, meaning your property taxes will not increase after installing solar panels or battery storage.",
+            "url": "https://www.boe.ca.gov/proptaxes/pdf/pub71.pdf",
+            "tags": [
+                "california",
+                "property tax",
+                "solar"
+            ]
+        },
+        {
+            "id": "us-ny-sun",
+            "name": "NY-Sun Incentive Program",
+            "region": "New York",
+            "country": "US",
+            "state": "NY",
+            "amount": "$0.20 - $0.80/W depending on sector and region",
+            "type": "Rebate",
+            "applies": [
+                "solar"
+            ],
+            "description": "NYSERDA solar incentive program providing per-watt rebates for residential and commercial solar installations. Incentive levels vary by utility territory and project size.",
+            "url": "https://www.nyserda.ny.gov/All-Programs/NY-Sun",
+            "tags": [
+                "new york",
+                "solar",
+                "rebate"
+            ]
+        },
+        {
+            "id": "us-ny-vder",
+            "name": "Value of Distributed Energy Resources (VDER)",
+            "region": "New York",
+            "country": "US",
+            "state": "NY",
+            "amount": "Location-based export credits",
+            "type": "Net Metering",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "New York's value stack tariff compensates solar exports based on energy, capacity, environmental, and demand reduction values. Rates vary by utility and location.",
+            "url": "https://www.nyserda.ny.gov/All-Programs/NY-Sun/Contractors/Value-of-Distributed-Energy-Resources",
+            "tags": [
+                "new york",
+                "net metering",
+                "solar"
+            ]
+        },
+        {
+            "id": "us-ny-drive-clean",
+            "name": "Drive Clean Rebate",
+            "region": "New York",
+            "country": "US",
+            "state": "NY",
+            "amount": "Up to $4,000 per L2 port (commercial)",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "NYSERDA rebate for Level 2 EV charger installations at workplaces, multi-unit dwellings, and public parking facilities.",
+            "url": "https://www.nyserda.ny.gov/All-Programs/Drive-Clean-Rebate",
+            "tags": [
+                "new york",
+                "ev charging",
+                "rebate"
+            ]
+        },
+        {
+            "id": "us-il-abp",
+            "name": "Illinois Adjustable Block Program",
+            "region": "Illinois",
+            "country": "US",
+            "state": "IL",
+            "amount": "15-year SREC contract (value varies by block)",
+            "type": "Performance Incentive",
+            "applies": [
+                "solar"
+            ],
+            "description": "Illinois Shines program provides Solar Renewable Energy Credits (SRECs) through 15-year contracts. Residential systems under 25 kW receive upfront payment based on estimated production.",
+            "url": "https://www.illinoisabp.com/",
+            "tags": [
+                "illinois",
+                "srec",
+                "production incentive"
+            ]
+        },
+        {
+            "id": "us-il-ceja-ev",
+            "name": "CEJA EV Charging Rebates",
+            "region": "Illinois",
+            "country": "US",
+            "state": "IL",
+            "amount": "Up to 80% of costs in disadvantaged communities",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "Climate and Equitable Jobs Act provides EV charging rebates prioritizing disadvantaged communities. Covers hardware, installation, and electrical upgrades.",
+            "url": "https://www.illinois.gov/ceja",
+            "tags": [
+                "illinois",
+                "ev charging",
+                "equity"
+            ]
+        },
+        {
+            "id": "us-ma-smart",
+            "name": "Massachusetts SMART Program",
+            "region": "Massachusetts",
+            "country": "US",
+            "state": "MA",
+            "amount": "Performance-based incentive (per kWh generated)",
+            "type": "Performance Incentive",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Solar Massachusetts Renewable Target (SMART) provides performance-based incentives paid over 10 or 20 years. Storage adder provides additional per-kWh incentive for paired storage.",
+            "url": "https://www.mass.gov/info-details/solar-massachusetts-renewable-target-smart",
+            "tags": [
+                "massachusetts",
+                "production incentive",
+                "storage adder"
+            ]
+        },
+        {
+            "id": "us-tx-property",
+            "name": "Texas Solar Property Tax Exemption",
+            "region": "Texas",
+            "country": "US",
+            "state": "TX",
+            "amount": "100% property tax exemption for solar value",
+            "type": "Tax Exemption",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Texas exempts the appraised value added by solar energy systems from property taxes. This means installing solar will not increase your property tax bill.",
+            "url": "https://comptroller.texas.gov/taxes/property-tax/exemptions/solar-wind.php",
+            "tags": [
+                "texas",
+                "property tax",
+                "solar"
+            ]
+        },
+        {
+            "id": "us-co-rec",
+            "name": "Xcel Energy Solar*Rewards",
+            "region": "Colorado",
+            "country": "US",
+            "state": "CO",
+            "amount": "$0.02-$0.03/kWh REC payments for 20 years",
+            "type": "Performance Incentive",
+            "applies": [
+                "solar"
+            ],
+            "description": "Xcel Energy purchases Renewable Energy Credits from residential and commercial solar systems through 20-year contracts, providing ongoing production-based payments.",
+            "url": "https://co.my.xcelenergy.com/s/renewable/solar-rewards",
+            "tags": [
+                "colorado",
+                "rec",
+                "production incentive"
+            ]
+        },
+        {
+            "id": "us-co-ev",
+            "name": "Colorado Charge Ahead Rebates",
+            "region": "Colorado",
+            "country": "US",
+            "state": "CO",
+            "amount": "$1,000-$9,000 per L2 port",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "Colorado provides rebates for EV charger installations at workplaces, multi-unit dwellings, and public facilities. Higher incentives for disadvantaged communities.",
+            "url": "https://energyoffice.colorado.gov/transportation/grants-incentives/charge-ahead-colorado",
+            "tags": [
+                "colorado",
+                "ev charging",
+                "rebate"
+            ]
+        },
+        {
+            "id": "us-az-aps",
+            "name": "APS Solar Incentive Program",
+            "region": "Arizona",
+            "country": "US",
+            "state": "AZ",
+            "amount": "$0.10/kWh export credit + demand charge reduction",
+            "type": "Performance Incentive",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Arizona Public Service provides solar export credits and reduced demand charges for customers with solar and battery storage systems.",
+            "url": "https://www.aps.com/en/About/Our-Company/Doing-Our-Part/Solar-and-Renewables",
+            "tags": [
+                "arizona",
+                "solar",
+                "utility"
+            ]
+        },
+        {
+            "id": "us-nj-srec2",
+            "name": "New Jersey SREC-II (Successor)",
+            "region": "New Jersey",
+            "country": "US",
+            "state": "NJ",
+            "amount": "Fixed 15-year SREC price (varies by project class)",
+            "type": "Performance Incentive",
+            "applies": [
+                "solar"
+            ],
+            "description": "New Jersey's Successor Solar Incentive program provides fixed-price SRECs through the Administratively Determined Incentive (ADI) and competitive solicitation programs.",
+            "url": "https://njcleanenergy.com/srec",
+            "tags": [
+                "new jersey",
+                "srec",
+                "production incentive"
+            ]
+        },
+        {
+            "id": "us-nj-adi-storage",
+            "name": "New Jersey Storage Incentive Program",
+            "region": "New Jersey",
+            "country": "US",
+            "state": "NJ",
+            "amount": "$150-$300 per kWh of storage capacity",
+            "type": "Rebate",
+            "applies": [
+                "storage"
+            ],
+            "description": "New Jersey provides per-kWh incentives for behind-the-meter energy storage systems, with bonus incentives for projects in overburdened communities.",
+            "url": "https://njcleanenergy.com/renewable-energy/programs/energy-storage",
+            "tags": [
+                "new jersey",
+                "storage",
+                "rebate"
+            ]
+        },
+        {
+            "id": "us-fl-net-metering",
+            "name": "Florida Net Metering",
+            "region": "Florida",
+            "country": "US",
+            "state": "FL",
+            "amount": "Full retail rate credit for excess generation",
+            "type": "Net Metering",
+            "applies": [
+                "solar"
+            ],
+            "description": "Florida utilities provide full retail rate net metering credits for solar energy exported to the grid. Systems up to 2 MW are eligible. Credits carry forward monthly and are paid annually.",
+            "url": "https://www.psc.state.fl.us/ElectricNaturalGas/NetMetering",
+            "tags": [
+                "florida",
+                "net metering",
+                "solar"
+            ]
+        },
+        {
+            "id": "us-fl-property",
+            "name": "Florida Solar Property Tax Exemption",
+            "region": "Florida",
+            "country": "US",
+            "state": "FL",
+            "amount": "100% property tax exemption for residential solar",
+            "type": "Tax Exemption",
+            "applies": [
+                "solar"
+            ],
+            "description": "Residential solar energy systems are exempt from property tax assessment in Florida, and solar equipment is exempt from state sales tax.",
+            "url": "https://www.flsenate.gov/laws/statutes/2022/193.624",
+            "tags": [
+                "florida",
+                "property tax",
+                "sales tax"
+            ]
+        },
+        {
+            "id": "us-utility-ev",
+            "name": "State Utility EV Rebates (Various)",
+            "region": "Various US States",
+            "country": "US",
+            "state": null,
+            "amount": "$500-$4,000 per L2 port, up to $25,000 per DCFC",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "Many electric utilities offer rebates for EV charger installations. Major programs include Pacific Gas & Electric (CA), Duke Energy (NC, SC, FL), and Con Edison (NY). Contact your local utility directly.",
+            "url": "https://afdc.energy.gov/laws/state",
+            "tags": [
+                "utility",
+                "ev charging",
+                "rebate"
+            ]
+        },
+        {
+            "id": "ca-zevip",
+            "name": "ZEVIP (Zero Emission Vehicle Infrastructure)",
+            "region": "Canada Federal",
+            "country": "CA",
+            "state": null,
+            "amount": "Up to 50% of costs, max $5,000/L2 or $50,000/DCFC",
+            "type": "Grant",
+            "applies": [
+                "ev"
+            ],
+            "description": "Natural Resources Canada program supporting EV charger installation at workplaces, multi-unit residential buildings, public places, and fleet depots. Multiple intake rounds per year.",
+            "url": "https://natural-resources.canada.ca/energy-efficiency/transportation-alternative-fuels/zero-emission-vehicle-infrastructure-program/21876",
+            "tags": [
+                "canada",
+                "federal",
+                "ev charging",
+                "grant"
+            ]
+        },
+        {
+            "id": "ca-cib-green",
+            "name": "Canada Infrastructure Bank - Green Infrastructure",
+            "region": "Canada Federal",
+            "country": "CA",
+            "state": null,
+            "amount": "Low-cost financing and co-investment",
+            "type": "Financing",
+            "applies": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "description": "The Canada Infrastructure Bank provides low-cost financing for large-scale renewable energy and energy storage projects. Indigenous community projects receive priority.",
+            "url": "https://cib-bic.ca/en/sectors/green-infrastructure/",
+            "tags": [
+                "canada",
+                "federal",
+                "financing",
+                "commercial"
+            ]
+        },
+        {
+            "id": "ca-greener-homes",
+            "name": "Canada Greener Homes Initiative",
+            "region": "Canada Federal",
+            "country": "CA",
+            "state": null,
+            "amount": "Up to $5,000 for solar PV",
+            "type": "Grant",
+            "applies": [
+                "solar"
+            ],
+            "description": "Federal grant program for residential energy efficiency and renewable energy upgrades. Requires EnerGuide evaluation before and after installation.",
+            "url": "https://natural-resources.canada.ca/energy-efficiency/homes/canada-greener-homes-initiative/24831",
+            "tags": [
+                "canada",
+                "federal",
+                "residential",
+                "grant"
+            ]
+        },
+        {
+            "id": "ca-izev",
+            "name": "iMHZEV Fleet Incentive",
+            "region": "Canada Federal",
+            "country": "CA",
+            "state": null,
+            "amount": "$5,000 per L2 port for medium/heavy-duty fleet",
+            "type": "Grant",
+            "applies": [
+                "ev"
+            ],
+            "description": "Incentives for Medium- and Heavy-duty Zero-Emission Vehicles program supports fleet electrification including charging infrastructure for commercial and transit fleets.",
+            "url": "https://tc.canada.ca/en/road-transportation/innovative-technologies/zero-emission-vehicles",
+            "tags": [
+                "canada",
+                "federal",
+                "fleet",
+                "ev charging"
+            ]
+        },
+        {
+            "id": "ca-on-save",
+            "name": "Save on Energy Programs",
+            "region": "Ontario",
+            "country": "CA",
+            "state": "ON",
+            "amount": "Various incentives for commercial energy projects",
+            "type": "Rebate",
+            "applies": [
+                "solar",
+                "storage"
+            ],
+            "description": "Ontario's IESO-funded Save on Energy programs provide commercial and industrial incentives for clean energy projects including solar and storage installations.",
+            "url": "https://saveonenergy.ca/",
+            "tags": [
+                "ontario",
+                "commercial",
+                "rebate"
+            ]
+        },
+        {
+            "id": "ca-on-ev",
+            "name": "Ontario EV Charger Grant Program",
+            "region": "Ontario",
+            "country": "CA",
+            "state": "ON",
+            "amount": "Up to $2,000 per connector for condos and workplaces",
+            "type": "Grant",
+            "applies": [
+                "ev"
+            ],
+            "description": "Ontario provides grants for EV charger installations at condominiums and workplaces. Supports Level 2 charging infrastructure deployment.",
+            "url": "https://www.ontario.ca/page/electric-vehicle-charger-ontario",
+            "tags": [
+                "ontario",
+                "ev charging",
+                "condo",
+                "workplace"
+            ]
+        },
+        {
+            "id": "ca-bc-cleanbc",
+            "name": "CleanBC Better Homes Program",
+            "region": "British Columbia",
+            "country": "CA",
+            "state": "BC",
+            "amount": "Up to $5,000 for solar, $2,000 for EV chargers",
+            "type": "Rebate",
+            "applies": [
+                "solar",
+                "storage",
+                "ev"
+            ],
+            "description": "BC provides rebates for home energy improvements including solar installations and EV charger connections. Enhanced rebates for income-qualified households.",
+            "url": "https://betterhomesbc.ca/",
+            "tags": [
+                "british columbia",
+                "residential",
+                "solar",
+                "ev"
+            ]
+        },
+        {
+            "id": "ca-bc-hydro",
+            "name": "BC Hydro Commercial EV Charging",
+            "region": "British Columbia",
+            "country": "CA",
+            "state": "BC",
+            "amount": "Up to $4,000 per L2 connector + $600 electrical",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "BC Hydro provides rebates for commercial and multi-unit residential EV charging installations, covering hardware and electrical upgrade costs.",
+            "url": "https://www.bchydro.com/powersmart/electric-vehicles/charging.html",
+            "tags": [
+                "british columbia",
+                "commercial",
+                "ev charging"
+            ]
+        },
+        {
+            "id": "ca-qc-roulez-vert",
+            "name": "Roulez vert Program",
+            "region": "Quebec",
+            "country": "CA",
+            "state": "QC",
+            "amount": "Up to $5,000 per EV connector",
+            "type": "Rebate",
+            "applies": [
+                "ev"
+            ],
+            "description": "Quebec's EV incentive program provides rebates for EV charging infrastructure at homes, workplaces, and multi-unit buildings. One of Canada's most generous provincial EV programs.",
+            "url": "https://vehiculeselectriques.gouv.qc.ca/english/",
+            "tags": [
+                "quebec",
+                "ev charging",
+                "rebate"
+            ]
+        },
+        {
+            "id": "ca-qc-chauffez-vert",
+            "name": "Chauffez vert Program",
+            "region": "Quebec",
+            "country": "CA",
+            "state": "QC",
+            "amount": "Up to $5,000 for renewable heating conversion",
+            "type": "Rebate",
+            "applies": [
+                "solar"
+            ],
+            "description": "Quebec rebate program supporting conversion from fossil fuel heating to renewable energy sources including solar thermal and heat pump systems.",
+            "url": "https://transitionenergetique.gouv.qc.ca/en/residential/programs/chauffez-vert",
+            "tags": [
+                "quebec",
+                "residential",
+                "rebate"
+            ]
+        },
+        {
+            "id": "ca-ab-mccac",
+            "name": "Municipal Climate Change Action Centre",
+            "region": "Alberta",
+            "country": "CA",
+            "state": "AB",
+            "amount": "Varies by project and municipality",
+            "type": "Grant",
+            "applies": [
+                "solar",
+                "storage",
+                "ev"
+            ],
+            "description": "MCCAC provides funding support for Alberta municipalities undertaking clean energy projects including solar installations, battery storage, and EV charging infrastructure.",
+            "url": "https://mccac.ca/",
+            "tags": [
+                "alberta",
+                "municipal",
+                "grant",
+                "solar"
+            ]
+        },
+        {
+            "id": "ca-ab-micro-gen",
+            "name": "Alberta Micro-generation Program",
+            "region": "Alberta",
+            "country": "CA",
+            "state": "AB",
+            "amount": "Credit at retail electricity rate for exports",
+            "type": "Net Metering",
+            "applies": [
+                "solar"
+            ],
+            "description": "Alberta's micro-generation regulation allows solar system owners to receive credits at the retail rate for electricity exported to the grid. Systems up to 5 MW are eligible.",
+            "url": "https://www.alberta.ca/micro-generation",
+            "tags": [
+                "alberta",
+                "net metering",
+                "solar"
+            ]
+        },
+        {
+            "id": "ca-sk-net-metering",
+            "name": "SaskPower Net Metering",
+            "region": "Saskatchewan",
+            "country": "CA",
+            "state": "SK",
+            "amount": "Credit at retail rate, up to 100 kW",
+            "type": "Net Metering",
+            "applies": [
+                "solar"
+            ],
+            "description": "SaskPower provides net metering for renewable energy systems up to 100 kW. Export credits at the retail electricity rate, carried forward for up to 12 months.",
+            "url": "https://www.saskpower.com/Our-Power-Future/Our-Electricity/Electrical-Options/Net-Metering",
+            "tags": [
+                "saskatchewan",
+                "net metering",
+                "solar"
+            ]
+        },
+        {
+            "id": "ca-mb-efficiency",
+            "name": "Efficiency Manitoba Solar Rebate",
+            "region": "Manitoba",
+            "country": "CA",
+            "state": "MB",
+            "amount": "Custom rebate based on system performance",
+            "type": "Rebate",
+            "applies": [
+                "solar"
+            ],
+            "description": "Efficiency Manitoba offers rebates for solar photovoltaic installations, with incentive amounts that vary based on projected energy production and system specifications.",
+            "url": "https://efficiencymb.ca/",
+            "tags": [
+                "manitoba",
+                "solar",
+                "rebate"
+            ]
+        },
+        {
+            "id": "ca-ns-solar-homes",
+            "name": "SolarHomes Program",
+            "region": "Nova Scotia",
+            "country": "CA",
+            "state": "NS",
+            "amount": "Up to $3,000 for residential solar",
+            "type": "Rebate",
+            "applies": [
+                "solar"
+            ],
+            "description": "Nova Scotia provides rebates for residential solar PV installations through the SolarHomes program, supporting homeowners in reducing electricity costs.",
+            "url": "https://www.efficiencyns.ca/service/solarhomes/",
+            "tags": [
+                "nova scotia",
+                "residential",
+                "solar"
+            ]
+        },
+        {
+            "id": "ca-nb-solar",
+            "name": "NB Power Solar Program",
+            "region": "New Brunswick",
+            "country": "CA",
+            "state": "NB",
+            "amount": "Net metering credits at retail rate",
+            "type": "Net Metering",
+            "applies": [
+                "solar"
+            ],
+            "description": "NB Power offers net metering for solar systems up to 100 kW. Credits are applied monthly at the retail electricity rate, with annual settlement.",
+            "url": "https://www.nbpower.com/en/products-services/net-metering/",
+            "tags": [
+                "new brunswick",
+                "net metering",
+                "solar"
+            ]
+        }
+    ]
+}

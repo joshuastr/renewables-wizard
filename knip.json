@@ -1,0 +1,21 @@
+{
+    "$schema": "https://unpkg.com/knip@latest/schema.json",
+    "entry": [
+        "src/main.js"
+    ],
+    "project": [
+        "src/**/*.js"
+    ],
+    "ignore": [
+        "scripts/**",
+        "dist/**",
+        "reports/**",
+        "audit/**"
+    ],
+    "ignoreDependencies": [
+        "eslint-*",
+        "@eslint/*",
+        "madge",
+        "knip"
+    ]
+}

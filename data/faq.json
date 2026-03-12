@@ -1,0 +1,533 @@
+{
+    "categories": [
+        {
+            "id": "solar-basics",
+            "label": "Solar Basics",
+            "icon": "sun",
+            "domain": [
+                "solar"
+            ]
+        },
+        {
+            "id": "inverters",
+            "label": "Inverters",
+            "icon": "zap",
+            "domain": [
+                "solar"
+            ]
+        },
+        {
+            "id": "storage",
+            "label": "Energy Storage",
+            "icon": "battery",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ]
+        },
+        {
+            "id": "microgrids",
+            "label": "Microgrids",
+            "icon": "network",
+            "domain": [
+                "microgrid"
+            ]
+        },
+        {
+            "id": "solar-installation",
+            "label": "Solar Installation",
+            "icon": "wrench",
+            "domain": [
+                "solar"
+            ]
+        },
+        {
+            "id": "solar-financial",
+            "label": "Solar Financial",
+            "icon": "dollar",
+            "domain": [
+                "solar",
+                "storage"
+            ]
+        },
+        {
+            "id": "grid-utility",
+            "label": "Grid & Utility",
+            "icon": "grid",
+            "domain": [
+                "solar",
+                "storage"
+            ]
+        },
+        {
+            "id": "ev-basics",
+            "label": "EV Charging Basics",
+            "icon": "zap",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-electrical",
+            "label": "Electrical",
+            "icon": "zap",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-cost",
+            "label": "Cost & ROI",
+            "icon": "dollar",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-installation",
+            "label": "Installation",
+            "icon": "wrench",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-networking",
+            "label": "Networking",
+            "icon": "network",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-fleet",
+            "label": "Fleet",
+            "icon": "truck",
+            "domain": [
+                "ev"
+            ]
+        },
+        {
+            "id": "ev-residential",
+            "label": "Residential EV",
+            "icon": "home",
+            "domain": [
+                "ev"
+            ]
+        }
+    ],
+    "entries": [
+        {
+            "id": "what-is-solar-pv",
+            "category": "solar-basics",
+            "domain": [
+                "solar"
+            ],
+            "question": "What is the difference between solar thermal and solar PV?",
+            "answer": "Solar PV (photovoltaic) converts sunlight directly into electricity using semiconductor cells. Solar thermal collects heat from the sun to warm water or air. For most residential and commercial applications, solar PV is the standard choice because it is more versatile (electricity powers everything), has lower maintenance, and benefits from strong incentive programs. Solar thermal is still used for pool heating and some industrial process heat applications, but PV dominates the market.",
+            "keywords": [
+                "solar pv",
+                "photovoltaic",
+                "solar thermal",
+                "panels"
+            ]
+        },
+        {
+            "id": "how-solar-panels-work",
+            "category": "solar-basics",
+            "domain": [
+                "solar"
+            ],
+            "question": "How do solar panels actually generate electricity?",
+            "answer": "Solar panels contain cells made of silicon semiconductors. When photons (light particles) hit the cell, they knock electrons loose from silicon atoms, creating an electrical current. This is called the photovoltaic effect. Each cell produces about 0.5 volts. Cells are wired in series within a panel to produce 30-50 volts per panel. Multiple panels are then connected to reach the voltage required by your inverter. The inverter converts the DC electricity from the panels into AC electricity that your building and the grid use. Modern panels convert 20-23% of sunlight into electricity.",
+            "keywords": [
+                "how solar works",
+                "photovoltaic effect",
+                "silicon",
+                "electricity generation"
+            ]
+        },
+        {
+            "id": "panel-types",
+            "category": "solar-basics",
+            "domain": [
+                "solar"
+            ],
+            "question": "What are the different types of solar panels and which should I choose?",
+            "answer": "Modern panels are almost all monocrystalline silicon, but the cell technology varies: PERC (Passivated Emitter Rear Cell) is the current mainstream technology at 20-22% efficiency. TOPCon (Tunnel Oxide Passivated Contact) is the next generation, offering 22-24% efficiency with better temperature performance. HJT (Heterojunction) combines crystalline and thin-film technology for 22-24% efficiency with the best temperature coefficient. HPBC (Hybrid Passivated Back Contact) is used by LONGi for a clean look with no visible busbars at 22-23% efficiency. For most projects, the differences are small. Choose based on available space (higher efficiency if roof is limited), temperature (HJT if very hot climate), and budget (PERC is cheapest, TOPCon/HJT cost slightly more).",
+            "keywords": [
+                "monocrystalline",
+                "PERC",
+                "TOPCon",
+                "HJT",
+                "HPBC",
+                "panel types",
+                "efficiency"
+            ]
+        },
+        {
+            "id": "string-vs-micro",
+            "category": "inverters",
+            "domain": [
+                "solar"
+            ],
+            "question": "Should I choose microinverters or a string inverter?",
+            "answer": "Microinverters (one per panel) provide panel-level optimization, monitoring, and independent operation. If one panel is shaded, the others are unaffected. They are ideal for residential roofs with shading, multiple orientations, or complex shapes. String inverters (one for the whole system) are simpler and slightly cheaper. Power optimizers (SolarEdge) add panel-level optimization to a string inverter. For residential: microinverters if any shading or complex roof, string + optimizers for simple roofs. For commercial: string inverters are standard for cost and simplicity unless shading is a major concern.",
+            "keywords": [
+                "microinverter",
+                "string inverter",
+                "enphase",
+                "solaredge",
+                "optimizer"
+            ]
+        },
+        {
+            "id": "hybrid-inverter",
+            "category": "inverters",
+            "domain": [
+                "solar",
+                "storage"
+            ],
+            "question": "What is a hybrid inverter and when do I need one?",
+            "answer": "A hybrid inverter manages solar panels, battery storage, and the grid connection in a single device. It replaces both the solar inverter and the battery inverter, reducing cost and complexity. You need a hybrid inverter if you are installing solar and battery storage together, or if you plan to add a battery later. If you are installing solar-only with no plans for storage, a standard solar inverter is sufficient and cheaper. If you already have solar and want to add a battery, an AC-coupled battery (like Enphase IQ Battery) can be added without replacing your existing inverter.",
+            "keywords": [
+                "hybrid inverter",
+                "battery inverter",
+                "AC coupled",
+                "DC coupled"
+            ]
+        },
+        {
+            "id": "battery-chemistry",
+            "category": "storage",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "question": "What is the difference between LFP and NMC batteries?",
+            "answer": "LFP (Lithium Iron Phosphate) and NMC (Nickel Manganese Cobalt) are the two main battery chemistries for energy storage. LFP is safer (no thermal runaway risk), lasts longer (6,000-10,000 cycles vs 3,000-5,000), handles daily deep cycling better, and operates in wider temperature ranges. NMC has higher energy density (smaller/lighter for the same capacity) but costs similarly to LFP now. For stationary energy storage, LFP is the clear choice - safety and longevity far outweigh the slight size advantage of NMC. Tesla Powerwall 3 is one of the few residential batteries still using NMC. Nearly all new products use LFP.",
+            "keywords": [
+                "LFP",
+                "NMC",
+                "lithium iron phosphate",
+                "battery chemistry",
+                "safety"
+            ]
+        },
+        {
+            "id": "battery-sizing",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "How do I size a battery for my home or building?",
+            "answer": "Battery sizing depends on your goal: Backup power - list your critical loads and their wattages, multiply by desired backup hours. Example: 2 kW of critical loads x 8 hours = 16 kWh of usable capacity. Self-consumption - match battery capacity to your evening/night consumption. Typically 1-1.5x your solar system size in kWh (so a 10 kW solar system pairs with a 10-15 kWh battery). Peak demand reduction (commercial) - analyze your 15-minute interval data to find peak demand events, then size battery power (kW) to shave those peaks. Battery capacity (kWh) needs to sustain that power for the peak duration. Start small - you can always add more battery capacity later with modular systems.",
+            "keywords": [
+                "battery sizing",
+                "capacity",
+                "kWh",
+                "backup hours",
+                "self-consumption"
+            ]
+        },
+        {
+            "id": "net-metering",
+            "category": "grid-utility",
+            "domain": [
+                "solar"
+            ],
+            "question": "What is net metering and how does it affect my solar investment?",
+            "answer": "Net metering is a billing arrangement where your utility credits you for excess solar electricity you export to the grid. Under full retail net metering, each kWh you export earns a credit equal to the retail electricity rate. This effectively makes the grid a free battery - export during the day, use credits at night. However, many utilities are reducing net metering rates (California NEM 3.0 cut export credits by 75%). In areas with reduced net metering, adding battery storage to consume your own solar becomes more financially attractive. Check your utility's current net metering policy before sizing your system - it significantly impacts the financial return.",
+            "keywords": [
+                "net metering",
+                "NEM",
+                "export credits",
+                "utility billing",
+                "grid"
+            ]
+        },
+        {
+            "id": "solar-roi",
+            "category": "solar-financial",
+            "domain": [
+                "solar"
+            ],
+            "question": "What is the typical payback period for solar?",
+            "answer": "Residential solar typically pays back in 5-8 years, with 25+ year system life meaning 17-20 years of free electricity after payback. Commercial solar can pay back in 3-6 years when including MACRS depreciation. Key factors affecting payback: electricity rate (higher rates = faster payback), solar production (sunnier locations = more kWh), system cost (varies by region and installer), incentives (30% ITC, state rebates, utility programs), and financing cost (cash purchase has fastest payback, loans add interest). After the 30% ITC, the effective installed cost is typically $1.75-2.45/W residential and $1.25-1.95/W commercial.",
+            "keywords": [
+                "payback",
+                "ROI",
+                "return on investment",
+                "cost savings",
+                "financial"
+            ]
+        },
+        {
+            "id": "what-is-microgrid",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What is a microgrid and when does it make sense?",
+            "answer": "A microgrid is a self-contained energy system that can operate connected to the main grid or independently (islanded). It typically includes solar panels, battery storage, a microgrid controller, and often a backup generator. The controller manages all power sources and automatically switches to island mode during grid outages. Microgrids make sense for: critical facilities that cannot lose power (hospitals, data centers, water treatment), remote communities with unreliable grid, campuses wanting energy independence, and military/government installations requiring resilient power. The microgrid controller is the key differentiator from standard solar + storage - it enables grid disconnection and autonomous operation.",
+            "keywords": [
+                "microgrid",
+                "island mode",
+                "islanding",
+                "controller",
+                "resilient power"
+            ]
+        },
+        {
+            "id": "solar-maintenance",
+            "category": "solar-installation",
+            "domain": [
+                "solar"
+            ],
+            "question": "What maintenance does a solar system require?",
+            "answer": "Solar PV systems require very little maintenance. Panels have no moving parts and are designed for 25-30 years of outdoor exposure. Routine maintenance includes: visual inspection of panels for physical damage (annually), monitoring production data for underperforming strings or panels (inverter/monitoring system handles this automatically), cleaning panels if production drops due to soiling (rain usually handles this, but dusty or pollen-heavy areas may need annual cleaning), checking mounting hardware for looseness (annually), and inverter replacement (string inverters typically last 10-15 years, microinverters 25+ years). Total annual maintenance cost is typically $100-300 for residential and $500-2,000 for commercial systems.",
+            "keywords": [
+                "maintenance",
+                "cleaning",
+                "monitoring",
+                "inverter replacement"
+            ]
+        },
+        {
+            "id": "itc-details",
+            "category": "solar-financial",
+            "domain": [
+                "solar",
+                "storage"
+            ],
+            "question": "How does the 30% federal tax credit work?",
+            "answer": "The Investment Tax Credit (ITC) is a dollar-for-dollar reduction in your federal income tax equal to 30% of the total installed cost of your solar and/or storage system. If your system costs $30,000, you receive a $13,000 tax credit. Important details: the credit applies to the full installed cost including equipment, labor, permitting, and sales tax. You must have sufficient tax liability to use the credit (it can be carried forward for up to 5 years). The 30% rate is available through 2032, then steps down to 26% in 2033 and 22% in 2034. Bonus adders available: +10% for domestic content, +10% for energy communities, +10-20% for low-income projects. Tax-exempt entities can use Direct Pay to receive the credit as a cash payment.",
+            "keywords": [
+                "ITC",
+                "tax credit",
+                "30 percent",
+                "federal",
+                "inflation reduction act"
+            ]
+        },
+        {
+            "id": "what-is-level2",
+            "category": "ev-basics",
+            "domain": [
+                "ev"
+            ],
+            "question": "What is the difference between Level 1, Level 2, and DC Fast Charging?",
+            "answer": "Level 1 uses a standard 120V household outlet and adds about 5-8 km of range per hour. It is rarely sufficient for anything beyond overnight home charging of a short-commute vehicle. Level 2 uses a 240V circuit (like a dryer outlet) and adds 25-80 km per hour depending on amperage. This is the workhorse for most installations: workplaces, apartments, hotels, and fleet depots. DC Fast Charging (DCFC) bypasses the vehicle's onboard charger entirely and pushes power directly to the battery at 50-350 kW. It can add 100+ km in 15-20 minutes. DCFC is used for highway corridors, convenience retail, and fleet vehicles that need fast turnaround. Most projects should start with Level 2 unless there is a specific need for fast charging.",
+            "keywords": [
+                "level 1",
+                "level 2",
+                "dc fast",
+                "dcfc",
+                "charging speed",
+                "types"
+            ]
+        },
+        {
+            "id": "what-is-ocpp",
+            "category": "ev-networking",
+            "domain": [
+                "ev"
+            ],
+            "question": "What is OCPP and why should I care about it?",
+            "answer": "OCPP (Open Charge Point Protocol) is an open communication standard that allows your chargers to talk to any compatible management platform. Without OCPP, you are locked into the charger manufacturer's software and network fees forever. With OCPP, you can switch management platforms without replacing hardware. Always specify OCPP 1.6J or 2.0 compliance when purchasing chargers.",
+            "keywords": [
+                "ocpp",
+                "open protocol",
+                "vendor lock-in",
+                "network",
+                "compatibility"
+            ]
+        },
+        {
+            "id": "breaker-sizing",
+            "category": "ev-electrical",
+            "domain": [
+                "ev"
+            ],
+            "question": "What size breaker do I need for an EV charger?",
+            "answer": "The breaker must be rated at 125% of the charger's continuous load per the National Electrical Code (NEC) and Canadian Electrical Code (CEC). A 40A charger needs a 50A breaker. A 48A charger needs a 60A breaker. A 32A charger needs a 40A breaker. This 125% rule is because EV charging is a continuous load (runs for more than 3 hours). Your electrician will also need to verify that your panel has enough spare capacity.",
+            "keywords": [
+                "breaker",
+                "circuit",
+                "amperage",
+                "panel",
+                "NEC",
+                "CEC",
+                "electrical"
+            ]
+        },
+        {
+            "id": "ev-load-management",
+            "category": "ev-electrical",
+            "domain": [
+                "ev"
+            ],
+            "question": "What is load management and why does it save money?",
+            "answer": "Load management (also called power management or smart charging) limits the total power drawn by a group of chargers so they do not exceed a set electrical limit. Without load management, 10 chargers at 48A each would need 10 x 60A breakers and a massive electrical service. With load management, those same 10 chargers can share a much smaller electrical service because they rarely all charge at full power simultaneously. This can reduce electrical infrastructure costs by 40-60%. It is essentially mandatory for any deployment of 4 or more chargers.",
+            "keywords": [
+                "load management",
+                "power management",
+                "smart charging",
+                "electrical capacity",
+                "EVEMS"
+            ]
+        },
+        {
+            "id": "ev-cost-per-port",
+            "category": "ev-cost",
+            "domain": [
+                "ev"
+            ],
+            "question": "How much does it really cost to install an EV charger?",
+            "answer": "Total installed cost per port typically ranges from $1,500-$5,000 for Level 2 and $50,000-$175,000 for DCFC. Major cost drivers include: distance from the electrical panel to the parking spot, whether a panel or service upgrade is required, trenching through concrete or asphalt, permitting fees, and networking setup. Always get at least 3 quotes from licensed electricians who have EV charger experience.",
+            "keywords": [
+                "cost",
+                "installation cost",
+                "price",
+                "budget",
+                "per port"
+            ]
+        },
+        {
+            "id": "connector-types",
+            "category": "ev-basics",
+            "domain": [
+                "ev"
+            ],
+            "question": "What connector types do I need to support?",
+            "answer": "In North America, there are three main connectors: J1772 is the standard for Level 2 charging and works with every EV. NACS (formerly Tesla connector) is being adopted as the new North American standard starting 2025. CCS1 (Combined Charging System) is used for DC fast charging on non-Tesla vehicles. CHAdeMO is an older DC fast standard being phased out. For new Level 2 installations, J1772 remains safe. For DCFC, CCS1 is the minimum, and many operators add CHAdeMO as a secondary connector.",
+            "keywords": [
+                "connector",
+                "j1772",
+                "nacs",
+                "tesla",
+                "ccs",
+                "chademo",
+                "plug type"
+            ]
+        },
+        {
+            "id": "fleet-overnight",
+            "category": "ev-fleet",
+            "domain": [
+                "ev"
+            ],
+            "question": "How do I plan overnight depot charging for a fleet?",
+            "answer": "Fleet depot charging is the most cost-effective EV charging scenario because vehicles have 8-12 hours to charge. Key steps: 1) Determine your daily energy needs (average km driven x vehicle efficiency in kWh/km). 2) Match that to available dwell time to find the required charger power level. 3) Use load management to minimize panel requirements. 4) Schedule charging during off-peak electricity hours for lowest energy costs. For most return-to-base fleets, Level 2 at 48A with overnight charging covers daily driving needs.",
+            "keywords": [
+                "fleet",
+                "depot",
+                "overnight",
+                "return to base",
+                "fleet charging"
+            ]
+        },
+        {
+            "id": "demand-charges",
+            "category": "ev-cost",
+            "domain": [
+                "ev"
+            ],
+            "question": "What are demand charges and how do they affect EV charging costs?",
+            "answer": "Demand charges are a fee based on your peak electricity usage during a billing period, measured in kW. A single hour of high demand can set your demand charge for the entire month. For EV charging, if 10 DC fast chargers all run at full power simultaneously, you could see a demand spike of 500+ kW, adding $5,000-15,000 to your monthly bill. Solutions include load management, battery energy storage, and time-of-use scheduling.",
+            "keywords": [
+                "demand charges",
+                "demand",
+                "electricity cost",
+                "peak",
+                "utility bill"
+            ]
+        },
+        {
+            "id": "ev-permitting",
+            "category": "ev-installation",
+            "domain": [
+                "ev"
+            ],
+            "question": "What permits do I need to install EV chargers?",
+            "answer": "Most jurisdictions require an electrical permit for EV charger installation. Some municipalities also require a building permit if modifying the structure. For DCFC installations, you may also need a utility interconnection agreement. The permitting process typically takes 2-8 weeks. Your electrician usually handles permit applications as part of their scope of work.",
+            "keywords": [
+                "permit",
+                "permitting",
+                "code",
+                "building permit",
+                "electrical permit"
+            ]
+        },
+        {
+            "id": "mur-charging",
+            "category": "ev-residential",
+            "domain": [
+                "ev"
+            ],
+            "question": "How do I add EV charging to an apartment or condo building?",
+            "answer": "Multi-unit residential (MUR) is the most complex EV charging scenario because it involves shared electrical infrastructure and multiple stakeholders. Key considerations: 1) Electrical capacity - most older buildings have limited spare capacity, making load management essential. 2) Metering - you need a way to bill individual users. 3) Installation path - conduit from the electrical room to parking stalls can be expensive. 4) Future-proofing - install conduit and panel capacity for future chargers even if you only need a few today. Government incentive programs for MUR buildings often cover 75-100% of costs.",
+            "keywords": [
+                "apartment",
+                "condo",
+                "multi-unit",
+                "strata",
+                "hoa",
+                "residential building"
+            ]
+        },
+        {
+            "id": "nacs-transition",
+            "category": "ev-basics",
+            "domain": [
+                "ev"
+            ],
+            "question": "Should I be worried about the NACS / Tesla connector transition?",
+            "answer": "NACS (North American Charging Standard) is Tesla's connector adopted as the SAE J3400 standard. Starting in 2025, most major auto manufacturers are switching new models to NACS ports. For new Level 2 installations, J1772 chargers will continue to work for years with adapters. For DCFC, consider units with both CCS1 and NACS connectors. Do not delay your project because of the connector transition.",
+            "keywords": [
+                "nacs",
+                "tesla connector",
+                "j3400",
+                "connector transition",
+                "future proof"
+            ]
+        },
+        {
+            "id": "ev-energy-storage",
+            "category": "ev-electrical",
+            "domain": [
+                "ev",
+                "storage"
+            ],
+            "question": "When should I consider battery energy storage for EV charging?",
+            "answer": "Battery Energy Storage Systems (BESS) for EV charging make sense where: electrical service is limited and an upgrade would cost $100K+, demand charges are high, you want to integrate solar power, or grid reliability is poor. However, BESS adds significant cost ($500-1,000 per kWh). For most deployments under 10 chargers, load management software is a cheaper and simpler solution than batteries. BESS makes the most sense for large DCFC sites (4+ fast chargers) where demand charge savings can pay back the battery cost within 3-5 years.",
+            "keywords": [
+                "battery",
+                "energy storage",
+                "bess",
+                "demand management",
+                "solar",
+                "backup power"
+            ]
+        },
+        {
+            "id": "ev-ada",
+            "category": "ev-installation",
+            "domain": [
+                "ev"
+            ],
+            "question": "What are the accessibility requirements for EV charger installations?",
+            "answer": "ADA and Canadian accessibility standards require a portion of EV charging stations be accessible. Requirements include: wider parking stalls (minimum 11 ft with 5 ft access aisle), charger controls at wheelchair-accessible height, firm and level surface from the access aisle to the charger, and accessible route to the building. The typical ratio is 1 accessible stall per 25 charging stations.",
+            "keywords": [
+                "ada",
+                "accessibility",
+                "accessible",
+                "wheelchair",
+                "compliance",
+                "parking"
+            ]
+        }
+    ]
+}

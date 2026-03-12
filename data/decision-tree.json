@@ -1,0 +1,775 @@
+{
+    "steps": [
+        {
+            "id": "project-type",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "question": "What type of project is this?",
+            "description": "Different settings have different energy profiles, regulatory requirements, and available incentive programs.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "residential",
+                    "label": "Residential",
+                    "icon": "home",
+                    "description": "Single family home or townhouse"
+                },
+                {
+                    "value": "commercial",
+                    "label": "Commercial / Industrial",
+                    "icon": "building",
+                    "description": "Office, retail, warehouse, factory"
+                },
+                {
+                    "value": "agricultural",
+                    "label": "Agricultural",
+                    "icon": "barn",
+                    "description": "Farm, ranch, greenhouse, irrigation"
+                },
+                {
+                    "value": "community",
+                    "label": "Community / Municipal",
+                    "icon": "city",
+                    "description": "Schools, hospitals, government buildings"
+                },
+                {
+                    "value": "remote",
+                    "label": "Remote / Off-Grid",
+                    "icon": "mountain",
+                    "description": "No grid connection or unreliable grid"
+                }
+            ]
+        },
+        {
+            "id": "primary-goal",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "question": "What is the primary goal?",
+            "description": "This helps determine the right system type and sizing approach.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "reduce-bills",
+                    "label": "Reduce electricity costs",
+                    "icon": "dollar",
+                    "description": "Lower monthly utility bills"
+                },
+                {
+                    "value": "backup",
+                    "label": "Backup power / resilience",
+                    "icon": "shield",
+                    "description": "Keep critical loads running during outages"
+                },
+                {
+                    "value": "independence",
+                    "label": "Energy independence",
+                    "icon": "battery",
+                    "description": "Minimize reliance on the grid"
+                },
+                {
+                    "value": "peak-shaving",
+                    "label": "Reduce peak demand charges",
+                    "icon": "chart",
+                    "description": "Flatten expensive demand spikes"
+                },
+                {
+                    "value": "sustainability",
+                    "label": "Sustainability / ESG",
+                    "icon": "leaf",
+                    "description": "Reduce carbon footprint"
+                },
+                {
+                    "value": "microgrid",
+                    "label": "Complete microgrid",
+                    "icon": "grid",
+                    "description": "Autonomous local power network"
+                }
+            ]
+        },
+        {
+            "id": "system-type",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "question": "What type of system are you considering?",
+            "description": "Each configuration has different cost, complexity, and capability profiles.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "solar-only",
+                    "label": "Solar PV only",
+                    "icon": "sun",
+                    "description": "Panels and inverter, no battery"
+                },
+                {
+                    "value": "solar-storage",
+                    "label": "Solar + battery storage",
+                    "icon": "sun-battery",
+                    "description": "Solar with battery backup"
+                },
+                {
+                    "value": "storage-only",
+                    "label": "Battery storage only",
+                    "icon": "battery-full",
+                    "description": "Grid-connected battery, no solar"
+                },
+                {
+                    "value": "microgrid",
+                    "label": "Microgrid (solar + storage + controls)",
+                    "icon": "network",
+                    "description": "Autonomous energy system with islanding capability"
+                }
+            ]
+        },
+        {
+            "id": "mount-type",
+            "domain": [
+                "solar"
+            ],
+            "question": "Where will the solar panels be installed?",
+            "description": "Mount type affects system design, permitting, and cost.",
+            "type": "single-select",
+            "showWhen": {
+                "system-type": [
+                    "solar-only",
+                    "solar-storage",
+                    "microgrid"
+                ]
+            },
+            "options": [
+                {
+                    "value": "pitched-roof",
+                    "label": "Pitched roof (shingle/tile)",
+                    "icon": "roof-pitch",
+                    "description": "Standard residential or commercial sloped roof"
+                },
+                {
+                    "value": "flat-roof",
+                    "label": "Flat roof (ballasted/attached)",
+                    "icon": "roof-flat",
+                    "description": "Commercial or industrial flat roof"
+                },
+                {
+                    "value": "metal-roof",
+                    "label": "Metal roof (standing seam)",
+                    "icon": "roof-metal",
+                    "description": "Agricultural, warehouse, or commercial metal roof"
+                },
+                {
+                    "value": "ground-mount",
+                    "label": "Ground mount",
+                    "icon": "ground",
+                    "description": "Open land, fixed or tracking"
+                },
+                {
+                    "value": "carport",
+                    "label": "Carport / canopy",
+                    "icon": "carport",
+                    "description": "Covered parking structure with solar panels"
+                }
+            ]
+        },
+        {
+            "id": "storage-needs",
+            "domain": [
+                "storage"
+            ],
+            "question": "What do you need the battery to cover?",
+            "description": "This determines the battery capacity you will need.",
+            "type": "single-select",
+            "showWhen": {
+                "system-type": [
+                    "solar-storage",
+                    "storage-only",
+                    "microgrid"
+                ]
+            },
+            "options": [
+                {
+                    "value": "essential",
+                    "label": "Essential loads only",
+                    "icon": "shield",
+                    "description": "Lights, fridge, internet, medical devices (5-10 kWh)"
+                },
+                {
+                    "value": "whole-building",
+                    "label": "Whole building backup",
+                    "icon": "building",
+                    "description": "Full building power during outages (15-30+ kWh)"
+                },
+                {
+                    "value": "peak-demand",
+                    "label": "Peak demand reduction",
+                    "icon": "chart",
+                    "description": "Shave demand spikes to reduce utility bills"
+                },
+                {
+                    "value": "self-consumption",
+                    "label": "Maximize self-consumption",
+                    "icon": "sun",
+                    "description": "Store solar for evening use"
+                }
+            ]
+        },
+        {
+            "id": "budget-solar",
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "question": "What is the approximate budget range?",
+            "description": "This helps us recommend appropriate equipment tiers. Costs vary significantly by region and installer.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "economy",
+                    "label": "Under $25,000",
+                    "description": "Small residential systems (5-8 kW solar)"
+                },
+                {
+                    "value": "mid-range",
+                    "label": "$25,000 - $75,000",
+                    "description": "Larger residential or small commercial with storage"
+                },
+                {
+                    "value": "commercial",
+                    "label": "$75,000 - $500,000",
+                    "description": "Commercial-scale solar and storage"
+                },
+                {
+                    "value": "enterprise",
+                    "label": "$500,000+",
+                    "description": "Large commercial, industrial, or microgrid"
+                }
+            ]
+        },
+        {
+            "id": "use-case",
+            "domain": [
+                "ev"
+            ],
+            "question": "What is the primary use case?",
+            "description": "Different environments have different charging needs. Select the one that best describes your situation.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "workplace",
+                    "label": "Workplace / Office",
+                    "icon": "building",
+                    "description": "Employees charge while they work"
+                },
+                {
+                    "value": "fleet",
+                    "label": "Fleet / Depot",
+                    "icon": "truck",
+                    "description": "Company vehicles charge overnight"
+                },
+                {
+                    "value": "residential",
+                    "label": "Residential / Home",
+                    "icon": "home",
+                    "description": "Home or apartment building"
+                },
+                {
+                    "value": "retail",
+                    "label": "Retail / Public",
+                    "icon": "store",
+                    "description": "Customer-facing charging"
+                },
+                {
+                    "value": "hospitality",
+                    "label": "Hospitality / Hotel",
+                    "icon": "hotel",
+                    "description": "Guest charging at hotels or resorts"
+                },
+                {
+                    "value": "highway",
+                    "label": "Highway / Corridor",
+                    "icon": "road",
+                    "description": "Fast charging along travel routes"
+                }
+            ]
+        },
+        {
+            "id": "vehicle-type",
+            "domain": [
+                "ev"
+            ],
+            "question": "What types of vehicles will be charging?",
+            "description": "Vehicle size affects battery capacity and charging speed requirements.",
+            "type": "single-select",
+            "showWhen": {
+                "use-case": [
+                    "fleet"
+                ]
+            },
+            "options": [
+                {
+                    "value": "passenger",
+                    "label": "Passenger Cars",
+                    "icon": "car",
+                    "description": "Sedans, SUVs, crossovers"
+                },
+                {
+                    "value": "light-duty",
+                    "label": "Light Duty Trucks/Vans",
+                    "icon": "van",
+                    "description": "Delivery vans, pickup trucks"
+                },
+                {
+                    "value": "medium-duty",
+                    "label": "Medium Duty",
+                    "icon": "bus",
+                    "description": "Box trucks, shuttle buses"
+                },
+                {
+                    "value": "mixed",
+                    "label": "Mixed Fleet",
+                    "icon": "refresh",
+                    "description": "Combination of vehicle types"
+                }
+            ]
+        },
+        {
+            "id": "dwell-time",
+            "domain": [
+                "ev"
+            ],
+            "question": "How long are vehicles typically parked?",
+            "description": "Longer parking times mean slower, cheaper chargers can be used. Shorter stops need faster, more expensive chargers.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "under-1",
+                    "label": "Under 1 hour",
+                    "description": "Quick stops - needs DC Fast Charging"
+                },
+                {
+                    "value": "1-3",
+                    "label": "1-3 hours",
+                    "description": "Shopping, dining, meetings"
+                },
+                {
+                    "value": "4-8",
+                    "label": "4-8 hours",
+                    "description": "Workday parking, half-day dwell"
+                },
+                {
+                    "value": "8-plus",
+                    "label": "8+ hours (overnight)",
+                    "description": "Overnight depot, long-term parking"
+                }
+            ]
+        },
+        {
+            "id": "quantity",
+            "domain": [
+                "ev"
+            ],
+            "question": "How many charging ports do you need?",
+            "description": "This affects electrical infrastructure, load management needs, and available incentives.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "1-2",
+                    "label": "1-2 ports",
+                    "description": "Pilot or single-user"
+                },
+                {
+                    "value": "3-10",
+                    "label": "3-10 ports",
+                    "description": "Small deployment"
+                },
+                {
+                    "value": "11-25",
+                    "label": "11-25 ports",
+                    "description": "Medium deployment"
+                },
+                {
+                    "value": "25-plus",
+                    "label": "25+ ports",
+                    "description": "Large-scale rollout"
+                }
+            ]
+        },
+        {
+            "id": "features",
+            "domain": [
+                "ev"
+            ],
+            "question": "Which features are important to you?",
+            "description": "Select all that apply. These help narrow down the best charger options.",
+            "type": "multi-select",
+            "options": [
+                {
+                    "value": "payment",
+                    "label": "Payment processing",
+                    "description": "Charge users by kWh or session"
+                },
+                {
+                    "value": "load-mgmt",
+                    "label": "Load management",
+                    "description": "Smart power sharing across chargers"
+                },
+                {
+                    "value": "ocpp",
+                    "label": "OCPP compatible",
+                    "description": "Avoid vendor lock-in"
+                },
+                {
+                    "value": "reporting",
+                    "label": "Usage reporting",
+                    "description": "Track and report on charging activity"
+                },
+                {
+                    "value": "access-control",
+                    "label": "Access control",
+                    "description": "RFID or app-based authorization"
+                },
+                {
+                    "value": "outdoor-rated",
+                    "label": "Outdoor rated",
+                    "description": "Built for weather exposure"
+                }
+            ]
+        },
+        {
+            "id": "budget-ev",
+            "domain": [
+                "ev"
+            ],
+            "question": "What is your budget range per charging port?",
+            "description": "Includes hardware only. Installation costs are additional and vary by site.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "economy",
+                    "label": "Economy (under $1,500)",
+                    "description": "Basic residential chargers"
+                },
+                {
+                    "value": "mid-range",
+                    "label": "Mid-range ($1,500-5,000)",
+                    "description": "Commercial Level 2 chargers"
+                },
+                {
+                    "value": "premium",
+                    "label": "Premium ($5,000-50,000)",
+                    "description": "Networked L2 or entry DCFC"
+                },
+                {
+                    "value": "enterprise",
+                    "label": "Enterprise ($50,000+)",
+                    "description": "DC Fast Chargers"
+                }
+            ]
+        }
+    ],
+    "rules": [
+        {
+            "domain": [
+                "solar",
+                "storage"
+            ],
+            "name": "Residential Solar + Storage",
+            "conditions": {
+                "project-type": "residential",
+                "system-type": "solar-storage"
+            },
+            "reasoning": "Adding battery storage to a residential solar system provides backup power during outages and can increase self-consumption of your solar energy. Instead of exporting excess solar to the grid during the day and buying it back at night, you store it and use it yourself. This is especially valuable in areas with low net metering rates or time-of-use billing. A single residential battery (10-16 kWh) covers essential loads for 8-12 hours or whole-home backup for 4-6 hours. The battery connects through a hybrid inverter that manages solar, battery, and grid power automatically.",
+            "tips": [
+                "If your primary goal is cost savings, solar-only has a faster payback. Add storage if backup power or self-consumption is important to you",
+                "Essential loads backup (lights, fridge, internet, medical devices) needs only 5-10 kWh - the smallest and cheapest battery option",
+                "Whole-home backup including HVAC typically needs 15-30 kWh depending on your system and climate",
+                "LFP (lithium iron phosphate) batteries are the current standard for residential - safer, longer-lasting, and more stable than NMC chemistry",
+                "A hybrid inverter replaces your solar inverter and manages both solar and battery, so you are not paying for two separate inverters",
+                "Check if your utility offers time-of-use rates - storing cheap daytime solar and using it during expensive evening peak hours improves ROI significantly"
+            ]
+        },
+        {
+            "domain": [
+                "solar"
+            ],
+            "name": "Residential Solar Only",
+            "conditions": {
+                "project-type": "residential",
+                "system-type": "solar-only"
+            },
+            "reasoning": "A grid-tied solar-only system is the simplest and most cost-effective way to reduce your electricity bills. Without a battery, your system exports excess power to the grid during the day and you draw from the grid at night. In areas with strong net metering policies, the grid effectively acts as a free battery. Solar-only systems have the fastest payback period (typically 5-8 years) because you avoid the cost of battery storage. The system connects through a string inverter or microinverters and requires minimal maintenance beyond occasional panel cleaning.",
+            "tips": [
+                "Check your utility's net metering policy before installing - full retail credit makes solar-only highly attractive",
+                "Microinverters (like Enphase IQ8) provide panel-level optimization and monitoring, best for roofs with partial shading",
+                "String inverters with optimizers (like SolarEdge) offer a good middle ground on cost and performance",
+                "Size your system to offset 80-100% of your annual electricity consumption for the best economics",
+                "South-facing roof orientation is ideal but east/west facing can still work well with modern high-efficiency panels",
+                "Most residential systems are 6-12 kW (15-30 panels) and can be installed in 1-2 days"
+            ]
+        },
+        {
+            "domain": [
+                "solar",
+                "storage"
+            ],
+            "name": "Commercial Solar + Storage",
+            "conditions": {
+                "project-type": "commercial",
+                "primary-goal": "peak-shaving"
+            },
+            "reasoning": "Commercial buildings with high demand charges benefit enormously from solar + storage. Solar reduces daytime energy consumption, and the battery targets demand charge reduction by discharging during your peak usage periods. Many commercial customers pay $10-20 per kW of peak demand per month - a single 100 kW spike for 15 minutes can add $1,000-2,000 to your monthly bill. A well-sized battery can shave 30-50% off demand charges. Combined with the 30% ITC and MACRS depreciation, the effective cost reduction for commercial solar + storage can reach 50-60%.",
+            "tips": [
+                "Get 12 months of interval data from your utility to understand your demand profile before sizing",
+                "Battery sizing for demand charge reduction is driven by your peak demand (kW), not energy consumption (kWh)",
+                "The 30% ITC + 5-year MACRS depreciation can reduce effective system cost by 50-60%",
+                "Three-phase string inverters (SMA, Fronius) are the standard for commercial rooftop",
+                "Consider a power purchase agreement (PPA) if capital expenditure is a constraint - you pay per kWh with no upfront cost",
+                "Flat commercial roofs are ideal for ballasted racking systems that require no roof penetrations"
+            ]
+        },
+        {
+            "domain": [
+                "solar"
+            ],
+            "name": "Agricultural Solar",
+            "conditions": {
+                "project-type": "agricultural"
+            },
+            "reasoning": "Agricultural operations have unique advantages for solar: large open land for ground-mount arrays, metal buildings ideal for roof mounting, high daytime energy loads (irrigation, cooling, processing), and access to USDA REAP grants that can cover 25-50% of project cost on top of the 30% federal ITC. Ground-mount arrays on agricultural land can be designed to allow farming activity underneath (agrivoltaics). Metal roof systems with standing seam clamps are the fastest and cheapest installation method.",
+            "tips": [
+                "USDA REAP grants (25% grant + 25% loan guarantee) stack with the 30% ITC for total incentive coverage of 55-80%",
+                "Ground-mount trackers increase production by 15-25% compared to fixed-tilt, worth it in most locations",
+                "Metal roof standing seam clamps require zero penetrations - no leaks, fast installation",
+                "Size for your irrigation season peak load to offset the most expensive electricity months",
+                "Agrivoltaics (raised panels allowing crops or grazing underneath) can provide dual income from the same land",
+                "Check your co-op or utility for specific agricultural net metering or time-of-use rates"
+            ]
+        },
+        {
+            "domain": [
+                "microgrid"
+            ],
+            "name": "Community Microgrid",
+            "conditions": {
+                "project-type": "community",
+                "system-type": "microgrid"
+            },
+            "reasoning": "Community microgrids provide resilient power for critical facilities (hospitals, emergency services, shelters, water treatment) that must remain operational during grid outages. A microgrid combines solar, battery storage, and a microgrid controller that can disconnect from the main grid (islanding) and operate autonomously. For community buildings, the IRA Direct Pay provision allows tax-exempt entities (municipalities, schools, hospitals) to receive the 30% ITC as a direct cash payment instead of a tax credit.",
+            "tips": [
+                "IRA Direct Pay (elective pay) lets tax-exempt entities claim the 30% ITC as a direct cash payment",
+                "Microgrid controllers (like Schneider EcoStruxure or Siemens SICAM) manage islanding and grid reconnection automatically",
+                "Size the battery for critical loads during the longest expected outage (typically 24-72 hours)",
+                "Include a generator as backup for extended outages beyond battery capacity",
+                "Community resilience projects often qualify for FEMA BRIC grants in addition to energy incentives",
+                "Start with a critical loads analysis to determine which circuits must stay powered during an outage"
+            ]
+        },
+        {
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "name": "Remote / Off-Grid System",
+            "conditions": {
+                "project-type": "remote"
+            },
+            "reasoning": "Remote and off-grid applications require a self-contained power system that can operate independently. The combination of solar + battery storage + a backup generator provides reliable 24/7 power without grid connection. Modern off-grid systems use inverter/chargers that manage all power sources automatically. Sizing is critical: you must generate and store enough energy to cover your consumption during the worst solar month (typically winter). LFP batteries are strongly preferred for off-grid because they handle daily deep cycling without degradation.",
+            "tips": [
+                "Size solar for the worst production month (December/January), not the annual average",
+                "Battery capacity should cover 2-3 days of autonomy (days of full load without solar)",
+                "LFP batteries are essential for off-grid - they handle thousands of deep cycles without degradation",
+                "Include a backup generator for extended cloudy periods and unexpected demand",
+                "Remote BC and northern Canadian communities can access CleanBC diesel displacement funding",
+                "Monitor your system remotely via cellular modem - off-grid systems need proactive maintenance"
+            ]
+        },
+        {
+            "domain": [
+                "storage"
+            ],
+            "name": "Standalone Battery Storage",
+            "conditions": {
+                "system-type": "storage-only"
+            },
+            "reasoning": "Installing battery storage without solar is increasingly common for backup power, demand charge reduction, and time-of-use arbitrage. Grid-connected batteries charge from the grid during off-peak hours (cheap electricity) and discharge during on-peak hours (expensive electricity). For commercial customers, this can reduce demand charges by 30-50%. For residential customers in areas with poor net metering, a battery can store cheap nighttime electricity for daytime use. Standalone storage qualifies for the 30% ITC as of the Inflation Reduction Act.",
+            "tips": [
+                "Standalone storage now qualifies for the 30% ITC under the Inflation Reduction Act - a major cost reduction",
+                "For demand charge reduction, size the battery's power (kW) to your target peak reduction, not capacity (kWh)",
+                "AC-coupled batteries (like Enphase IQ Battery) can retrofit into any existing electrical system",
+                "If you plan to add solar later, choose a battery and inverter that support future solar integration",
+                "Time-of-use arbitrage works best where on-peak and off-peak rates differ by more than $0.10/kWh",
+                "Commercial customers should analyze 12 months of demand data before sizing"
+            ]
+        },
+        {
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "name": "General Renewables Recommendation",
+            "conditions": {},
+            "reasoning": "Based on your inputs, here is a general starting point. Solar PV is the most cost-effective renewable energy investment for most buildings, with typical payback periods of 5-10 years and 25+ year system life. Adding battery storage increases cost but provides backup power and can improve economics in areas with demand charges or time-of-use rates. The 30% federal ITC significantly reduces net cost and is available through 2032. Start by getting 3 quotes from local installers to understand site-specific costs.",
+            "tips": [
+                "Get 3 quotes from different installers to compare pricing and system designs",
+                "The 30% federal ITC is available through 2032 for solar and standalone storage",
+                "Check your state and utility for additional incentives that stack with the federal ITC",
+                "Size your system based on your actual electricity consumption, not a generic estimate",
+                "Choose Tier 1 bankable panel manufacturers for the best warranty protection",
+                "Consider your future electricity needs (EV charging, heat pumps) when sizing your system"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Residential Level 2 Charging",
+            "conditions": {
+                "use-case": "residential"
+            },
+            "recommendedCategories": [
+                "l2-residential"
+            ],
+            "reasoning": "For home charging, a Level 2 charger at 240V provides the best balance of speed, cost, and simplicity. Most EVs fully charge overnight on a Level 2 charger, adding 40-80 km of range per hour. This is the most cost-effective charging scenario since you are using your existing home electrical service and charging during off-peak hours when electricity is cheapest.",
+            "tips": [
+                "Check if your electrical panel has a spare 50A or 60A slot before purchasing a charger",
+                "A 48A charger on a 60A breaker is the sweet spot for most homes",
+                "If you have two EVs, look for chargers with power sharing to avoid needing two separate circuits",
+                "Many utilities offer time-of-use rates with cheaper electricity at night",
+                "If you rent, a portable 240V charger with a NEMA 14-50 plug lets you take it with you when you move"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Workplace Level 2 Charging",
+            "conditions": {
+                "use-case": "workplace",
+                "dwell-time": "4-8"
+            },
+            "recommendedCategories": [
+                "l2-commercial"
+            ],
+            "reasoning": "Workplace charging is ideal for Level 2 because employees park for 4-8 hours, providing plenty of time for even a standard charger to fully replenish a day's driving. At 11.5 kW, an employee driving 60 km to work would fully recover that energy in about 1.5 hours, leaving the remaining dwell time as buffer.",
+            "tips": [
+                "Start with a pilot of 4-8 ports to gauge demand before committing to a large deployment",
+                "Load management is essential for 4+ ports - it can reduce your electrical infrastructure costs by 40-60%",
+                "Choose OCPP-compatible chargers to avoid being locked into one network provider's fees",
+                "Check federal and provincial/state incentives - workplace charging incentives can cover 50-80% of costs",
+                "Dual-port chargers cut installation costs by sharing one circuit between two ports"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Fleet Depot Overnight Charging",
+            "conditions": {
+                "use-case": "fleet",
+                "dwell-time": "8-plus"
+            },
+            "recommendedCategories": [
+                "fleet-depot",
+                "l2-commercial"
+            ],
+            "reasoning": "Fleet depots with overnight dwell times are the most cost-effective EV charging scenario. With 8-12 hours of charging time, you can use Level 2 chargers with aggressive load management to minimize electrical infrastructure. Load management is critical: 25 chargers with load management might only need a 200A service, versus 1,500A without it.",
+            "tips": [
+                "Daisy-chain chargers (like Siemens VersiCharge XL) to minimize conduit runs and installation cost",
+                "Schedule charging to start at 10 PM or later for off-peak electricity rates",
+                "Install sub-metering to track energy costs per vehicle for fleet TCO analysis",
+                "Plan for 100% fleet electrification from the start in your infrastructure design",
+                "Load management is not optional for fleet - it is the single most impactful cost reduction tool"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Retail / Public DC Fast Charging",
+            "conditions": {
+                "use-case": "retail",
+                "dwell-time": "under-1"
+            },
+            "recommendedCategories": [
+                "dcfc-standard",
+                "dcfc-high-power"
+            ],
+            "reasoning": "Short customer visits require DC Fast Charging. At 50-150 kW, drivers can add 100-300 km of range in 15-30 minutes. DCFC costs 10-30x more than Level 2, but it generates revenue and drives foot traffic.",
+            "tips": [
+                "Start with 2 DC fast chargers and add more based on utilization data",
+                "50-75 kW chargers are significantly cheaper to install than 150+ kW and sufficient for most retail scenarios",
+                "NEVI grants can cover up to 80% of highway corridor DCFC costs",
+                "Demand charges can be your biggest ongoing cost - discuss rate options with your utility",
+                "Consider a compact charger (like Tritium RTM 75) if space is limited"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Hotel / Hospitality Level 2 Charging",
+            "conditions": {
+                "use-case": "hospitality"
+            },
+            "recommendedCategories": [
+                "l2-commercial"
+            ],
+            "reasoning": "Hotels are an excellent Level 2 use case because guests park overnight, providing ample time for full charging. EV drivers actively seek hotels with chargers and will pay a premium or choose your property over a competitor without charging.",
+            "tips": [
+                "Promote EV charging on your booking platforms - EV drivers filter for hotels with charging",
+                "Start with 2-4 ports and track demand. Hotels typically need chargers for 15-25% of parking spots",
+                "Consider including charging in the room rate rather than separate billing",
+                "Wall-mounted chargers near building entrances are cheaper to install than pedestal units",
+                "Power sharing across 4-6 chargers on one circuit keeps costs low for overnight charging"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Highway Corridor DC Fast Charging",
+            "conditions": {
+                "use-case": "highway"
+            },
+            "recommendedCategories": [
+                "dcfc-high-power"
+            ],
+            "reasoning": "Highway corridor charging requires 150 kW minimum, ideally 350 kW. At 350 kW, compatible vehicles add about 300 km of range in 10-15 minutes. This segment has the highest infrastructure cost but also the most government incentive support through programs like NEVI.",
+            "tips": [
+                "NEVI grants can cover 80% of costs for qualifying highway corridor sites",
+                "Plan for at least 4 ports per site - NEVI minimum",
+                "Modular charger platforms let you add power capacity as demand grows",
+                "Site selection is critical - rest stops and fast food locations near highway exits see highest utilization",
+                "Budget for potential utility service upgrades - highway sites often need new transformer installations"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "General EV Charging Recommendation",
+            "conditions": {},
+            "recommendedCategories": [
+                "l2-commercial",
+                "l2-residential"
+            ],
+            "reasoning": "Level 2 charging covers 90%+ of charging needs at a fraction of the cost of DC Fast Charging. It is simpler to install, cheaper to operate, and usually sufficient when vehicles have more than 2 hours of dwell time. Start with Level 2, collect utilization data, and add DC Fast Charging only if dwell times are consistently too short.",
+            "tips": [
+                "Start small and scale based on real data, not projections",
+                "Always choose OCPP-compatible chargers to avoid vendor lock-in",
+                "Load management pays for itself on any deployment with 4+ ports",
+                "Check your local incentive programs - they can cover 50-80% of costs",
+                "Get at least 3 installation quotes from electricians with EV charger experience"
+            ]
+        }
+    ]
+}

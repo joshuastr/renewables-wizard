@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renewables Wizard - Open Source Knowledge Tool</title>
+    <meta name="description"
+        content="Free, vendor-neutral advisor for solar PV, battery energy storage, EV charging, and microgrid systems. Expert guidance for procurement managers and energy professionals." />
+    <meta name="author" content="Joshua Strub" />
+    <meta property="og:title" content="Renewables Wizard" />
+    <meta property="og:description"
+        content="Open-source knowledge tool for solar, battery storage, EV charging, and microgrid systems." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="header-brand">
+                <span class="header-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        style="color:var(--amber)">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg></span>
+                <div class="header-text">
+                    <span class="header-title">Renewables Wizard</span>
+                    <span class="header-subtitle">Open Source Knowledge Tool</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <a href="https://github.com/jstrub" target="_blank" rel="noopener noreferrer" class="header-github"
+                    aria-label="View on GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+                <span class="header-badge">Free & Open Source</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="domain-selector" id="domainSelector">
+        <button class="domain-btn active" data-domain="solar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <span>Solar PV</span>
+        </button>
+        <button class="domain-btn" data-domain="storage">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="6" width="18" height="12" rx="2" />
+                <line x1="23" y1="10" x2="23" y2="14" />
+                <rect x="4" y="9" width="12" height="6" fill="currentColor" opacity="0.15" />
+            </svg>
+            <span>Battery Storage</span>
+        </button>
+        <button class="domain-btn" data-domain="ev">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            <span>EV Charging</span>
+        </button>
+        <button class="domain-btn" data-domain="microgrid">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="5" r="3" />
+                <circle cx="5" cy="19" r="3" />
+                <circle cx="19" cy="19" r="3" />
+                <line x1="12" y1="8" x2="5" y2="16" />
+                <line x1="12" y1="8" x2="19" y2="16" />
+                <line x1="5" y1="16" x2="19" y2="16" />
+            </svg>
+            <span>Microgrids</span>
+        </button>
+    </div>
+
+    <div class="settings-bar" id="settingsBar">
+        <div class="settings-inner">
+            <div class="settings-group">
+                <span class="settings-label">Country</span>
+                <div class="country-toggle" id="countryToggle">
+                    <button class="country-btn active" data-country="US">
+                        <span>US</span>
+                    </button>
+                    <button class="country-btn" data-country="CA">
+                        <span>Canada</span>
+                    </button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <span class="settings-label">Location</span>
+                <select class="settings-select" id="locationSelect"></select>
+            </div>
+            <div class="settings-group">
+                <span class="settings-label">Currency</span>
+                <span class="settings-currency" id="currencyDisplay">USD</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="tool-tabs" role="tablist">
+        <button class="tool-tab active" data-tab="advisor" role="tab" aria-selected="true">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            </svg>
+            <span class="tab-label">Advisor<span class="tab-desc">Get Recommendations</span></span>
+        </button>
+        <button class="tool-tab" data-tab="knowledge" role="tab" aria-selected="false">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+            </svg>
+            <span class="tab-label">Knowledge<span class="tab-desc">FAQ & Guides</span></span>
+        </button>
+        <button class="tool-tab" data-tab="calculator" role="tab" aria-selected="false">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="4" y="2" width="16" height="20" rx="2" />
+                <line x1="8" y1="6" x2="16" y2="6" />
+                <line x1="8" y1="10" x2="10" y2="10" />
+                <line x1="14" y1="10" x2="16" y2="10" />
+                <line x1="8" y1="14" x2="10" y2="14" />
+                <line x1="14" y1="14" x2="16" y2="14" />
+                <line x1="8" y1="18" x2="16" y2="18" />
+            </svg>
+            <span class="tab-label">Calculator<span class="tab-desc">Size Your System</span></span>
+        </button>
+        <button class="tool-tab" data-tab="compare" role="tab" aria-selected="false">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="2" y="4" width="8" height="16" rx="1" />
+                <rect x="14" y="4" width="8" height="16" rx="1" />
+            </svg>
+            <span class="tab-label">Compare<span class="tab-desc">Side by Side</span></span>
+        </button>
+        <button class="tool-tab" data-tab="incentives" role="tab" aria-selected="false">
+            <svg class="tab-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+            <span class="tab-label">Incentives<span class="tab-desc">Rebates & Credits</span></span>
+        </button>
+    </nav>
+
+    <main class="main-content">
+        <div id="advisorPanel" class="tab-panel active" role="tabpanel">
+            <div id="wizardContainer"></div>
+        </div>
+        <div id="knowledgePanel" class="tab-panel" role="tabpanel">
+            <div id="knowledgeContainer"></div>
+        </div>
+        <div id="calculatorPanel" class="tab-panel" role="tabpanel">
+            <div id="calculatorContainer"></div>
+        </div>
+        <div id="comparePanel" class="tab-panel" role="tabpanel">
+            <div id="compareContainer"></div>
+        </div>
+        <div id="incentivesPanel" class="tab-panel" role="tabpanel">
+            <div id="incentivesContainer"></div>
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-brand">Renewables Wizard</span>
+                <span class="footer-sep">-</span>
+                <span class="footer-note">Free, open-source renewable energy guidance</span>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/jstrub" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                    GitHub
+                </a>
+                <span class="footer-sep">-</span>
+                <span class="footer-data">Built with public manufacturer data</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
