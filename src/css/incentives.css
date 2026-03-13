@@ -38,7 +38,7 @@
 
 .incentive-item {
     background: var(--bg-white);
-    padding: 16px 24px;
+    padding: 14px 24px;
     border-bottom: 1px solid var(--border);
     transition: background 0.15s ease
 }
@@ -53,7 +53,7 @@
 
 .incentive-item-header {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr auto 24px;
+    grid-template-columns: 1fr auto auto;
     gap: 16px;
     align-items: center;
     cursor: pointer;
@@ -66,6 +66,12 @@
     color: var(--ink);
 }
 
+.incentive-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
 .incentive-type,
 .incentive-region {
     font-size: 11px;
@@ -74,10 +80,16 @@
     background: var(--bg-subtle);
     border-radius: var(--radius-sm);
     font-weight: 500;
-    display: inline-block;
     text-align: center;
     letter-spacing: 0.02em;
-    text-transform: uppercase
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+.incentive-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .incentive-amount {
@@ -85,7 +97,7 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--accent);
-    text-align: right;
+    white-space: nowrap;
 }
 
 .incentive-expand-icon {

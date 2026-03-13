@@ -102,11 +102,15 @@ export function renderIncentives(domain, settings) {
         <div class="incentive-item">
             <div class="incentive-item-header">
                 <div class="incentive-name">${p.name}</div>
-                <div class="incentive-type">${p.type}</div>
-                <div class="incentive-region">${p.state || (p.country === 'US' ? 'Federal' : 'Federal')}</div>
-                <div class="incentive-amount">${p.amount}</div>
-                <div class="incentive-expand-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <div class="incentive-meta">
+                    <span class="incentive-type">${p.type}</span>
+                    <span class="incentive-region">${p.state || (p.country === 'US' ? 'Federal' : 'Federal')}</span>
+                </div>
+                <div class="incentive-right">
+                    <span class="incentive-amount">${p.amount}</span>
+                    <span class="incentive-expand-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </span>
                 </div>
             </div>
             <div class="incentive-body">

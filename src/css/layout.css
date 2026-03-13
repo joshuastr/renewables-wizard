@@ -231,8 +231,7 @@
     padding: 24px 32px;
     background: linear-gradient(135deg, var(--accent-light) 0%, #e8f5ef 100%);
     border-radius: var(--radius-md);
-    justify-content: center;
-    box-shadow: var(--shadow-sm)
+    justify-content: center
 }
 
 .incentive-summary-stat {
@@ -422,9 +421,7 @@
 }
 
 .btn-primary:hover {
-    background: var(--accent-dark);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md)
+    background: var(--accent-dark)
 }
 
 .btn-primary:disabled {
