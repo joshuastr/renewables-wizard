@@ -75,7 +75,11 @@ export function renderWizard(domain, settings) {
     html += `<div class="wizard-progress"><span>${answeredCount} of ${visible.length} answered</span></div>`
   }
 
+  const scrollY = window.scrollY
+  container.style.minHeight = container.offsetHeight + 'px'
   container.innerHTML = html
+  window.scrollTo(0, scrollY)
+  requestAnimationFrame(() => { container.style.minHeight = '' })
 
   container.querySelectorAll('.wizard-option').forEach(opt => {
     opt.addEventListener('click', () => {
