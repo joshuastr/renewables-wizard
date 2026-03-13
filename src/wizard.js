@@ -128,7 +128,7 @@ function renderStep(step, idx) {
         <div class="wizard-options">${step.options.map(opt => {
     const isSelected = isMulti ? (selected || []).includes(opt.value) : selected === opt.value
     return `<button class="wizard-option${isSelected ? ' selected' : ''}" data-step="${step.id}" data-value="${opt.value}">
-                <span class="wizard-option-icon">${opt.icon ? getIcon(opt.icon) : ''}</span>
+                ${opt.icon ? `<span class="wizard-option-icon">${getIcon(opt.icon)}</span>` : ''}
                 <span class="wizard-option-label">${opt.label}</span>
                 ${opt.description ? `<span class="wizard-option-desc">${opt.description}</span>` : ''}
             </button>`
