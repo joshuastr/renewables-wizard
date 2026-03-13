@@ -1,4 +1,4 @@
-import { initWizard, renderWizard } from './wizard.js'
+import { initWizard, renderWizard, resetWizard } from './wizard.js'
 import { initKnowledge, renderKnowledge } from './knowledge.js'
 import { initCalculator, renderCalculator } from './calculator.js'
 import { initComparison, renderComparison } from './comparison.js'
@@ -68,6 +68,7 @@ function initDomainSelector() {
             btns.forEach(b => b.classList.remove('active'))
             btn.classList.add('active')
             document.body.dataset.domain = domain
+            resetWizard()
             updateContextBar()
             refreshAllModules()
         })

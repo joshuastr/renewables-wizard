@@ -38,6 +38,10 @@ function getIcon(name) {
   return svgIcons[name] || svgIcons.default
 }
 
+export function resetWizard() {
+  wizardState = {}
+}
+
 export function initWizard(data, domain) {
   treeData = data
   wizardState = {}
@@ -60,10 +64,12 @@ export function renderWizard(domain) {
     html += renderStep(step, i)
   })
 
+  const answeredCount = visible.filter(s => wizardState[s.id] !== undefined).length
+
   if (allAnswered) {
     html += renderResults(domain, steps)
   } else if (visible.length > 0) {
-    html += `<div class="wizard-progress"><span>${Object.keys(wizardState).length} of ${visible.length} answered</span></div>`
+    html += `<div class="wizard-progress"><span>${answeredCount} of ${visible.length} answered</span></div>`
   }
 
   container.innerHTML = html

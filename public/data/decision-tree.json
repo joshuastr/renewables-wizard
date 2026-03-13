@@ -180,7 +180,8 @@
         {
             "id": "storage-needs",
             "domain": [
-                "storage"
+                "storage",
+                "solar"
             ],
             "question": "What do you need the battery to cover?",
             "description": "This determines the battery capacity you will need.",
