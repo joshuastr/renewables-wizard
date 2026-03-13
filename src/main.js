@@ -25,7 +25,7 @@ const domainNames = { solar: 'Solar PV', storage: 'Battery Storage', ev: 'EV Cha
 const tabContexts = {
     advisor: { suffix: 'Advisor', desc: 'Walk through your project details step by step and get tailored product recommendations with expert tips.' },
     knowledge: { suffix: 'Knowledge Base', desc: 'Browse FAQs and reference guides organized by topic. Search for specific questions.' },
-    calculator: { suffix: 'Calculator', desc: 'Adjust sliders to estimate system sizing, energy output, costs, and payback for your project.' },
+    calculator: { suffix: 'Calculators', desc: 'Adjust sliders to estimate system sizing, energy output, costs, and payback for your project.' },
     compare: { suffix: 'Product Comparison', desc: 'Filter by manufacturer and type, then select up to 3 products to compare specs side by side.' },
     incentives: { suffix: 'Incentives', desc: 'Browse available rebates, tax credits, and grants filtered by your region.' }
 }
