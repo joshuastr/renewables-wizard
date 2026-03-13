@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-    --bg-page: #ffffff;
+    --bg-page: #fafaf9;
     --bg-white: #ffffff;
-    --bg-subtle: #f7f7f6;
-    --bg-hover: #f0f0ee;
+    --bg-subtle: #f3f3f1;
+    --bg-hover: #eceae8;
     --bg-card: #ffffff;
-    --border: rgba(0, 0, 0, 0.05);
-    --border-em: rgba(0, 0, 0, 0.08);
+    --border: rgba(0, 0, 0, 0.06);
+    --border-em: rgba(0, 0, 0, 0.1);
     --border-active: #1a7a5c;
 
     --accent: #1a7a5c;
-    --accent-light: #f0faf6;
-    --accent-mid: #d1f0e4;
+    --accent-light: #eef8f4;
+    --accent-mid: #c8e6da;
     --accent-dark: #125a43;
 
     --amber: #c2850c;
@@ -21,7 +21,7 @@
     --amber-dark: #7c5a0a;
 
     --green: #1a7a5c;
-    --green-light: #f0faf6;
+    --green-light: #eef8f4;
     --teal: #0d9488;
     --teal-light: #f0fdfa;
     --red: #dc2626;
@@ -29,10 +29,14 @@
     --blue: #2563eb;
     --blue-light: #eff6ff;
 
-    --ink: #111111;
-    --ink-2: #444444;
-    --ink-3: #737373;
-    --ink-4: #a3a3a3;
+    --ink: #1a1a1a;
+    --ink-2: #404040;
+    --ink-3: #6b6b6b;
+    --ink-4: #999999;
+
+    --nav-bg: #1e2a2a;
+    --nav-ink: rgba(255, 255, 255, 0.92);
+    --nav-ink-dim: rgba(255, 255, 255, 0.5);
 
     --font-heading: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
@@ -41,9 +45,9 @@
     --radius-lg: 16px;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --transition: 0.2s var(--ease);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 *,
@@ -72,10 +76,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border)
+    background: var(--nav-bg);
+    border-bottom: none
 }
 
 .header-inner {
@@ -108,13 +110,13 @@ body {
     font-weight: 700;
     font-size: 17px;
     letter-spacing: -0.02em;
-    color: var(--ink)
+    color: var(--nav-ink)
 }
 
 .header-subtitle {
     font-size: 11px;
     font-weight: 500;
-    color: var(--ink-3);
+    color: var(--nav-ink-dim);
     text-transform: uppercase;
     letter-spacing: 0.08em
 }
@@ -126,21 +128,21 @@ body {
 }
 
 .header-github {
-    color: var(--ink-3);
+    color: var(--nav-ink-dim);
     transition: color var(--transition);
     display: flex;
     align-items: center
 }
 
 .header-github:hover {
-    color: var(--accent)
+    color: var(--nav-ink)
 }
 
 .header-badge {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.06em;
-    color: var(--ink-4);
+    color: var(--nav-ink-dim);
     background: transparent;
     border: none;
     padding: 4px 0;
@@ -151,21 +153,23 @@ body {
 .domain-selector {
     display: flex;
     gap: 4px;
-    padding: 16px 32px 12px;
+    padding: 14px 32px 10px;
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: center
+    justify-content: center;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border)
 }
 
 .domain-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
+    padding: 8px 18px;
     background: transparent;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 100px;
-    color: var(--ink-4);
+    color: var(--ink-3);
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 500;
@@ -174,7 +178,7 @@ body {
 }
 
 .domain-btn:hover {
-    color: var(--ink-2);
+    color: var(--ink);
     background: var(--bg-subtle)
 }
 
@@ -183,9 +187,8 @@ body {
 }
 
 .domain-btn.active {
-    color: var(--accent-dark);
-    background: var(--accent-light);
-    border-color: transparent;
+    color: #ffffff;
+    background: var(--accent);
     font-weight: 600
 }
 
@@ -320,12 +323,13 @@ body {
 /* Tabs */
 .tool-tabs {
     display: flex;
-    gap: 0;
-    padding: 4px 32px 0;
+    gap: 4px;
+    padding: 8px 32px;
     max-width: 1200px;
     margin: 0 auto;
     overflow-x: auto;
     scrollbar-width: none;
+    background: var(--bg-white);
     border-bottom: 1px solid var(--border)
 }
 
@@ -337,39 +341,38 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 22px;
+    padding: 8px 16px;
     background: transparent;
     border: none;
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-    color: var(--ink-4);
+    border-radius: var(--radius-sm);
+    color: var(--ink-3);
     font-family: var(--font-body);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition);
     white-space: nowrap;
-    flex-shrink: 0;
-    margin-bottom: -1px
+    flex-shrink: 0
 }
 
 .tool-tab:hover {
-    color: var(--ink-2)
+    color: var(--ink);
+    background: var(--bg-subtle)
 }
 
 .tool-tab.active {
-    color: var(--ink);
-    border-bottom-color: var(--accent);
+    color: var(--accent-dark);
+    background: var(--accent-light);
     font-weight: 600
 }
 
 .tab-icon {
     flex-shrink: 0;
-    opacity: 0.55
+    opacity: 0.45
 }
 
 .tool-tab.active .tab-icon {
-    opacity: 0.8;
+    opacity: 0.9;
     color: var(--accent)
 }
 
@@ -579,6 +582,11 @@ body {
     background: var(--accent-light);
     border-color: var(--accent);
     box-shadow: 0 0 0 1px var(--accent)
+}
+
+.wizard-option:hover:not(.selected) {
+    border-left: 3px solid var(--accent-mid);
+    padding-left: 21px
 }
 
 .wizard-option.selected .wizard-option-label {
