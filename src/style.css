@@ -3,11 +3,11 @@
 :root {
     --bg-page: #ffffff;
     --bg-white: #ffffff;
-    --bg-subtle: #f8f8f7;
-    --bg-hover: #f2f2f0;
-    --bg-card: #fafaf9;
-    --border: rgba(0, 0, 0, 0.06);
-    --border-em: rgba(0, 0, 0, 0.10);
+    --bg-subtle: #f7f7f6;
+    --bg-hover: #f0f0ee;
+    --bg-card: #ffffff;
+    --border: rgba(0, 0, 0, 0.05);
+    --border-em: rgba(0, 0, 0, 0.08);
     --border-active: #1a7a5c;
 
     --accent: #1a7a5c;
@@ -29,10 +29,10 @@
     --blue: #2563eb;
     --blue-light: #eff6ff;
 
-    --ink: #1a1a1a;
-    --ink-2: #3d3d3d;
-    --ink-3: #6b6b6b;
-    --ink-4: #9a9a9a;
+    --ink: #111111;
+    --ink-2: #444444;
+    --ink-3: #737373;
+    --ink-4: #a3a3a3;
 
     --font-heading: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
@@ -41,9 +41,9 @@
     --radius-lg: 16px;
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --transition: 0.2s var(--ease);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.06);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 *,
@@ -203,9 +203,10 @@ body {
 .settings-inner {
     display: flex;
     align-items: center;
-    gap: 24px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border)
+    gap: 20px;
+    padding: 6px 0;
+    border-bottom: none;
+    opacity: 0.8
 }
 
 .settings-group {
@@ -340,14 +341,14 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 20px;
+    padding: 14px 22px;
     background: transparent;
     border: none;
     border-bottom: 2px solid transparent;
     border-radius: 0;
     color: var(--ink-4);
     font-family: var(--font-body);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition);
@@ -383,15 +384,11 @@ body {
 }
 
 .tab-desc {
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--ink-4);
-    display: block
+    display: none
 }
 
 .tool-tab.active .tab-desc {
-    color: var(--accent);
-    opacity: 0.7
+    display: none
 }
 
 /* Main */
@@ -494,24 +491,25 @@ body {
 /* Section Intro */
 .section-intro {
     text-align: center;
-    margin-bottom: 40px
+    margin-bottom: 48px
 }
 
 .section-intro h2 {
     font-family: var(--font-heading);
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
     color: var(--ink);
-    letter-spacing: -0.02em;
-    margin-bottom: 10px
+    letter-spacing: -0.025em;
+    margin-bottom: 12px
 }
 
 .section-intro p {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--ink-3);
     max-width: 520px;
     margin: 0 auto;
-    line-height: 1.6
+    line-height: 1.65;
+    font-weight: 400
 }
 
 /* Wizard */
@@ -554,31 +552,31 @@ body {
 
 .wizard-options {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 12px
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px
 }
 
 .wizard-option {
     background: var(--bg-white);
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
-    padding: 20px;
+    padding: 28px 24px;
     cursor: pointer;
     transition: all var(--transition);
     text-align: left;
     font-family: var(--font-body);
-    color: var(--ink)
+    color: var(--ink);
+    box-shadow: var(--shadow-sm)
 }
 
 .wizard-option:hover {
-    border-color: var(--border-em);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md)
 }
 
 .wizard-option:active {
     transform: translateY(0);
-    box-shadow: none
+    box-shadow: var(--shadow-sm)
 }
 
 .wizard-option.selected {
@@ -592,10 +590,16 @@ body {
 }
 
 .wizard-option-icon {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
-    color: var(--ink-3)
+    color: var(--ink-3);
+    font-size: 0
+}
+
+.wizard-option-icon svg {
+    width: 32px;
+    height: 32px
 }
 
 .wizard-option.selected .wizard-option-icon {
@@ -604,15 +608,16 @@ body {
 
 .wizard-option-label {
     font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 15px;
+    margin-bottom: 6px;
     display: block
 }
 
 .wizard-option-desc {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--ink-3);
-    display: block
+    display: block;
+    line-height: 1.5
 }
 
 .wizard-multi-options {
@@ -623,7 +628,7 @@ body {
 
 .wizard-multi-option {
     background: var(--bg-white);
-    border: 1px solid var(--border);
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
     padding: 12px 16px;
     cursor: pointer;
@@ -634,11 +639,11 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: none
+    box-shadow: var(--shadow-sm)
 }
 
 .wizard-multi-option:hover {
-    border-color: var(--border-em)
+    box-shadow: var(--shadow-md)
 }
 
 .wizard-multi-option.selected {
@@ -739,7 +744,7 @@ body {
     margin-bottom: 24px;
     padding: 20px;
     background: var(--bg-subtle);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: var(--radius-md);
     border-left: 3px solid var(--accent)
 }
@@ -751,15 +756,16 @@ body {
 
 .result-tips li {
     padding: 12px 16px;
-    margin-bottom: 8px;
+    margin-bottom: 0;
     background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
     font-size: 14px;
     color: var(--ink-2);
     display: flex;
     gap: 10px;
-    box-shadow: var(--shadow-sm)
+    box-shadow: none
 }
 
 .result-tips li::before {
@@ -821,16 +827,16 @@ body {
     align-items: center;
     gap: 6px;
     padding: 8px 16px;
-    background: var(--bg-white);
-    border: 1px solid var(--border);
+    background: transparent;
+    border: none;
     border-radius: 100px;
-    color: var(--ink-3);
+    color: var(--ink-4);
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition);
-    box-shadow: var(--shadow-sm)
+    box-shadow: none
 }
 
 .knowledge-cat-btn:hover,
@@ -842,24 +848,29 @@ body {
 .knowledge-cat-btn.active,
 .category-btn.active {
     background: var(--accent-light);
-    border-color: var(--accent);
-    color: var(--accent-dark)
+    color: var(--accent-dark);
+    font-weight: 600
 }
 
 .faq-grid {
     display: grid;
-    gap: 12px;
+    gap: 0;
     max-width: 800px;
     margin: 0 auto
 }
 
 .faq-item {
     background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
     overflow: hidden;
     transition: all var(--transition);
-    box-shadow: var(--shadow-sm)
+    box-shadow: none
+}
+
+.faq-item:first-child {
+    border-top: 1px solid var(--border)
 }
 
 .faq-question {
@@ -867,7 +878,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 16px 20px;
+    padding: 18px 4px;
     cursor: pointer;
     font-weight: 500;
     font-size: 15px;
@@ -906,17 +917,17 @@ body {
 
 .faq-item.open {
     border-color: var(--border-em);
-    box-shadow: var(--shadow-md)
+    box-shadow: none
 }
 
 .faq-answer-inner {
-    padding: 0 20px 20px;
+    padding: 0 4px 20px;
     font-size: 14px;
     color: var(--ink-2);
     line-height: 1.7;
-    border-top: 1px solid var(--border);
-    padding-top: 16px;
-    background: var(--bg-subtle)
+    border-top: none;
+    padding-top: 0;
+    background: transparent
 }
 
 .faq-category-badge {
@@ -951,9 +962,9 @@ body {
 
 .calc-panel {
     background: var(--bg-white);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 28px;
     box-shadow: var(--shadow-sm)
 }
 
@@ -1005,7 +1016,7 @@ body {
 
 .calc-results {
     background: var(--accent-light);
-    border: 1px solid var(--accent-mid);
+    border: none;
     border-radius: var(--radius-md);
     padding: 20px
 }
