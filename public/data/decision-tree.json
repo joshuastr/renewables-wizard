@@ -296,6 +296,12 @@
                     "label": "Highway / Corridor",
                     "icon": "road",
                     "description": "Fast charging along travel routes"
+                },
+                {
+                    "value": "transit",
+                    "label": "Transit / Public Transport",
+                    "icon": "bus",
+                    "description": "Municipal transit, school buses, shuttle services"
                 }
             ]
         },
@@ -750,6 +756,28 @@
                 "Modular charger platforms let you add power capacity as demand grows",
                 "Site selection is critical - rest stops and fast food locations near highway exits see highest utilization",
                 "Budget for potential utility service upgrades - highway sites often need new transformer installations"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Transit / Public Transport Charging",
+            "conditions": {
+                "use-case": "transit"
+            },
+            "recommendedCategories": [
+                "fleet-depot",
+                "dcfc-high-power"
+            ],
+            "reasoning": "Transit electrification typically involves large-battery vehicles (buses at 200-600 kWh, school buses at 100-200 kWh) with predictable routes and return-to-depot schedules. Overnight depot charging with managed Level 2 or medium-power DC (50-150 kW) is the most cost-effective approach. On-route opportunity charging at terminals using 150-450 kW chargers can supplement depot charging for routes too long for a single charge.",
+            "tips": [
+                "Start with routes that are shortest and most predictable - these have the lowest risk",
+                "Depot overnight charging at 50-100 kW is 3-5x cheaper per bus than 450 kW en-route chargers",
+                "Federal Transit Administration (FTA) Low-No Emission grants cover buses and charging infrastructure",
+                "School bus electrification qualifies for EPA Clean School Bus rebates ($250K-375K per bus)",
+                "Vehicle-to-grid (V2G) with electric school buses can generate revenue during summer months",
+                "Plan electrical infrastructure for full fleet electrification from day one, even if starting with a pilot"
             ]
         },
         {

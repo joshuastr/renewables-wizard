@@ -21,18 +21,39 @@ export function formatCurrency(amount) {
     return `${symbol}${Math.round(amount).toLocaleString('en')}`
 }
 
+const domainNames = { solar: 'Solar PV', storage: 'Battery Storage', ev: 'EV Charging', microgrid: 'Microgrids' }
+const tabContexts = {
+    advisor: { suffix: 'Advisor', desc: 'Answer a few questions about your project and we will provide tailored recommendations, expert tips, and relevant comparisons.' },
+    knowledge: { suffix: 'Knowledge Base', desc: 'Frequently asked questions and expert guidance. Search or browse by category.' },
+    calculator: { suffix: 'Calculator', desc: 'Estimate system size, production, costs, and payback period.' },
+    compare: { suffix: 'Product Comparison', desc: 'Browse products and select up to 3 to compare side by side. All specifications are from public manufacturer data.' },
+    incentives: { suffix: 'Incentives', desc: 'Discover rebates, tax credits, grants, and financing programs.' }
+}
+let activeTab = 'advisor'
+
+function updateContextBar() {
+    const contextTitle = document.getElementById('domainContextTitle')
+    const contextDesc = document.getElementById('domainContextDesc')
+    const domain = domainNames[activeDomain] || 'Renewables'
+    const tab = tabContexts[activeTab] || tabContexts.advisor
+    if (contextTitle) contextTitle.textContent = `${domain} ${tab.suffix}`
+    if (contextDesc) contextDesc.textContent = tab.desc
+}
+
 function initTabs() {
     const tabs = document.querySelectorAll('.tool-tab')
     const panels = document.querySelectorAll('.tab-panel')
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const target = tab.dataset.tab
+            activeTab = target
             tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false') })
             tab.classList.add('active')
             tab.setAttribute('aria-selected', 'true')
             panels.forEach(p => p.classList.remove('active'))
             const panel = document.getElementById(target + 'Panel')
             if (panel) panel.classList.add('active')
+            updateContextBar()
         })
     })
 }
@@ -47,6 +68,7 @@ function initDomainSelector() {
             btns.forEach(b => b.classList.remove('active'))
             btn.classList.add('active')
             document.body.dataset.domain = domain
+            updateContextBar()
             refreshAllModules()
         })
     })

@@ -324,7 +324,36 @@ body {
     font-weight: 500
 }
 
-/* Tabs — on white bar below dark nav */
+/* Domain Context Bar — on dark bg below header */
+.domain-context-bar {
+    background: var(--nav-bg);
+    border-bottom: none;
+    padding: 16px 32px 12px
+}
+
+.domain-context-inner {
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.domain-context-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin: 0 0 2px
+}
+
+.domain-context-desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    line-height: 1.5;
+    max-width: 600px
+}
+
+/* Tabs — on white bar below context title */
 .tool-tabs {
     display: flex;
     gap: 4px;
@@ -492,33 +521,9 @@ body {
     background: var(--bg-subtle)
 }
 
-/* Section Intro — gradient hero zone */
+/* Section Intro — hidden, context is now above tabs */
 .section-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 32px 24px;
-    background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-page) 100%);
-    border-radius: var(--radius-lg);
-    margin-left: -16px;
-    margin-right: -16px
-}
-
-.section-intro h2 {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: -0.03em;
-    margin-bottom: 8px
-}
-
-.section-intro p {
-    font-size: 15px;
-    color: var(--ink-3);
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-weight: 400
+    display: none
 }
 
 /* Wizard */
@@ -608,21 +613,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: var(--radius-sm);
-    background: var(--accent-light);
-    color: var(--accent);
+    background: var(--bg-subtle);
+    color: var(--ink-2);
     font-size: 0
 }
 
 .wizard-option-icon svg {
-    width: 24px;
-    height: 24px
+    width: 22px;
+    height: 22px
 }
 
 .wizard-option.selected .wizard-option-icon {
-    background: var(--accent-mid);
+    background: var(--accent-light);
     color: var(--accent-dark)
 }
 
@@ -1775,45 +1780,46 @@ body {
     width: 100%;
     appearance: none;
     -webkit-appearance: none;
-    height: 3px;
-    border-radius: 2px;
-    background: #e5e5e3;
+    height: 2px;
+    border-radius: 1px;
+    background: #e0e0de;
     outline: none;
     cursor: pointer;
-    margin: 12px 0;
+    margin: 14px 0;
 }
 
 .calc-slider::-webkit-slider-thumb {
     appearance: none;
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #ffffff;
-    border: 2px solid var(--accent);
+    border: 1.5px solid var(--accent);
     cursor: pointer;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
     margin-top: 0;
-    transition: box-shadow 0.15s ease;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .calc-slider::-webkit-slider-thumb:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    transform: scale(1.1);
 }
 
 .calc-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #ffffff;
-    border: 2px solid var(--accent);
+    border: 1.5px solid var(--accent);
     cursor: pointer;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 .calc-slider::-moz-range-track {
     width: 100%;
-    height: 3px;
+    height: 2px;
     cursor: pointer;
     background: transparent;
     border-color: transparent;
