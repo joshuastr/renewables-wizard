@@ -16,7 +16,17 @@ export function initIncentives(data, domain, settings) {
 export function renderIncentives(domain, settings) {
   const container = document.getElementById('incentivesContainer')
   if (!container || !incentiveData) return
-  if (settings) currentSettings = settings
+  if (settings) {
+    currentSettings = settings
+    // Auto-sync filter with settings bar country toggle
+    if (settings.country === 'CA' && filterCountry !== 'CA') {
+      filterCountry = 'CA'
+      filterState = settings.location || ''
+    } else if (settings.country === 'US' && filterCountry === 'CA') {
+      filterCountry = 'US'
+      filterState = settings.location || ''
+    }
+  }
 
   // Start from all programs that match this domain
   let programs = incentiveData.programs.filter(p => p.applies.includes(domain))

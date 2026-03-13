@@ -143,7 +143,7 @@ function initSettingsBar() {
 
 function refreshAllModules() {
     const settings = getSettings()
-    renderWizard(activeDomain)
+    renderWizard(activeDomain, settings)
     renderKnowledge(activeDomain)
     renderCalculator(activeDomain, settings)
     renderComparison(activeDomain)

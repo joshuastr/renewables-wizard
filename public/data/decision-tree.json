@@ -506,6 +506,7 @@
             "domain": [
                 "solar"
             ],
+            "country": "US",
             "name": "Residential Solar Only",
             "conditions": {
                 "project-type": "residential",
@@ -518,7 +519,27 @@
                 "String inverters with optimizers (like SolarEdge) offer a good middle ground on cost and performance",
                 "Size your system to offset 80-100% of your annual electricity consumption for the best economics",
                 "South-facing roof orientation is ideal but east/west facing can still work well with modern high-efficiency panels",
-                "Most residential systems are 6-12 kW (15-30 panels) and can be installed in 1-2 days"
+                "The 30% federal ITC reduces your net cost significantly - available through 2032"
+            ]
+        },
+        {
+            "domain": [
+                "solar"
+            ],
+            "country": "CA",
+            "name": "Residential Solar Only (Canada)",
+            "conditions": {
+                "project-type": "residential",
+                "system-type": "solar-only"
+            },
+            "reasoning": "A grid-tied solar-only system is the simplest and most cost-effective way to reduce your electricity bills. Without a battery, your system exports excess power to the grid during the day and you draw from the grid at night. Canadian net metering policies vary by province but are generally favorable, with many provinces offering full retail credit. Solar-only systems have the fastest payback period. The federal Clean Energy Investment Tax Credit and provincial rebate programs can significantly reduce your net cost.",
+            "tips": [
+                "Check your province's net metering policy - BC, Ontario, and Alberta all have programs but terms differ",
+                "The federal Clean Energy Investment Tax Credit (up to 30%) can significantly reduce system cost",
+                "BC residents should check BC Hydro net metering and CleanBC programs for additional incentives",
+                "Ontario residents may qualify for programs from the IESO and local utility incentives",
+                "CCA Class 43.1/43.2 accelerated depreciation is available for business-owned solar installations",
+                "Canadian solar production is lower in winter months - size your system based on annual production, not summer peak"
             ]
         },
         {
@@ -545,6 +566,7 @@
             "domain": [
                 "solar"
             ],
+            "country": "US",
             "name": "Agricultural Solar",
             "conditions": {
                 "project-type": "agricultural"
@@ -557,6 +579,25 @@
                 "Size for your irrigation season peak load to offset the most expensive electricity months",
                 "Agrivoltaics (raised panels allowing crops or grazing underneath) can provide dual income from the same land",
                 "Check your co-op or utility for specific agricultural net metering or time-of-use rates"
+            ]
+        },
+        {
+            "domain": [
+                "solar"
+            ],
+            "country": "CA",
+            "name": "Agricultural Solar (Canada)",
+            "conditions": {
+                "project-type": "agricultural"
+            },
+            "reasoning": "Agricultural operations in Canada have strong advantages for solar: large open land for ground-mount arrays, metal buildings ideal for roof mounting, and high seasonal energy loads. The federal Clean Energy Investment Tax Credit and CCA Class 43.1/43.2 accelerated depreciation can significantly reduce net cost. Some provinces offer additional agricultural energy programs. Ground-mount arrays in Canadian climates benefit from higher albedo (snow reflection) in winter months.",
+            "tips": [
+                "The federal Clean Energy Investment Tax Credit (up to 30%) is available for agricultural solar installations",
+                "CCA Class 43.1/43.2 accelerated depreciation substantially reduces the effective cost for farm businesses",
+                "Ground-mount trackers increase production by 15-25% and are especially valuable at Canadian latitudes",
+                "Snow reflection (albedo effect) can boost winter production by 10-15% with bifacial panels",
+                "Check your provincial agricultural ministry for on-farm energy programs and grants",
+                "Alberta and Saskatchewan have strong solar resources despite their northern latitude"
             ]
         },
         {
@@ -622,6 +663,7 @@
                 "storage",
                 "microgrid"
             ],
+            "country": "US",
             "name": "General Renewables Recommendation",
             "conditions": {},
             "reasoning": "Based on your inputs, here is a general starting point. Solar PV is the most cost-effective renewable energy investment for most buildings, with typical payback periods of 5-10 years and 25+ year system life. Adding battery storage increases cost but provides backup power and can improve economics in areas with demand charges or time-of-use rates. The 30% federal ITC significantly reduces net cost and is available through 2032. Start by getting 3 quotes from local installers to understand site-specific costs.",
@@ -631,6 +673,25 @@
                 "Check your state and utility for additional incentives that stack with the federal ITC",
                 "Size your system based on your actual electricity consumption, not a generic estimate",
                 "Choose Tier 1 bankable panel manufacturers for the best warranty protection",
+                "Consider your future electricity needs (EV charging, heat pumps) when sizing your system"
+            ]
+        },
+        {
+            "domain": [
+                "solar",
+                "storage",
+                "microgrid"
+            ],
+            "country": "CA",
+            "name": "General Renewables Recommendation (Canada)",
+            "conditions": {},
+            "reasoning": "Based on your inputs, here is a general starting point. Solar PV is a strong investment in Canada, with typical payback periods of 8-12 years depending on your province and electricity rates. Adding battery storage provides backup power and can improve economics with time-of-use billing. The federal Clean Energy Investment Tax Credit and CCA Class 43.1/43.2 accelerated depreciation significantly reduce net cost. Provincial programs from BC Hydro, Hydro-Quebec, and Ontario utilities can further reduce costs. Start by getting 3 quotes from local installers.",
+            "tips": [
+                "Get 3 quotes from different installers to compare pricing and system designs",
+                "The federal Clean Energy Investment Tax Credit (up to 30%) is available for clean energy installations",
+                "Check your provincial utility for net metering programs and additional rebates",
+                "CCA Class 43.1/43.2 accelerated depreciation is available for business installations",
+                "BC, Ontario, and Quebec have the most developed incentive programs for renewables",
                 "Consider your future electricity needs (EV charging, heat pumps) when sizing your system"
             ]
         },
