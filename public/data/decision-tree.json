@@ -427,29 +427,29 @@
             "domain": [
                 "ev"
             ],
-            "question": "How many charging ports do you need?",
-            "description": "This affects electrical infrastructure, load management needs, and available incentives.",
+            "question": "How many vehicles do you need to charge?",
+            "description": "This determines the number of chargers, electrical capacity, and load management approach.",
             "type": "single-select",
             "options": [
                 {
                     "value": "1-2",
-                    "label": "1-2 ports",
-                    "description": "Pilot or single-user"
+                    "label": "1-2 vehicles",
+                    "description": "Personal or single-user"
                 },
                 {
                     "value": "3-10",
-                    "label": "3-10 ports",
-                    "description": "Small deployment"
+                    "label": "3-10 vehicles",
+                    "description": "Small site or team"
                 },
                 {
                     "value": "11-25",
-                    "label": "11-25 ports",
-                    "description": "Medium deployment"
+                    "label": "11-25 vehicles",
+                    "description": "Medium fleet or facility"
                 },
                 {
                     "value": "25-plus",
-                    "label": "25+ ports",
-                    "description": "Large-scale rollout"
+                    "label": "25+ vehicles",
+                    "description": "Large fleet or campus"
                 }
             ]
         },
@@ -499,7 +499,7 @@
             "domain": [
                 "ev"
             ],
-            "question": "What is your budget range per charging port?",
+            "question": "What is your budget range per charger?",
             "description": "Includes hardware only. Installation costs are additional and vary by site.",
             "type": "single-select",
             "options": [

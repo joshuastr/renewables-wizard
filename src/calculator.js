@@ -15,7 +15,11 @@ const irradianceMap = {
     'ca-on': { label: 'Canada Ontario', factor: 3.8, rate: 0.13, country: 'CA' },
     'ca-qc': { label: 'Canada Quebec', factor: 3.9, rate: 0.07, country: 'CA' },
     'ca-sk': { label: 'Canada Saskatchewan', factor: 4.3, rate: 0.15, country: 'CA' },
-    'ca-mb': { label: 'Canada Manitoba', factor: 4.0, rate: 0.09, country: 'CA' }
+    'ca-mb': { label: 'Canada Manitoba', factor: 4.0, rate: 0.09, country: 'CA' },
+    'ca-ns': { label: 'Canada Nova Scotia', factor: 3.5, rate: 0.17, country: 'CA' },
+    'ca-nb': { label: 'Canada New Brunswick', factor: 3.4, rate: 0.13, country: 'CA' },
+    'ca-nl': { label: 'Canada Newfoundland & Labrador', factor: 3.2, rate: 0.13, country: 'CA' },
+    'ca-pe': { label: 'Canada Prince Edward Island', factor: 3.5, rate: 0.17, country: 'CA' }
 }
 
 export function initCalculator(domain, settings) {

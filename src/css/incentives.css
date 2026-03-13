@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
     margin-bottom: 32px
 }
 
@@ -11,18 +10,17 @@
     padding: 8px 16px;
     background: var(--bg-white);
     border: 1px solid var(--border);
-    border-radius: 100px;
+    border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-size: 13px;
     font-weight: 500;
     color: var(--ink-3);
     cursor: pointer;
-    transition: all var(--transition);
-    box-shadow: var(--shadow-sm)
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease
 }
 
 .incentive-filter:hover {
-    background: var(--bg-hover);
+    background: var(--bg-subtle);
     color: var(--ink-2)
 }
 
@@ -32,25 +30,25 @@
     color: var(--accent-dark)
 }
 
+.incentive-list {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden
+}
+
 .incentive-item {
     background: var(--bg-white);
-    border-bottom: none;
     padding: 16px 24px;
-    margin-bottom: 6px;
-    border-radius: var(--radius-sm);
-    transition: all var(--transition);
-    box-shadow: var(--shadow-sm);
-    border-left: 3px solid transparent
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s ease
 }
 
 .incentive-item:last-child {
-    margin-bottom: 0;
+    border-bottom: none
 }
 
 .incentive-item:hover {
-    background: var(--bg-white);
-    box-shadow: var(--shadow-md);
-    border-left-color: var(--accent-mid)
+    background: var(--bg-subtle)
 }
 
 .incentive-item-header {
@@ -70,14 +68,16 @@
 
 .incentive-type,
 .incentive-region {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--ink-3);
     padding: 3px 10px;
     background: var(--bg-subtle);
-    border-radius: 100px;
+    border-radius: var(--radius-sm);
     font-weight: 500;
     display: inline-block;
-    text-align: center
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase
 }
 
 .incentive-amount {
@@ -147,6 +147,5 @@
     color: var(--ink-3);
     background: var(--bg-subtle);
     padding: 2px 8px;
-    border-radius: 100px
+    border-radius: var(--radius-sm)
 }
-

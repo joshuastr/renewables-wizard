@@ -233,6 +233,132 @@
             ]
         },
         {
+            "id": "battery-lifespan",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "How long do home batteries actually last?",
+            "answer": "Most residential batteries are warranted for 10 years or a set number of cycles (typically 4,000-6,000 for LFP chemistry). In practice, LFP batteries retain 80% or more of their original capacity after 15 years of daily cycling. Key factors affecting lifespan: depth of discharge (shallower cycles preserve capacity longer), temperature (extreme heat degrades cells faster), and charge/discharge rate (gentler is better). A battery rated for 10,000 cycles at 80% depth of discharge, cycled once per day, would last roughly 27 years before reaching 70% capacity. Real-world degradation is typically 1-2% per year for quality LFP products.",
+            "keywords": [
+                "battery lifespan",
+                "degradation",
+                "warranty",
+                "cycles",
+                "longevity"
+            ]
+        },
+        {
+            "id": "battery-c-rate",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "What is C-rate and why does it matter for battery selection?",
+            "answer": "C-rate describes how quickly a battery can charge or discharge relative to its total capacity. A 1C rate means the battery can fully discharge in 1 hour (so a 10 kWh battery at 1C delivers 10 kW). A 0.5C rate means 2 hours to full discharge (10 kWh at 5 kW). Higher C-rates mean more power output but typically reduce cycle life and generate more heat. For backup power, you need high enough C-rate to handle surge loads (air conditioners, pumps). For time-of-use arbitrage, moderate C-rates work fine since you are shifting energy over hours. For peak demand shaving, you may need high C-rate for short bursts. Most residential batteries operate at 0.3-0.5C. Commercial systems often need 0.5-1C or higher.",
+            "keywords": [
+                "C-rate",
+                "power output",
+                "discharge rate",
+                "kW vs kWh"
+            ]
+        },
+        {
+            "id": "battery-thermal",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "Do batteries need special cooling or climate control?",
+            "answer": "Battery performance and lifespan are significantly affected by temperature. Most lithium batteries operate best between 15-35 degrees C. Above 40 degrees C, degradation accelerates and the battery management system (BMS) may throttle output. Below -10 degrees C, charging may be restricted or disabled. Indoor installation in a garage or utility room is ideal for temperature stability. Outdoor installations in hot climates benefit from shaded locations or actively cooled enclosures. Some commercial battery systems include liquid cooling (like Tesla Megapack), which maintains optimal temperature but adds complexity and cost. For most residential installations, a shaded wall-mount location with adequate ventilation is sufficient.",
+            "keywords": [
+                "thermal management",
+                "cooling",
+                "temperature",
+                "climate",
+                "indoor outdoor"
+            ]
+        },
+        {
+            "id": "battery-commercial-vs-residential",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "What is the difference between residential and commercial battery systems?",
+            "answer": "Residential batteries (5-20 kWh) are designed for simplicity - they come as sealed units with integrated inverters and BMS, mount on a wall, and connect to your home panel. Popular options include Tesla Powerwall 3 (13.5 kWh), Enphase IQ 5P (5 kWh, stackable), and Franklin WH (13.6 kWh). Commercial systems (50 kWh to multi-MWh) are modular rack-mounted systems with separate inverters, transformers, and fire suppression. They target demand charge reduction, load shifting, and utility-scale applications. The per-kWh cost is typically lower for commercial systems due to scale, but installation complexity and permitting requirements are significantly higher. Some products bridge the gap: the Tesla Powerwall 3 can be installed in groups up to 10 units for small commercial.",
+            "keywords": [
+                "residential battery",
+                "commercial battery",
+                "scale",
+                "Powerwall",
+                "Enphase"
+            ]
+        },
+        {
+            "id": "battery-vpp",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "What is a virtual power plant and can my battery participate?",
+            "answer": "A virtual power plant (VPP) aggregates many distributed batteries into a single coordinated resource that can respond to grid needs. When the grid is stressed, a VPP operator dispatches stored energy from hundreds or thousands of home batteries simultaneously. Homeowners earn payments for participation, typically $20-75 per month or per-event compensation. Major VPP programs include Tesla's VPP (available in select states), OhmConnect, and utility-specific programs. Requirements usually include a compatible battery with internet connectivity and enrollment in the VPP program. Your battery still provides backup power - VPP dispatch typically only uses a portion of your stored energy and avoids depleting your backup reserve.",
+            "keywords": [
+                "VPP",
+                "virtual power plant",
+                "grid services",
+                "demand response",
+                "aggregation"
+            ]
+        },
+        {
+            "id": "battery-round-trip",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "What is round-trip efficiency and why does it matter?",
+            "answer": "Round-trip efficiency (RTE) measures the percentage of energy you get back from a battery compared to what you put in. If you store 10 kWh and can use 8.5 kWh, the RTE is 85%. Modern lithium batteries achieve 85-95% RTE. Energy losses occur during charging (inverter conversion losses), storage (self-discharge, BMS power consumption), and discharging (inverter conversion again). Higher RTE means more of your solar energy is usable. For comparison: lead-acid batteries achieve only 70-80% RTE, and hydrogen storage systems achieve roughly 30-40%. When evaluating batteries, look at system-level RTE (including inverter losses) rather than just cell-level efficiency. A 5% difference in RTE over 10 years of daily cycling can translate to thousands of dollars in lost energy value.",
+            "keywords": [
+                "round-trip efficiency",
+                "RTE",
+                "energy loss",
+                "inverter losses"
+            ]
+        },
+        {
+            "id": "battery-maintenance",
+            "category": "storage",
+            "domain": [
+                "storage"
+            ],
+            "question": "What maintenance do battery systems require?",
+            "answer": "Lithium battery systems require minimal maintenance compared to lead-acid or flow batteries. Routine upkeep includes: monitoring system performance through the manufacturer app or portal (daily/automated), ensuring ventilation paths remain clear of debris (quarterly), checking electrical connections for tightness and corrosion (annually), verifying firmware updates are current (automated for most systems), and inspecting the area around the battery for moisture, pests, or physical damage (twice per year). There are no fluids to top off, no equalization charges needed, and no cell replacement under normal conditions. Most manufacturers offer remote monitoring and diagnostics. Budget $50-150 per year for professional inspection if desired, though many homeowners handle monitoring themselves.",
+            "keywords": [
+                "battery maintenance",
+                "monitoring",
+                "inspection",
+                "firmware"
+            ]
+        },
+        {
+            "id": "battery-ac-dc-coupling",
+            "category": "storage",
+            "domain": [
+                "storage",
+                "solar"
+            ],
+            "question": "What is the difference between AC-coupled and DC-coupled battery systems?",
+            "answer": "AC-coupled systems have separate inverters for solar and battery. Solar DC converts to AC through the solar inverter, then back to DC for battery storage, then back to AC for use. Each conversion loses 2-5% efficiency. DC-coupled systems share an inverter (hybrid inverter) that handles both solar and battery on the DC side, eliminating one conversion step and improving efficiency by 3-8%. AC coupling is ideal for retrofitting storage to an existing solar system since you keep your existing solar inverter. DC coupling is preferred for new installations since it is more efficient and typically cheaper overall. Some systems like Tesla Powerwall 3 and Franklin WH include built-in solar inputs, making them DC-coupled without needing a separate hybrid inverter.",
+            "keywords": [
+                "AC coupled",
+                "DC coupled",
+                "hybrid inverter",
+                "retrofit",
+                "conversion efficiency"
+            ]
+        },
+        {
             "id": "net-metering",
             "category": "grid-utility",
             "domain": [
