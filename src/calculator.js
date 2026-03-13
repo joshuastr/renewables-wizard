@@ -1,5 +1,6 @@
 const solarState = { location: 'us-sw', monthlyBill: 200, systemType: 'solar-storage', roofArea: 500 }
 const evState = { vehicles: 20, kmPerDay: 120, dwellHours: 10, evEfficiency: 0.20, chargerPower: 11.5 }
+const commState = { chargers: 4, chargerPower: 11.5, hardwareCost: 6500, installCost: 3000, sessionsPerDay: 4, avgSessionHrs: 3, pricePerKwh: 0.35, elecCostPerKwh: 0.14, monthlyOpex: 20 }
 let currentDomain = 'solar'
 let currentSettings = { country: 'US', currency: 'USD', cadRate: 1.37 }
 
@@ -45,6 +46,13 @@ function fmtCurrency(n) {
     if (isCAD) n = n * currentSettings.cadRate
     const symbol = isCAD ? 'C$' : '$'
     return `${symbol}${Math.round(n).toLocaleString('en')}`
+}
+
+function fmtSmall(n) {
+    const isCAD = currentSettings.currency === 'CAD'
+    if (isCAD) n = n * currentSettings.cadRate
+    const symbol = isCAD ? 'C$' : '$'
+    return `${symbol}${n.toFixed(2)}`
 }
 
 function getFilteredLocations() {
@@ -204,8 +212,68 @@ function renderEvCalculator(container) {
     <div class="calculator-tabs" style="display:flex; gap:16px; margin-bottom:24px; border-bottom:1px solid var(--border);">
         <button class="tab-btn ${currentEvMode === 'infrastructure' ? 'active' : ''}" style="background:none; border:none; padding:8px 16px; font-weight:600; font-family:var(--font-heading); color:${currentEvMode === 'infrastructure' ? 'var(--accent)' : 'var(--ink-3)'}; border-bottom:${currentEvMode === 'infrastructure' ? '2px solid var(--accent)' : '2px solid transparent'}; cursor:pointer;" id="modeInfra">Infrastructure</button>
         <button class="tab-btn ${currentEvMode === 'roi' ? 'active' : ''}" style="background:none; border:none; padding:8px 16px; font-weight:600; font-family:var(--font-heading); color:${currentEvMode === 'roi' ? 'var(--accent)' : 'var(--ink-3)'}; border-bottom:${currentEvMode === 'roi' ? '2px solid var(--accent)' : '2px solid transparent'}; cursor:pointer;" id="modeRoi">Fleet ROI</button>
+        <button class="tab-btn ${currentEvMode === 'commercial' ? 'active' : ''}" style="background:none; border:none; padding:8px 16px; font-weight:600; font-family:var(--font-heading); color:${currentEvMode === 'commercial' ? 'var(--accent)' : 'var(--ink-3)'}; border-bottom:${currentEvMode === 'commercial' ? '2px solid var(--accent)' : '2px solid transparent'}; cursor:pointer;" id="modeComm">Commercial ROI</button>
     </div>
 
+    ${currentEvMode === 'commercial' ? `
+    <div class="calculator-layout">
+        <div class="calc-panel">
+            <div class="calc-panel-title">Installation</div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Number of chargers</span><span class="calc-value" id="valCommChargers">${commState.chargers}</span></div>
+                <input type="range" class="calc-slider" id="calcCommChargers" min="1" max="50" value="${commState.chargers}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Charger power level</span></div>
+                <select class="calc-select" id="calcCommPower">
+                    <option value="7.7" ${commState.chargerPower === 7.7 ? 'selected' : ''}>Level 2 - 32A (7.7 kW)</option>
+                    <option value="11.5" ${commState.chargerPower === 11.5 ? 'selected' : ''}>Level 2 - 48A (11.5 kW)</option>
+                    <option value="19.2" ${commState.chargerPower === 19.2 ? 'selected' : ''}>Level 2 - 80A (19.2 kW)</option>
+                    <option value="50" ${commState.chargerPower === 50 ? 'selected' : ''}>DC Fast - 50 kW</option>
+                    <option value="120" ${commState.chargerPower === 120 ? 'selected' : ''}>DC Fast - 120 kW</option>
+                    <option value="150" ${commState.chargerPower === 150 ? 'selected' : ''}>DC Fast - 150 kW</option>
+                    <option value="350" ${commState.chargerPower === 350 ? 'selected' : ''}>DC Fast - 350 kW</option>
+                </select>
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Hardware cost per charger</span><span class="calc-value" id="valCommHardware">${fmtCurrency(commState.hardwareCost)}</span></div>
+                <input type="range" class="calc-slider" id="calcCommHardware" min="500" max="100000" step="500" value="${commState.hardwareCost}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Installation cost per charger</span><span class="calc-value" id="valCommInstall">${fmtCurrency(commState.installCost)}</span></div>
+                <input type="range" class="calc-slider" id="calcCommInstall" min="500" max="50000" step="500" value="${commState.installCost}" />
+            </div>
+        </div>
+        <div class="calc-panel">
+            <div class="calc-panel-title">Revenue Assumptions</div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Sessions per charger per day</span><span class="calc-value" id="valCommSessions">${commState.sessionsPerDay}</span></div>
+                <input type="range" class="calc-slider" id="calcCommSessions" min="1" max="20" value="${commState.sessionsPerDay}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Average session duration</span><span class="calc-value" id="valCommSessionHrs">${commState.avgSessionHrs} hrs</span></div>
+                <input type="range" class="calc-slider" id="calcCommSessionHrs" min="0.5" max="8" step="0.5" value="${commState.avgSessionHrs}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Price charged per kWh</span><span class="calc-value" id="valCommPrice">${fmtSmall(commState.pricePerKwh)}</span></div>
+                <input type="range" class="calc-slider" id="calcCommPrice" min="0.15" max="1.00" step="0.01" value="${commState.pricePerKwh}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Electricity cost per kWh</span><span class="calc-value" id="valCommElec">${fmtSmall(commState.elecCostPerKwh)}</span></div>
+                <input type="range" class="calc-slider" id="calcCommElec" min="0.05" max="0.30" step="0.01" value="${commState.elecCostPerKwh}" />
+            </div>
+            <div class="calc-group">
+                <div class="calc-label"><span>Monthly OpEx per charger</span><span class="calc-value" id="valCommOpex">${fmtCurrency(commState.monthlyOpex)}</span></div>
+                <input type="range" class="calc-slider" id="calcCommOpex" min="0" max="100" step="5" value="${commState.monthlyOpex}" />
+            </div>
+        </div>
+    </div>
+    <div class="calculator-layout" style="margin-top:20px;">
+        <div class="calc-panel" id="evResultsPanel" style="grid-column:1/-1;">
+            <!-- Results injected here -->
+        </div>
+    </div>
+    ` : `
     <div class="calculator-layout">
         <div class="calc-panel">
             <div class="calc-panel-title">Your Project</div>
@@ -245,7 +313,8 @@ function renderEvCalculator(container) {
         <div class="calc-panel" id="evResultsPanel">
             <!-- Results injected here -->
         </div>
-    </div>`
+    </div>
+    `}`
 
     const updateEvDOM = () => {
         // Values
@@ -290,8 +359,8 @@ function renderEvCalculator(container) {
                     <div class="calc-metric"><span class="calc-metric-label">Estimated installation cost</span><span class="calc-metric-value">${fmtCurrency(installCostLow)} - ${fmtCurrency(installCostHigh)}</span></div>
                 </div>
             `
-        } else {
-            // ROI Mode
+        } else if (currentEvMode === 'roi') {
+            // Fleet ROI Mode
             const annualDistPerVeh = evState.kmPerDay * 365
             const totalAnnualDist = annualDistPerVeh * evState.vehicles
 
@@ -333,6 +402,55 @@ function renderEvCalculator(container) {
                     <div class="calc-metric"><span class="calc-metric-label">Total annual fleet distance</span><span class="calc-metric-value">${Math.round(totalAnnualDist * distFactor).toLocaleString()} ${distUnit}</span></div>
                 </div>
             `
+        } else {
+            // Commercial ROI Mode
+            const totalCapex = commState.chargers * (commState.hardwareCost + commState.installCost)
+            const kwhPerSession = commState.chargerPower * commState.avgSessionHrs * 0.85
+            const annualKwhDelivered = commState.chargers * commState.sessionsPerDay * kwhPerSession * 365
+            const annualRevenue = annualKwhDelivered * commState.pricePerKwh
+            const annualElecCost = annualKwhDelivered * commState.elecCostPerKwh
+            const annualOpex = commState.chargers * commState.monthlyOpex * 12
+            const annualNetIncome = annualRevenue - annualElecCost - annualOpex
+            const paybackYears = annualNetIncome > 0 ? totalCapex / annualNetIncome : Infinity
+            const fiveYearROI = annualNetIncome > 0 ? (((annualNetIncome * 5) - totalCapex) / totalCapex * 100) : -100
+            const utilizationPct = Math.min(100, (commState.sessionsPerDay * commState.avgSessionHrs) / 24 * 100).toFixed(0)
+            const monthlyPerCharger = annualNetIncome / commState.chargers / 12
+
+            // Update commercial slider labels
+            const elH = container.querySelector('#valCommHardware')
+            const elI = container.querySelector('#valCommInstall')
+            const elS = container.querySelector('#valCommSessions')
+            const elSH = container.querySelector('#valCommSessionHrs')
+            const elP = container.querySelector('#valCommPrice')
+            const elE = container.querySelector('#valCommElec')
+            const elO = container.querySelector('#valCommOpex')
+            const elC = container.querySelector('#valCommChargers')
+            if (elH) elH.innerText = fmtCurrency(commState.hardwareCost)
+            if (elI) elI.innerText = fmtCurrency(commState.installCost)
+            if (elS) elS.innerText = commState.sessionsPerDay
+            if (elSH) elSH.innerText = commState.avgSessionHrs + ' hrs'
+            if (elP) elP.innerText = fmtSmall(commState.pricePerKwh)
+            if (elE) elE.innerText = fmtSmall(commState.elecCostPerKwh)
+            if (elO) elO.innerText = fmtCurrency(commState.monthlyOpex)
+            if (elC) elC.innerText = commState.chargers
+
+            resultsPanel.innerHTML = `
+                <div class="calc-panel-title">Investment Analysis</div>
+                <div class="calc-result-readout">
+                    <div class="calc-result-label">Payback Period</div>
+                    <div class="calc-result-value">${paybackYears === Infinity ? 'N/A' : paybackYears.toFixed(1)}<span class="calc-result-unit"> years</span></div>
+                    <div class="calc-result-subtext">5-Year ROI: <strong class="${fiveYearROI >= 0 ? 'positive' : 'danger'}">${fiveYearROI.toFixed(0)}%</strong> | Utilization: ${utilizationPct}%</div>
+                </div>
+                <div class="calc-metrics">
+                    <div class="calc-metric"><span class="calc-metric-label">Total CapEx</span><span class="calc-metric-value">${fmtCurrency(totalCapex)}</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Annual energy delivered</span><span class="calc-metric-value">${Math.round(annualKwhDelivered).toLocaleString()} kWh</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Annual revenue</span><span class="calc-metric-value positive">${fmtCurrency(annualRevenue)}</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Annual electricity cost</span><span class="calc-metric-value">${fmtCurrency(annualElecCost)}</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Annual OpEx (network/maintenance)</span><span class="calc-metric-value">${fmtCurrency(annualOpex)}</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Annual net income</span><span class="calc-metric-value ${annualNetIncome >= 0 ? 'positive' : 'danger'}">${fmtCurrency(annualNetIncome)}</span></div>
+                    <div class="calc-metric"><span class="calc-metric-label">Monthly net per charger</span><span class="calc-metric-value ${monthlyPerCharger >= 0 ? 'positive' : 'danger'}">${fmtCurrency(monthlyPerCharger)}</span></div>
+                </div>
+            `
         }
 
         // Update track styling
@@ -353,17 +471,40 @@ function renderEvCalculator(container) {
         })
     }
 
-    bindSlider('calcVehicles', 'vehicles')
-    bindSlider('calcKm', 'kmPerDay')
-    if (currentEvMode === 'infrastructure') bindSlider('calcDwell', 'dwellHours')
-    bindSlider('calcEff', 'evEfficiency')
+    if (currentEvMode === 'commercial') {
+        // Commercial mode sliders
+        const bindCommSlider = (id, key) => {
+            const el = container.querySelector('#' + id)
+            if (el) el.addEventListener('input', () => {
+                commState[key] = parseFloat(el.value)
+                updateEvDOM()
+            })
+        }
+        bindCommSlider('calcCommChargers', 'chargers')
+        bindCommSlider('calcCommHardware', 'hardwareCost')
+        bindCommSlider('calcCommInstall', 'installCost')
+        bindCommSlider('calcCommSessions', 'sessionsPerDay')
+        bindCommSlider('calcCommSessionHrs', 'avgSessionHrs')
+        bindCommSlider('calcCommPrice', 'pricePerKwh')
+        bindCommSlider('calcCommElec', 'elecCostPerKwh')
+        bindCommSlider('calcCommOpex', 'monthlyOpex')
 
-    const ps = container.querySelector('#calcPower')
-    if (ps) ps.addEventListener('change', () => { evState.chargerPower = parseFloat(ps.value); updateEvDOM() })
+        const cps = container.querySelector('#calcCommPower')
+        if (cps) cps.addEventListener('change', () => { commState.chargerPower = parseFloat(cps.value); updateEvDOM() })
+    } else {
+        bindSlider('calcVehicles', 'vehicles')
+        bindSlider('calcKm', 'kmPerDay')
+        if (currentEvMode === 'infrastructure') bindSlider('calcDwell', 'dwellHours')
+        bindSlider('calcEff', 'evEfficiency')
+
+        const ps = container.querySelector('#calcPower')
+        if (ps) ps.addEventListener('change', () => { evState.chargerPower = parseFloat(ps.value); updateEvDOM() })
+    }
 
     // Mode toggles
     container.querySelector('#modeInfra').addEventListener('click', () => { currentEvMode = 'infrastructure'; renderEvCalculator(container) })
     container.querySelector('#modeRoi').addEventListener('click', () => { currentEvMode = 'roi'; renderEvCalculator(container) })
+    container.querySelector('#modeComm').addEventListener('click', () => { currentEvMode = 'commercial'; renderEvCalculator(container) })
 
     // Initial render
     updateEvDOM()

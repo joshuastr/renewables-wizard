@@ -2,7 +2,7 @@
 
 Open-source knowledge tool for solar, battery storage, EV charging, and microgrid planning.
 
-**[Live Demo →](https://renewables-wizard.netlify.app)**
+**[Live Demo →](https://joshuastr.github.io/renewables-wizard/)**
 
 ## Features
 
