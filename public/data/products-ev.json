@@ -391,6 +391,195 @@
                 "Lighting display"
             ],
             "notes": "ABB's flagship charger can charge up to 4 vehicles at once with dynamic power sharing. 360 kW peak power can add about 100 km of range in under 3 minutes on compatible vehicles."
+        },
+        {
+            "id": "ea-watti-home-gen2s",
+            "manufacturer": "Electric Avenue",
+            "model": "Watti Home Gen2 S",
+            "category": "l2-residential",
+            "power": "48A / 11.5 kW",
+            "amperage": "48A",
+            "voltage": "240V",
+            "connector": "J1772 or NACS (J3400)",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, Electric Avenue app, RFID",
+            "operatingTemp": "-40C to 50C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "cUL Listed",
+                "UL Listed",
+                "NEMA 4"
+            ],
+            "msrp": "~$700-900 CAD",
+            "features": [
+                "Hardwired or NEMA 14-50 plug-in",
+                "RFID user authentication",
+                "No subscription required",
+                "NEMA 4 outdoor rated"
+            ],
+            "notes": "Canadian-designed smart charger from Electric Avenue, available through electrical wholesale distribution. The NEMA 4 rating and -40C operating temperature make it well-suited for Canadian and northern US climates. No monthly subscription fees for smart features is a strong selling point. Available with either J1772 or NACS connector."
+        },
+        {
+            "id": "ea-watti-pro-echo",
+            "manufacturer": "Electric Avenue",
+            "model": "Watti Pro Echo",
+            "category": "l2-commercial",
+            "power": "Up to 48A / 11.5 kW per port",
+            "amperage": "48A per port",
+            "voltage": "208/240V",
+            "connector": "J1772",
+            "mounting": "Wall or pedestal",
+            "connectivity": "WiFi, LTE (via Watti-Fi), OCPP",
+            "operatingTemp": "-40C to 50C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "cUL Listed",
+                "UL Listed"
+            ],
+            "msrp": "~$2,500-4,000 CAD per dual port",
+            "features": [
+                "Dual port",
+                "Offline load sharing",
+                "Revenue-ready software",
+                "Flexible payment (app, tap, terminal)"
+            ],
+            "notes": "Electric Avenue's commercial workhorse for MURBs, fleets, and workplace charging. The offline load sharing means two ports can share a single circuit even without network connectivity. Revenue-ready with multiple payment options including tap-and-pay. Distributed exclusively through electrical wholesalers in Canada."
+        },
+        {
+            "id": "ea-watti-direct-180",
+            "manufacturer": "Electric Avenue",
+            "model": "Watti Direct 180",
+            "category": "dcfc-standard",
+            "power": "Up to 180 kW",
+            "amperage": "Up to 400A",
+            "voltage": "200-1000V DC",
+            "connector": "CCS1 / NACS",
+            "mounting": "Floor standing or wall mount",
+            "connectivity": "4G/LTE, Ethernet, WiFi, OCPP",
+            "operatingTemp": "-40C to 50C",
+            "cableLength": "Integrated",
+            "warranty": "3 years (extended available)",
+            "certifications": [
+                "cUL Listed",
+                "UL Listed"
+            ],
+            "msrp": "Contact distributor",
+            "features": [
+                "Modular power architecture",
+                "Wall mount or freestanding",
+                "Scalable 40-180 kW",
+                "Enterprise software integration"
+            ],
+            "notes": "Electric Avenue's DC fast charging platform scales from 40 kW to 180 kW using modular power units. The wall-mount option is unusual for DCFC and useful in space-constrained garages. Available through EA's wholesale distribution network with Enterprise Software for fleet and public charging management. Strong choice for Canadian deployments requiring cold-climate DCFC."
+        },
+        {
+            "id": "wallbox-pulsar-plus",
+            "manufacturer": "Wallbox",
+            "model": "Pulsar Plus",
+            "category": "l2-residential",
+            "power": "Up to 48A / 11.5 kW",
+            "amperage": "40A or 48A",
+            "voltage": "240V",
+            "connector": "J1772 or NACS",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, Bluetooth, myWallbox app",
+            "operatingTemp": "-25C to 40C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "ENERGY STAR"
+            ],
+            "msrp": "~$650 USD",
+            "features": [
+                "Ultra-compact design",
+                "Power Boost (dynamic load management)",
+                "Alexa & Google compatible",
+                "Scheduled charging"
+            ],
+            "notes": "One of the most compact residential chargers on the market at roughly 7 inches square. The Power Boost feature dynamically adjusts charging power based on your home's real-time electrical consumption, preventing panel overloads without needing an electrical upgrade. Great design aesthetic - looks more like a home appliance than industrial equipment."
+        },
+        {
+            "id": "wallbox-pulsar-max",
+            "manufacturer": "Wallbox",
+            "model": "Pulsar Max",
+            "category": "l2-residential",
+            "power": "Up to 48A / 11.5 kW",
+            "amperage": "48A",
+            "voltage": "240V",
+            "connector": "J1772 or NACS",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, Bluetooth, myWallbox app",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "25 ft (7.6m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed",
+                "IP55",
+                "IK10"
+            ],
+            "msrp": "~$650-750 USD",
+            "features": [
+                "IP55/IK10 ruggedized",
+                "Built-in energy metering",
+                "Eco-Smart solar integration",
+                "RCD Type B protection built-in"
+            ],
+            "notes": "The Pulsar Max is the tougher successor to the Pulsar Plus with significantly better impact (IK10) and weather (IP55) ratings. The built-in RCD Type B protection eliminates the need for an external ground fault device, simplifying installation. Eco-Smart mode can prioritize solar self-consumption if paired with a home solar system. Best choice for harsh weather or exposed outdoor installations."
+        },
+        {
+            "id": "wallbox-quasar2",
+            "manufacturer": "Wallbox",
+            "model": "Quasar 2",
+            "category": "l2-residential",
+            "power": "11.5 kW (bidirectional)",
+            "amperage": "48A",
+            "voltage": "240V",
+            "connector": "CCS1",
+            "mounting": "Wall mount",
+            "connectivity": "WiFi, Bluetooth, myWallbox app",
+            "operatingTemp": "-20C to 50C",
+            "cableLength": "16 ft (5m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed"
+            ],
+            "msrp": "~$4,500-5,500 USD",
+            "features": [
+                "Bidirectional V2H/V2G",
+                "Backup power during outages",
+                "Time-of-use optimization",
+                "ISO 15118-20 compliant"
+            ],
+            "notes": "The first UL-certified bidirectional DC home charger using CCS1. Turns your EV battery into a home backup system - a 60 kWh EV battery can power a typical home for 2-3 days during an outage. Also enables time-of-use arbitrage: charge from the grid at off-peak rates, discharge to your home at peak rates. Requires a compatible EV supporting ISO 15118-20 bidirectional charging (currently limited vehicle support, expanding rapidly)."
+        },
+        {
+            "id": "wallbox-supernova-180",
+            "manufacturer": "Wallbox",
+            "model": "Supernova 180",
+            "category": "dcfc-high-power",
+            "power": "Up to 180 kW",
+            "amperage": "Up to 400A",
+            "voltage": "200-1000V DC",
+            "connector": "CCS1 / NACS",
+            "mounting": "Floor standing",
+            "connectivity": "4G, Ethernet, WiFi, OCPP 1.6J",
+            "operatingTemp": "-30C to 50C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "3 years",
+            "certifications": [
+                "UL Listed"
+            ],
+            "msrp": "~$60,000-80,000 USD",
+            "features": [
+                "Modular 6x30 kW power units",
+                "Continued operation if module fails",
+                "10-inch touchscreen",
+                "Multiple payment options"
+            ],
+            "notes": "Wallbox's third-generation DC fast charger delivers 180 kW in a compact footprint. The modular 6x30 kW architecture means if one power module fails, the unit continues operating at reduced power rather than going offline. Adds roughly 100 miles of range in under 10 minutes. The compact form factor offers one of the best power-to-footprint ratios in the mid-range DCFC segment."
         }
     ]
 }
