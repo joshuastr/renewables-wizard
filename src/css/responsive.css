@@ -16,7 +16,8 @@
         grid-template-columns: 1fr 1fr
     }
 
-    .header-badge {
+    .header-author-link,
+    .header-sep {
         display: none
     }
 
