@@ -1,0 +1,41 @@
+/* Responsive */
+@media(max-width:768px) {
+    .calculator-layout {
+        grid-template-columns: 1fr
+    }
+
+    .compare-grid {
+        grid-template-columns: 1fr
+    }
+
+    .incentive-grid {
+        grid-template-columns: 1fr
+    }
+
+    .wizard-options {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .header-badge {
+        display: none
+    }
+
+    .tool-tabs {
+        padding: 8px 16px
+    }
+
+    .main-content {
+        padding: 16px
+    }
+}
+
+@media(max-width:480px) {
+    .wizard-options {
+        grid-template-columns: 1fr
+    }
+
+    .domain-selector {
+        flex-wrap: wrap
+    }
+}
+

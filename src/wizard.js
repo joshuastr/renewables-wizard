@@ -136,7 +136,7 @@ function renderStep(step, idx) {
     </div>`
 }
 
-function renderResults(domain, steps) {
+function renderResults(domain, _steps) {
   const countryCode = currentCountry === 'CA' ? 'CA' : 'US'
   const rules = treeData.rules.filter(r => r.domain.includes(domain)).filter(r => {
     if (!r.country) return true

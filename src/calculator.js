@@ -1,5 +1,5 @@
-let solarState = { location: 'us-sw', monthlyBill: 200, systemType: 'solar-storage', roofArea: 500 }
-let evState = { vehicles: 20, kmPerDay: 120, dwellHours: 10, evEfficiency: 0.20, chargerPower: 11.5 }
+const solarState = { location: 'us-sw', monthlyBill: 200, systemType: 'solar-storage', roofArea: 500 }
+const evState = { vehicles: 20, kmPerDay: 120, dwellHours: 10, evEfficiency: 0.20, chargerPower: 11.5 }
 let currentDomain = 'solar'
 let currentSettings = { country: 'US', currency: 'USD', cadRate: 1.37 }
 
@@ -186,7 +186,6 @@ let currentEvMode = 'infrastructure'
 
 function renderEvCalculator(container) {
     const isCAD = currentSettings.currency === 'CAD'
-    const currLabel = isCAD ? 'CAD' : 'USD'
     const distUnit = currentSettings.country === 'CA' ? 'km' : 'miles'
     const distFactor = currentSettings.country === 'CA' ? 1 : 0.621
     const effUnit = currentSettings.country === 'CA' ? 'Wh/km' : 'Wh/mi'

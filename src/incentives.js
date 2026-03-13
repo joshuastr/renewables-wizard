@@ -29,7 +29,7 @@ export function renderIncentives(domain, settings) {
   }
 
   // Start from all programs that match this domain
-  let programs = incentiveData.programs.filter(p => p.applies.includes(domain))
+  const programs = incentiveData.programs.filter(p => p.applies.includes(domain))
 
   // Derive filter options BEFORE applying filters (so dropdowns always show all possible options)
   const countries = [...new Set(programs.map(p => p.country))].sort()

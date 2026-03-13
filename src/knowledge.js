@@ -41,7 +41,7 @@ export function renderKnowledge(domain) {
     )
   }
 
-  let html = `<div class="section-intro">
+  const html = `<div class="section-intro">
         <h2>Knowledge Base</h2>
         <p>Frequently asked questions and expert guidance. Search or browse by category.</p>
     </div>

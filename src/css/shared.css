@@ -1,0 +1,63 @@
+/* Misc shared */
+.knowledge-empty {
+    text-align: center;
+    padding: 48px;
+    color: var(--ink-3);
+    font-size: 15px
+}
+
+.knowledge-search svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink-4)
+}
+
+.knowledge-search {
+    max-width: 600px;
+    margin: 0 auto 24px;
+    position: relative
+}
+
+.knowledge-search input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    background: var(--bg-white);
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: all var(--transition);
+    box-shadow: var(--shadow-sm)
+}
+
+.knowledge-search input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(26, 122, 92, 0.08)
+}
+
+.knowledge-results {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 12px
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.7;
+    transition: max-height 0.4s var(--ease), padding 0.3s var(--ease)
+}
+
+.faq-item.open .faq-answer {
+    max-height: 600px;
+    padding: 0 20px 20px
+}
+

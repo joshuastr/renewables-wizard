@@ -23,11 +23,11 @@ export function formatCurrency(amount) {
 
 const domainNames = { solar: 'Solar PV', storage: 'Battery Storage', ev: 'EV Charging', microgrid: 'Microgrids' }
 const tabContexts = {
-    advisor: { suffix: 'Advisor', desc: 'Answer a few questions about your project and we will provide tailored recommendations, expert tips, and relevant comparisons.' },
-    knowledge: { suffix: 'Knowledge Base', desc: 'Frequently asked questions and expert guidance. Search or browse by category.' },
-    calculator: { suffix: 'Calculator', desc: 'Estimate system size, production, costs, and payback period.' },
-    compare: { suffix: 'Product Comparison', desc: 'Browse products and select up to 3 to compare side by side. All specifications are from public manufacturer data.' },
-    incentives: { suffix: 'Incentives', desc: 'Discover rebates, tax credits, grants, and financing programs.' }
+    advisor: { suffix: 'Advisor', desc: 'Walk through your project details step by step and get tailored product recommendations with expert tips.' },
+    knowledge: { suffix: 'Knowledge Base', desc: 'Browse FAQs and reference guides organized by topic. Search for specific questions.' },
+    calculator: { suffix: 'Calculator', desc: 'Adjust sliders to estimate system sizing, energy output, costs, and payback for your project.' },
+    compare: { suffix: 'Product Comparison', desc: 'Filter by manufacturer and type, then select up to 3 products to compare specs side by side.' },
+    incentives: { suffix: 'Incentives', desc: 'Browse available rebates, tax credits, and grants filtered by your region.' }
 }
 let activeTab = 'advisor'
 
