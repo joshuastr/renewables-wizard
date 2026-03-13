@@ -528,6 +528,76 @@
                 "compliance",
                 "parking"
             ]
+        },
+        {
+            "id": "solar-permitting-process",
+            "category": "solar-installation",
+            "domain": [
+                "solar"
+            ],
+            "question": "What is the solar permitting process and what inspections are required?",
+            "answer": "The solar permitting process varies by jurisdiction but generally follows these steps: 1) Plan submission with electrical single-line diagram, structural attachment details, and site plan. 2) Permit review and approval (1-4 weeks). 3) Installation by licensed contractor. 4) Rough inspection (before panels are installed - verifying racking, grounding, conduit). 5) Final electrical inspection (after panels, inverter, and wiring are complete). 6) Utility interconnection agreement and meter swap/net meter activation. Common reasons for permit rejection: insufficient structural load calculations, missing rapid shutdown compliance, incorrect wire sizing, and incomplete fire setback details (IFC pathways). Keep a checklist: engineered stamped plans, structural letter, electrical diagrams, equipment spec sheets, and insurance certificates.",
+            "keywords": [
+                "permit",
+                "inspection",
+                "building department",
+                "AHJ",
+                "plan review",
+                "interconnection"
+            ]
+        },
+        {
+            "id": "building-code-solar",
+            "category": "solar-installation",
+            "domain": [
+                "solar"
+            ],
+            "question": "What building code requirements apply to solar installations?",
+            "answer": "Solar installations must comply with the National Electrical Code (NEC) in the US or Canadian Electrical Code (CEC) in Canada, plus local building codes. Key requirements include: NEC 690 Solar PV Systems covers wiring, grounding, disconnects, and overcurrent protection. NEC 690.12 Rapid Shutdown requires module-level shutdown capability within 30 seconds for firefighter safety. The 120% rule (NEC 705.12) limits how much solar you can back-feed through your main panel. IFC (International Fire Code) requires setbacks from roof edges and ridges for firefighter access. Structural codes require engineering for wind uplift, snow loads, and roof attachment waterproofing. In Canada, BC Step Code and Ontario Building Code have additional energy performance tiers that may require solar-ready infrastructure on new construction.",
+            "keywords": [
+                "NEC 690",
+                "rapid shutdown",
+                "120% rule",
+                "fire code",
+                "building code",
+                "BC Step Code",
+                "CEC"
+            ]
+        },
+        {
+            "id": "ev-cms-comparison",
+            "category": "ev-networking",
+            "domain": [
+                "ev"
+            ],
+            "question": "What are the main EV charging management software platforms?",
+            "answer": "EV charging management software (CMS/CSMS) handles user authentication, payment processing, load management, and reporting. Major platforms include: ChargePoint (vertically integrated - hardware + software bundle, largest network but proprietary lock-in), Shell Recharge (formerly Greenlots, good for public networks), Driivz (enterprise-grade, white-label capable), EV Connect (mid-market, good reporting), and open-source options like Open Charge Alliance tools. Key evaluation criteria: OCPP compatibility (avoid proprietary-only platforms), payment processing fees, monthly per-port subscription costs, reporting and analytics capabilities, driver app quality, and roaming agreements (ability for drivers from other networks to use your chargers). Budget $5-25/port/month for network fees depending on features.",
+            "keywords": [
+                "CMS",
+                "CSMS",
+                "chargepoint",
+                "management software",
+                "network",
+                "platform",
+                "driivz"
+            ]
+        },
+        {
+            "id": "solar-certifications",
+            "category": "solar-installation",
+            "domain": [
+                "solar"
+            ],
+            "question": "What certifications should a solar installer have?",
+            "answer": "NABCEP (North American Board of Certified Energy Practitioners) is the gold standard for solar installer certification in the US and Canada. Key certifications include: NABCEP PV Installation Professional (PVIP) for installers, NABCEP PV Design Specialist for system designers, and NABCEP PV Technical Sales for salespeople. Most states require a licensed electrician (C-10 in California, Master Electrician in many states) for the electrical work. Many manufacturers require installer certification to activate product warranties - SolarEdge, Enphase, and most battery manufacturers have their own training programs. In Canada, provincial electrical licenses apply. Look for contractors who have both NABCEP certification and manufacturer-specific training, and verify they carry proper insurance and bonding.",
+            "keywords": [
+                "NABCEP",
+                "certification",
+                "licensed",
+                "electrician",
+                "training",
+                "installer qualifications"
+            ]
         }
     ]
 }

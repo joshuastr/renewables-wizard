@@ -1,0 +1,279 @@
+{
+    "categories": [
+        {
+            "id": "controllers",
+            "label": "Microgrid Controllers",
+            "description": "Intelligent management systems that coordinate distributed energy resources, manage grid connection/islanding, and optimize power flow across the microgrid.",
+            "specs": [
+                "manufacturer",
+                "power_rating",
+                "der_support",
+                "islanding",
+                "protocols",
+                "monitoring"
+            ]
+        },
+        {
+            "id": "ats",
+            "label": "Automatic Transfer Switches",
+            "description": "Switches that automatically transfer electrical load between the utility grid and backup power sources during outages, enabling seamless islanding transitions.",
+            "specs": [
+                "manufacturer",
+                "amperage",
+                "voltage",
+                "transfer_time",
+                "type"
+            ]
+        },
+        {
+            "id": "microgrid-inverters",
+            "label": "Microgrid Inverters",
+            "description": "Inverters designed for microgrid applications with grid-forming capability, allowing them to create and maintain a stable AC power supply independently.",
+            "specs": [
+                "manufacturer",
+                "power_rating",
+                "type",
+                "grid_forming",
+                "battery_compatible",
+                "efficiency"
+            ]
+        }
+    ],
+    "products": [
+        {
+            "category": "controllers",
+            "name": "Schneider EcoStruxure Microgrid Advisor",
+            "manufacturer": "Schneider Electric",
+            "power_rating": "Up to 20 MW",
+            "der_support": "Solar, Wind, Battery, Diesel, CHP, Fuel Cell",
+            "islanding": "Seamless transition (<100ms)",
+            "protocols": "Modbus, DNP3, IEC 61850, MQTT",
+            "monitoring": "Cloud-based with SCADA integration",
+            "pros": [
+                "Industry-leading reliability and scale",
+                "Full SCADA integration",
+                "Extensive DER support",
+                "Used in critical infrastructure worldwide"
+            ],
+            "cons": [
+                "Premium pricing",
+                "Requires Schneider ecosystem for best results",
+                "Complex commissioning"
+            ],
+            "website": "https://www.se.com/us/en/work/solutions/microgrids/"
+        },
+        {
+            "category": "controllers",
+            "name": "SEL-3555 Real-Time Automation Controller",
+            "manufacturer": "Schweitzer Engineering Laboratories",
+            "power_rating": "Up to 10 MW",
+            "der_support": "Solar, Battery, Generator, Wind",
+            "islanding": "Sub-cycle transfer (<16ms)",
+            "protocols": "IEC 61850, DNP3, Modbus, SEL proprietary",
+            "monitoring": "On-premise with RTAC integration",
+            "pros": [
+                "Fastest islanding transfer in the industry",
+                "Military/utility grade reliability",
+                "Cybersecurity focused",
+                "Made in USA"
+            ],
+            "cons": [
+                "Steep learning curve",
+                "Protection engineering expertise required",
+                "Less user-friendly interface"
+            ],
+            "website": "https://selinc.com/products/3555/"
+        },
+        {
+            "category": "controllers",
+            "name": "Heila EDGE",
+            "manufacturer": "Heila Technologies (Kohler)",
+            "power_rating": "Up to 5 MW",
+            "der_support": "Solar, Battery, Generator, EV Chargers",
+            "islanding": "Automatic with configurable logic",
+            "protocols": "Modbus, SunSpec, OCPP",
+            "monitoring": "Cloud dashboard with API",
+            "pros": [
+                "Easy to deploy and configure",
+                "Modular plug-and-play architecture",
+                "Good for commercial/campus microgrids",
+                "Strong EV integration"
+            ],
+            "cons": [
+                "Smaller scale than Schneider/SEL",
+                "Newer in market",
+                "Limited utility-scale experience"
+            ],
+            "website": "https://www.heilatech.com/"
+        },
+        {
+            "category": "controllers",
+            "name": "Spirae Wave",
+            "manufacturer": "Spirae",
+            "power_rating": "Up to 50 MW",
+            "der_support": "Solar, Wind, Battery, Hydro, Diesel, CHP",
+            "islanding": "Configurable with advanced controls",
+            "protocols": "IEC 61850, DNP3, Modbus, OpenADR",
+            "monitoring": "Advanced analytics and forecasting",
+            "pros": [
+                "Largest scale capability",
+                "Advanced forecasting and optimization",
+                "Utility-grade",
+                "Demand response integration"
+            ],
+            "cons": [
+                "Enterprise pricing",
+                "Requires specialized engineering",
+                "Longer deployment timeline"
+            ],
+            "website": "https://www.spirae.com/"
+        },
+        {
+            "category": "ats",
+            "name": "ASCO 7000 Series",
+            "manufacturer": "ASCO Power Technologies (Schneider)",
+            "amperage": "30A - 4000A",
+            "voltage": "120-600V",
+            "transfer_time": "Open: 100ms, Closed: 60ms",
+            "type": "Automatic, Open or Closed Transition",
+            "pros": [
+                "Industry standard for critical power",
+                "Widest amperage range",
+                "UL 1008 listed",
+                "Remote monitoring capable"
+            ],
+            "cons": [
+                "Premium pricing at higher amperages",
+                "Requires qualified installation"
+            ],
+            "website": "https://www.ascopower.com/us/en/products/transfer-switches/"
+        },
+        {
+            "category": "ats",
+            "name": "Eaton ATC-900",
+            "manufacturer": "Eaton",
+            "amperage": "100A - 4000A",
+            "voltage": "120-600V",
+            "transfer_time": "Configurable, 100ms typical",
+            "type": "Automatic, Open or Closed Transition",
+            "pros": [
+                "Excellent controller interface",
+                "Wide compatibility",
+                "Good value at mid-range amperages",
+                "Strong distribution network"
+            ],
+            "cons": [
+                "Fewer options at very low amperages",
+                "Controller interface learning curve"
+            ],
+            "website": "https://www.eaton.com/us/en-us/products/transfer-switches.html"
+        },
+        {
+            "category": "ats",
+            "name": "GE Zenith ZTG",
+            "manufacturer": "GE Industrial",
+            "amperage": "100A - 3000A",
+            "voltage": "120-600V",
+            "transfer_time": "Sub-cycle available (ZTS)",
+            "type": "Automatic, Bypass/Isolation available",
+            "pros": [
+                "Bypass/isolation for maintenance without downtime",
+                "Proven in data center and hospital applications",
+                "Sub-cycle static transfer option"
+            ],
+            "cons": [
+                "GE industrial division availability varies by region",
+                "Premium for static transfer models"
+            ],
+            "website": "https://www.geindustrial.com/"
+        },
+        {
+            "category": "microgrid-inverters",
+            "name": "SMA Sunny Island 8.0H",
+            "manufacturer": "SMA Solar",
+            "power_rating": "8 kW (stackable to 12 units)",
+            "type": "Battery Inverter/Charger",
+            "grid_forming": "Yes - creates stable 60Hz AC grid",
+            "battery_compatible": "48V lead-acid or lithium (BYD, Pytes, others)",
+            "efficiency": "96%",
+            "pros": [
+                "Proven grid-forming capability",
+                "Stackable for larger systems",
+                "Works with many battery brands",
+                "Strong off-grid track record"
+            ],
+            "cons": [
+                "48V DC only",
+                "Older platform",
+                "Communication setup can be complex"
+            ],
+            "website": "https://www.sma-america.com/"
+        },
+        {
+            "category": "microgrid-inverters",
+            "name": "Outback Radian GS8048A",
+            "manufacturer": "EnerSys (OutBack Power)",
+            "power_rating": "8 kW (stackable to 80 kW)",
+            "type": "Inverter/Charger",
+            "grid_forming": "Yes - true sine wave output",
+            "battery_compatible": "48V battery bank (lead-acid, lithium)",
+            "efficiency": "93%",
+            "pros": [
+                "Built for off-grid and harsh environments",
+                "Integrated AC and DC disconnects",
+                "Proven in remote installations",
+                "Good dealer support"
+            ],
+            "cons": [
+                "Lower efficiency than competitors",
+                "Heavy and large",
+                "Fewer smart features"
+            ],
+            "website": "https://www.outbackpower.com/"
+        },
+        {
+            "category": "microgrid-inverters",
+            "name": "Sol-Ark 15K",
+            "manufacturer": "Sol-Ark",
+            "power_rating": "15 kW",
+            "type": "Hybrid Inverter (Grid-tied + Off-grid)",
+            "grid_forming": "Yes - full off-grid capability",
+            "battery_compatible": "48V lithium (multiple brands), high-voltage options",
+            "efficiency": "97.6%",
+            "pros": [
+                "Highest residential power rating",
+                "Split-phase 240V output",
+                "Dual MPPT solar inputs",
+                "Excellent efficiency"
+            ],
+            "cons": [
+                "Single unit (not stackable for large commercial)",
+                "US/Canada residential focus",
+                "Limited commercial track record"
+            ],
+            "website": "https://www.sol-ark.com/"
+        },
+        {
+            "category": "microgrid-inverters",
+            "name": "Victron MultiPlus-II 48/5000",
+            "manufacturer": "Victron Energy",
+            "power_rating": "5 kVA (stackable to 6 units per phase)",
+            "type": "Inverter/Charger",
+            "grid_forming": "Yes - full off-grid and grid-assist",
+            "battery_compatible": "48V lithium or lead-acid",
+            "efficiency": "96%",
+            "pros": [
+                "Extremely configurable",
+                "Strong marine and off-grid pedigree",
+                "Active user community",
+                "Competitive pricing"
+            ],
+            "cons": [
+                "Requires GX device for monitoring",
+                "More DIY-oriented",
+                "Limited US installer network"
+            ],
+            "website": "https://www.victronenergy.com/"
+        }
+    ]
+}

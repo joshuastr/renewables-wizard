@@ -232,9 +232,19 @@
             "type": "single-select",
             "options": [
                 {
+                    "value": "starter",
+                    "label": "Under $10,000",
+                    "description": "Small residential (3-5 kW solar)"
+                },
+                {
                     "value": "economy",
-                    "label": "Under $25,000",
-                    "description": "Small residential systems (5-8 kW solar)"
+                    "label": "$10,000 - $15,000",
+                    "description": "Mid-size residential (5-8 kW solar)"
+                },
+                {
+                    "value": "residential",
+                    "label": "$15,000 - $25,000",
+                    "description": "Larger residential with possible storage addon"
                 },
                 {
                     "value": "mid-range",
@@ -250,6 +260,35 @@
                     "value": "enterprise",
                     "label": "$500,000+",
                     "description": "Large commercial, industrial, or microgrid"
+                }
+            ]
+        },
+        {
+            "id": "user-role",
+            "domain": [
+                "solar"
+            ],
+            "question": "What is your role?",
+            "description": "This helps us tailor recommendations. Installers get technical specs and code requirements, while homeowners get ROI and purchasing guidance.",
+            "type": "single-select",
+            "options": [
+                {
+                    "value": "homeowner",
+                    "label": "Homeowner / Building Owner",
+                    "icon": "home",
+                    "description": "Looking to purchase or evaluate a solar system"
+                },
+                {
+                    "value": "installer",
+                    "label": "Installer / Contractor",
+                    "icon": "tool",
+                    "description": "Designing or installing solar systems"
+                },
+                {
+                    "value": "specifier",
+                    "label": "Engineer / Specifier",
+                    "icon": "grid",
+                    "description": "Specifying equipment for projects"
                 }
             ]
         },
@@ -303,6 +342,12 @@
                     "label": "Transit / Public Transport",
                     "icon": "bus",
                     "description": "Municipal transit, school buses, shuttle services"
+                },
+                {
+                    "value": "municipal",
+                    "label": "Municipal / Public Infrastructure",
+                    "icon": "city",
+                    "description": "Parks, libraries, city lots, downtown areas"
                 }
             ]
         },
@@ -659,6 +704,25 @@
         },
         {
             "domain": [
+                "solar"
+            ],
+            "country": "US",
+            "name": "Community / Municipal Solar",
+            "conditions": {
+                "project-type": "community"
+            },
+            "reasoning": "Community and municipal solar projects have a unique advantage: the IRA Direct Pay provision allows tax-exempt entities (municipalities, school districts, hospitals, nonprofits) to receive the 30% ITC as a direct cash payment instead of a tax credit. This eliminates the need for tax equity partners or third-party ownership structures. Community buildings with consistent daytime load (schools, libraries, municipal offices) are ideal for solar because generation and consumption align.",
+            "tips": [
+                "IRA Direct Pay lets tax-exempt entities claim the 30% ITC as a direct check from the IRS",
+                "Meeting prevailing wage and apprenticeship requirements increases the ITC from 6% to 30%",
+                "Issue an RFP specifying system size, O&M requirements, and performance guarantees",
+                "Community solar programs allow residents without suitable roofs to subscribe to a shared array",
+                "School districts should consider summer construction timelines when parking lots and campuses are empty",
+                "Check state-level REAP grants and utility rebates that stack on top of IRA Direct Pay"
+            ]
+        },
+        {
+            "domain": [
                 "solar",
                 "storage",
                 "microgrid"
@@ -855,10 +919,34 @@
             "reasoning": "Level 2 charging covers 90%+ of charging needs at a fraction of the cost of DC Fast Charging. It is simpler to install, cheaper to operate, and usually sufficient when vehicles have more than 2 hours of dwell time. Start with Level 2, collect utilization data, and add DC Fast Charging only if dwell times are consistently too short.",
             "tips": [
                 "Start small and scale based on real data, not projections",
-                "Always choose OCPP-compatible chargers to avoid vendor lock-in",
+                "Always choose OCPP-compatible chargers to avoid vendor lock-in and ensure future interoperability",
                 "Load management pays for itself on any deployment with 4+ ports",
                 "Check your local incentive programs - they can cover 50-80% of costs",
-                "Get at least 3 installation quotes from electricians with EV charger experience"
+                "Get at least 3 installation quotes from electricians with EV charger experience",
+                "OCPP 2.0.1 adds smart charging, ISO 15118 plug-and-charge, and improved security over OCPP 1.6J"
+            ]
+        },
+        {
+            "domain": [
+                "ev"
+            ],
+            "name": "Municipal / Public Infrastructure Charging",
+            "conditions": {
+                "use-case": "municipal"
+            },
+            "recommendedCategories": [
+                "l2-commercial",
+                "dcfc-standard"
+            ],
+            "reasoning": "Municipal charging serves the public and requires a different approach than commercial deployments. ADA accessibility compliance is mandatory for public installations. A mix of Level 2 and DCFC typically works best: Level 2 for library and park visitors with longer dwell times, DCFC for downtown locations where turnover matters. Federal NEVI and state/provincial grants often cover 80%+ of costs for public-access chargers. Signage, wayfinding, and integration with payment apps are essential for public adoption.",
+            "tips": [
+                "ADA compliance is mandatory: at least one accessible charging space per site with proper signage and approach",
+                "NEVI grants require 4 DCFC ports minimum with 150 kW each at qualifying highway corridor sites",
+                "For city lots and parks, Level 2 with 4-8 hour dwell time is usually the best fit and lowest cost",
+                "Install clear wayfinding signage from main roads to charger locations",
+                "OCPP compliance is essential for municipal deployments to avoid vendor lock-in on multi-year contracts",
+                "Consider pricing that covers electricity and maintenance costs while remaining accessible to the public",
+                "Budget for ongoing network management fees and cellular connectivity costs in your operating budget"
             ]
         }
     ]

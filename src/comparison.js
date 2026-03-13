@@ -9,14 +9,17 @@ const domainProductTypes = {
     solar: ['panels', 'inverters'],
     storage: ['batteries'],
     ev: ['chargers'],
-    microgrid: ['panels', 'inverters', 'batteries']
+    microgrid: ['mg-controllers', 'mg-inverters', 'mg-ats']
 }
 
 const typeLabels = {
     panels: 'Solar Panels',
     inverters: 'Inverters',
     batteries: 'Battery Systems',
-    chargers: 'EV Chargers'
+    chargers: 'EV Chargers',
+    'mg-controllers': 'Microgrid Controllers',
+    'mg-inverters': 'Microgrid Inverters',
+    'mg-ats': 'Transfer Switches'
 }
 
 function formatCategoryLabel(str) {
@@ -90,10 +93,11 @@ export function renderComparison(domain) {
     }
 
     html += `<div class="charger-search-results">${filtered.map(p => {
-        const isSelected = selectedIds.includes(p.id)
-        return `<div class="charger-search-card ${isSelected ? 'selected' : ''}" data-id="${p.id}">
+        const isSelected = selectedIds.includes(p.id || p.name)
+        const displayModel = p.model || p.name || ''
+        return `<div class="charger-search-card ${isSelected ? 'selected' : ''}" data-id="${p.id || p.name}">
             <div class="charger-card-mfr">${p.manufacturer}</div>
-            <div class="charger-card-model">${p.model}</div>
+            <div class="charger-card-model">${displayModel}</div>
             <div class="charger-card-power">${getProductSubline(p, activeProductType)}</div>
             ${p.notes ? `<div style="font-size:12px;color:var(--ink-3);margin-top:8px;line-height:1.4">${truncate(p.notes, 90)}</div>` : ''}
         </div>`
@@ -150,6 +154,9 @@ function getProductList(type) {
     if (type === 'inverters') return allData.solar?.inverters || []
     if (type === 'batteries') return allData.bess?.systems || []
     if (type === 'chargers') return allData.ev?.chargers || []
+    if (type === 'mg-controllers') return (allData.microgrid?.products || []).filter(p => p.category === 'controllers')
+    if (type === 'mg-inverters') return (allData.microgrid?.products || []).filter(p => p.category === 'microgrid-inverters')
+    if (type === 'mg-ats') return (allData.microgrid?.products || []).filter(p => p.category === 'ats')
     return []
 }
 
@@ -158,6 +165,9 @@ function getProductSubline(p, type) {
     if (type === 'inverters') return `${p.power} | ${p.type}`
     if (type === 'batteries') return `${p.capacity} | ${p.power}`
     if (type === 'chargers') return `${p.power} | ${p.connector}`
+    if (type === 'mg-controllers') return `${p.power_rating} | ${p.islanding}`
+    if (type === 'mg-inverters') return `${p.power_rating} | ${p.grid_forming ? 'Grid-Forming' : 'Grid-Following'}`
+    if (type === 'mg-ats') return `${p.amperage} | ${p.transfer_time}`
     return ''
 }
 
@@ -177,7 +187,9 @@ function filterProducts(products) {
         result = result.filter(p =>
             (p.manufacturer && p.manufacturer.toLowerCase().includes(q)) ||
             (p.model && p.model.toLowerCase().includes(q)) ||
+            (p.name && p.name.toLowerCase().includes(q)) ||
             (p.power && p.power.toLowerCase().includes(q)) ||
+            (p.power_rating && p.power_rating.toLowerCase().includes(q)) ||
             (p.notes && p.notes.toLowerCase().includes(q))
         )
     }
@@ -191,13 +203,13 @@ function truncate(str, len) {
 
 function renderCompareTable(type) {
     const products = getProductList(type)
-    const sel = selectedIds.map(id => products.find(p => p.id === id)).filter(Boolean)
+    const sel = selectedIds.map(id => products.find(p => (p.id || p.name) === id)).filter(Boolean)
     if (sel.length < 2) return ''
     const specs = getSpecs(type)
     return `<div style="margin-top:32px">
         <div class="result-section-title">Side-by-Side Comparison</div>
         <div class="compare-table-wrapper"><table class="compare-table">
-            <thead><tr><th>Specification</th>${sel.map(p => `<th>${p.manufacturer} ${p.model}</th>`).join('')}</tr></thead>
+            <thead><tr><th>Specification</th>${sel.map(p => `<th>${p.manufacturer} ${p.model || p.name}</th>`).join('')}</tr></thead>
             <tbody>${specs.map(s => `<tr><td class="compare-spec-label">${s.label}</td>${sel.map(p => {
         let v = p[s.key]; if (Array.isArray(v)) v = v.join(', '); return `<td>${v || '-'}</td>`
     }).join('')}</tr>`).join('')}</tbody>
@@ -231,6 +243,24 @@ function getSpecs(type) {
         { key: 'operatingTemp', label: 'Operating Temp' }, { key: 'cableLength', label: 'Cable Length' },
         { key: 'warranty', label: 'Warranty' }, { key: 'msrp', label: 'Price (Public)' },
         { key: 'features', label: 'Features' }, { key: 'notes', label: 'Expert Notes' }
+    ]
+    if (type === 'mg-controllers') return [
+        { key: 'manufacturer', label: 'Manufacturer' }, { key: 'name', label: 'Product' },
+        { key: 'power_rating', label: 'Power Rating' }, { key: 'der_support', label: 'DER Support' },
+        { key: 'islanding', label: 'Islanding' }, { key: 'protocols', label: 'Protocols' },
+        { key: 'monitoring', label: 'Monitoring' }, { key: 'pros', label: 'Strengths' }, { key: 'cons', label: 'Limitations' }
+    ]
+    if (type === 'mg-inverters') return [
+        { key: 'manufacturer', label: 'Manufacturer' }, { key: 'name', label: 'Product' },
+        { key: 'power_rating', label: 'Power Rating' }, { key: 'type', label: 'Type' },
+        { key: 'grid_forming', label: 'Grid-Forming' }, { key: 'battery_compatible', label: 'Battery Compatibility' },
+        { key: 'efficiency', label: 'Efficiency' }, { key: 'pros', label: 'Strengths' }, { key: 'cons', label: 'Limitations' }
+    ]
+    if (type === 'mg-ats') return [
+        { key: 'manufacturer', label: 'Manufacturer' }, { key: 'name', label: 'Product' },
+        { key: 'amperage', label: 'Amperage Range' }, { key: 'voltage', label: 'Voltage' },
+        { key: 'transfer_time', label: 'Transfer Time' }, { key: 'type', label: 'Type' },
+        { key: 'pros', label: 'Strengths' }, { key: 'cons', label: 'Limitations' }
     ]
     return []
 }

@@ -161,18 +161,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTabs()
     initDomainSelector()
     initSettingsBar()
-    const [treeData, faqData, solarData, bessData, evData, incentiveData] = await Promise.all([
+    const [treeData, faqData, solarData, bessData, evData, incentiveData, microgridData] = await Promise.all([
         loadJSON(`${BASE}data/decision-tree.json`),
         loadJSON(`${BASE}data/faq.json`),
         loadJSON(`${BASE}data/products-solar.json`),
         loadJSON(`${BASE}data/products-bess.json`),
         loadJSON(`${BASE}data/products-ev.json`),
         loadJSON(`${BASE}data/incentives.json`),
+        loadJSON(`${BASE}data/products-microgrid.json`),
     ])
     const settings = getSettings()
     initWizard(treeData, activeDomain)
     initKnowledge(faqData, activeDomain)
     initCalculator(activeDomain, settings)
-    initComparison({ solar: solarData, bess: bessData, ev: evData }, activeDomain)
+    initComparison({ solar: solarData, bess: bessData, ev: evData, microgrid: microgridData }, activeDomain)
     initIncentives(incentiveData, activeDomain, settings)
 })
