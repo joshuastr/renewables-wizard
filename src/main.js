@@ -127,6 +127,8 @@ function refreshAllModules() {
     renderIncentives(activeDomain, settings)
 }
 
+const BASE = import.meta.env.BASE_URL
+
 async function loadJSON(path) {
     const res = await fetch(path)
     return res.json()
@@ -137,12 +139,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     initDomainSelector()
     initSettingsBar()
     const [treeData, faqData, solarData, bessData, evData, incentiveData] = await Promise.all([
-        loadJSON('/data/decision-tree.json'),
-        loadJSON('/data/faq.json'),
-        loadJSON('/data/products-solar.json'),
-        loadJSON('/data/products-bess.json'),
-        loadJSON('/data/products-ev.json'),
-        loadJSON('/data/incentives.json'),
+        loadJSON(`${BASE}data/decision-tree.json`),
+        loadJSON(`${BASE}data/faq.json`),
+        loadJSON(`${BASE}data/products-solar.json`),
+        loadJSON(`${BASE}data/products-bess.json`),
+        loadJSON(`${BASE}data/products-ev.json`),
+        loadJSON(`${BASE}data/incentives.json`),
     ])
     const settings = getSettings()
     initWizard(treeData, activeDomain)
