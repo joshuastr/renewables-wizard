@@ -129,21 +129,21 @@
     }
 
     .wizard-option {
-        padding: 20px 18px
+        padding: 16px 14px
     }
 
     .wizard-option-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 10px
+        width: 32px;
+        height: 32px;
+        margin-bottom: 8px
     }
 
     .wizard-option-label {
-        font-size: 14px
+        font-size: 13px
     }
 
     .wizard-option-desc {
-        font-size: 12px
+        font-size: 11px
     }
 }
 
