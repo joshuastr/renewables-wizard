@@ -68,7 +68,10 @@ body {
     background: var(--bg-page);
     color: var(--ink);
     line-height: 1.6;
-    min-height: 100vh
+    min-height: 100vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.06)
 }
 
 /* Header */
@@ -82,8 +85,8 @@ body {
 }
 
 .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     padding: 14px 32px;
     display: flex;
     align-items: center;
@@ -332,8 +335,8 @@ body {
 }
 
 .domain-context-inner {
-    max-width: 1200px;
-    margin: 0 auto
+    max-width: none;
+    margin: 0
 }
 
 .domain-context-title {
@@ -425,8 +428,8 @@ body {
 
 /* Main */
 .main-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     padding: 24px 32px 32px;
     min-height: calc(100vh - 200px)
 }
