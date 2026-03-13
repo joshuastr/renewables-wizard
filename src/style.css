@@ -358,13 +358,12 @@ body {
     display: flex;
     gap: 4px;
     padding: 10px 32px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
     overflow-x: auto;
     scrollbar-width: none;
     background: var(--bg-white);
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow-sm)
+    border-bottom: 1px solid var(--border)
 }
 
 .tool-tabs::-webkit-scrollbar {
