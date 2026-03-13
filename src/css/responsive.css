@@ -1,5 +1,5 @@
-/* Responsive */
-@media(max-width:768px) {
+/* ─── Tablet ─── */
+@media (max-width: 768px) {
     .calculator-layout {
         grid-template-columns: 1fr
     }
@@ -20,22 +20,183 @@
         display: none
     }
 
+    .header-inner {
+        padding: 12px 16px
+    }
+
+    .domain-selector {
+        padding: 6px 16px 0;
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .domain-selector::-webkit-scrollbar {
+        display: none
+    }
+
+    .domain-btn {
+        font-size: 13px;
+        padding: 6px 14px;
+        flex-shrink: 0
+    }
+
+    .settings-bar {
+        padding: 0 16px
+    }
+
+    .domain-context-bar {
+        padding: 12px 16px 10px
+    }
+
+    .domain-context-title {
+        font-size: 18px
+    }
+
+    .domain-context-desc {
+        font-size: 12px
+    }
+
     .tool-tabs {
-        padding: 8px 16px
+        padding: 8px 16px;
+        gap: 2px
+    }
+
+    .tool-tab {
+        padding: 6px 12px;
+        font-size: 12px;
+        gap: 6px
     }
 
     .main-content {
         padding: 16px
     }
+
+    /* Incentive rows: stack on tablet */
+    .incentive-item-header {
+        grid-template-columns: 1fr auto 24px;
+        gap: 8px
+    }
+
+    .incentive-type,
+    .incentive-region {
+        display: none
+    }
+
+    .incentive-name {
+        font-size: 14px
+    }
+
+    .incentive-amount {
+        font-size: 13px
+    }
+
+    /* Compare search/filter stacking */
+    .compare-search {
+        flex-direction: column
+    }
+
+    .compare-toolbar {
+        flex-direction: column;
+        gap: 8px
+    }
+
+    /* Knowledge categories wrap */
+    .faq-categories {
+        gap: 6px
+    }
+
+    .faq-cat-btn {
+        font-size: 12px;
+        padding: 6px 10px
+    }
+
+    /* Incentive summary bar */
+    .incentive-summary-bar {
+        padding: 16px 20px;
+        gap: 20px
+    }
+
+    .incentive-summary-count {
+        font-size: 22px
+    }
+
+    /* Wizard step headings */
+    .wizard-step-question {
+        font-size: 18px
+    }
+
+    .wizard-option {
+        padding: 20px 18px
+    }
+
+    .wizard-option-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px
+    }
+
+    .wizard-option-label {
+        font-size: 14px
+    }
+
+    .wizard-option-desc {
+        font-size: 12px
+    }
 }
 
-@media(max-width:480px) {
+/* ─── Mobile ─── */
+@media (max-width: 480px) {
     .wizard-options {
         grid-template-columns: 1fr
     }
 
     .domain-selector {
-        flex-wrap: wrap
+        flex-wrap: nowrap;
+        justify-content: flex-start
+    }
+
+    .domain-btn {
+        font-size: 12px;
+        padding: 6px 12px
+    }
+
+    .domain-context-title {
+        font-size: 16px
+    }
+
+    .calc-panel {
+        padding: 20px 16px
+    }
+
+    .calc-panel h3 {
+        font-size: 15px
+    }
+
+    /* Incentive cards: simpler layout */
+    .incentive-item {
+        padding: 12px 16px
+    }
+
+    .incentive-item-header {
+        grid-template-columns: 1fr 24px;
+        gap: 6px
+    }
+
+    .incentive-amount {
+        display: block;
+        text-align: left;
+        grid-column: 1;
+        font-size: 12px;
+        margin-top: 2px
+    }
+
+    /* Footer */
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px
     }
 }
-
