@@ -724,6 +724,203 @@
                 "training",
                 "installer qualifications"
             ]
+        },
+        {
+            "id": "microgrid-basics",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What is a microgrid and how is it different from a regular grid connection?",
+            "answer": "A microgrid is a localized energy system that can operate connected to the main grid or independently (islanded). It includes distributed energy resources (solar, wind, generators, batteries), loads (buildings), and a microgrid controller that manages power flow. Unlike a standard grid connection where you passively consume utility power, a microgrid actively manages generation and consumption locally. The key differentiator is the ability to island - disconnect from the utility grid and continue operating during outages. Microgrids range from single-building systems (a solar + battery home) to campus-scale installations powering hospitals, military bases, or entire communities.",
+            "keywords": [
+                "microgrid basics",
+                "islanding",
+                "distributed energy",
+                "local energy",
+                "grid independence"
+            ]
+        },
+        {
+            "id": "microgrid-components",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What are the core components of a microgrid?",
+            "answer": "A microgrid requires four core components: (1) Generation sources like solar PV, wind turbines, natural gas or diesel generators, or fuel cells. Most modern microgrids prioritize renewables with backup generators for extended outages. (2) Energy storage, typically lithium-ion batteries, to buffer intermittent generation and provide instant power during grid disconnection. (3) Loads such as the buildings and equipment being powered. Critical loads are identified and prioritized during islanding. (4) A microgrid controller (the brain) that manages power flow between generation, storage, and loads, handles grid synchronization, and makes real-time decisions about when to island and how to allocate power. Advanced controllers use AI-based forecasting to optimize generation schedules and minimize costs.",
+            "keywords": [
+                "components",
+                "controller",
+                "distributed generation",
+                "energy storage",
+                "loads"
+            ]
+        },
+        {
+            "id": "microgrid-grid-tied-vs-islanded",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What is the difference between grid-tied and islanded microgrid operation?",
+            "answer": "In grid-tied mode, the microgrid operates connected to the utility grid. It can import or export power, participate in demand response programs, and use the grid as backup. The microgrid controller optimizes costs by choosing the cheapest power source at any given time. In islanded mode, the microgrid disconnects from the grid (either intentionally or during an outage) and operates autonomously. The controller must balance generation and load in real time without grid support, which requires sufficient generation capacity and energy storage. Transitioning between modes (seamless transfer) is critical. Basic systems may have a brief interruption (100-500ms), while advanced systems with grid-forming inverters can transition in under 20ms with no perceptible outage.",
+            "keywords": [
+                "grid-tied",
+                "islanded",
+                "seamless transfer",
+                "grid-forming",
+                "autonomous"
+            ]
+        },
+        {
+            "id": "microgrid-controls",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "How does a microgrid controller work?",
+            "answer": "A microgrid controller is the central intelligence that manages all energy resources, loads, and grid interaction. It operates at three levels: (1) Device level - communicates with individual assets (inverters, generators, switches) via protocols like Modbus, DNP3, or IEEE 2030.5. (2) Local control - manages power balance, voltage, and frequency in real time (milliseconds). Uses droop control or virtual synchronous machine algorithms for stability. (3) Energy management - optimizes dispatch over minutes to hours, considering weather forecasts, load predictions, electricity tariffs, and equipment constraints. Major controller platforms include Schneider Electric EcoStruxure, Siemens SICAM, Heila (now Kohler), and Spirae. Open-source options exist through OpenFMB and GridLAB-D for research applications.",
+            "keywords": [
+                "controller",
+                "energy management",
+                "dispatch",
+                "droop control",
+                "EMS"
+            ]
+        },
+        {
+            "id": "microgrid-cost-economics",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "How much does a microgrid cost and what drives the economics?",
+            "answer": "Microgrid costs vary enormously based on scale and complexity. Residential microgrids (solar + battery + automatic transfer switch) range from $30,000-$80,000. Commercial campus microgrids typically cost $2-5 million for 500kW-2MW systems. Community-scale microgrids can reach $10-50 million. Key cost drivers include: generation capacity (solar at $1-2/W, generators at $500-1,500/kW), energy storage ($300-600/kWh installed), the controller and switchgear ($100,000-500,000 for commercial scale), and soft costs (engineering, permitting, interconnection studies - often 20-40% of total). Economics improve with: high utility rates, frequent outages (resilience value), demand charge reduction, participation in utility demand response programs, and available incentives like FEMA BRIC grants or state resilience funds.",
+            "keywords": [
+                "cost",
+                "economics",
+                "pricing",
+                "ROI",
+                "resilience value"
+            ]
+        },
+        {
+            "id": "microgrid-resilience-hubs",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What is a community resilience hub and how does a microgrid fit in?",
+            "answer": "A community resilience hub is a facility (often a community center, school, or fire station) equipped with a microgrid that can provide essential services during emergencies. During normal operations, the microgrid reduces energy costs and may generate revenue through demand response. During disasters, it islands from the grid to provide power for heating/cooling, phone charging, refrigeration for medications, communication equipment, and emergency lighting. FEMA has been actively funding resilience hubs through BRIC (Building Resilient Infrastructure and Communities) grants, with awards up to $50 million. Many states also offer resilience-focused grants. Successful hubs typically combine solar (50-200kW), battery storage (100-500kWh), and a backup generator, controlled by an automated microgrid system.",
+            "keywords": [
+                "resilience hub",
+                "community",
+                "FEMA",
+                "BRIC",
+                "emergency power",
+                "disaster preparedness"
+            ]
+        },
+        {
+            "id": "microgrid-design-considerations",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What are the key design considerations for a microgrid?",
+            "answer": "Microgrid design starts with defining the critical loads that must operate during islanding (life safety, communications, refrigeration) versus deferrable loads (HVAC setback, EV charging). This determines minimum generation and storage capacity. Key considerations include: (1) Load analysis - peak demand, energy consumption patterns, and critical vs. non-critical load segregation. (2) Generation mix - renewables reduce fuel costs but need storage backup; generators provide reliable power but have fuel logistics and emissions. (3) Storage sizing - must cover the gap between generation and load during islanding, typically 4-8 hours for grid-resiliency applications. (4) Interconnection - utility requirements for connecting a microgrid, including protection coordination, anti-islanding (or intentional islanding) protocols, and metering. (5) Black start capability - can the system restart from a completely de-energized state without grid support?",
+            "keywords": [
+                "design",
+                "critical loads",
+                "sizing",
+                "black start",
+                "interconnection"
+            ]
+        },
+        {
+            "id": "microgrid-regulatory",
+            "category": "microgrids",
+            "domain": [
+                "microgrid"
+            ],
+            "question": "What are the regulatory challenges for microgrids?",
+            "answer": "Microgrid regulation varies significantly by jurisdiction. Key challenges include: (1) Utility franchise rights - in many states, selling electricity across public rights-of-way is restricted to regulated utilities, limiting multi-building microgrids. (2) Interconnection standards - IEEE 1547-2018 updated standards for grid-connected distributed resources, but local utilities may have additional requirements. (3) Rate structures - some utilities impose standby charges or demand ratchets that penalize partial grid disconnection. (4) Tariff participation - access to demand response, time-of-use optimization, or wholesale market participation depends on state regulations. (5) Permitting - microgrids may require environmental permits (for generators), building permits, electrical permits, and utility interconnection agreements. States like California, Connecticut, New York, and Massachusetts have been the most progressive in creating microgrid-friendly regulatory frameworks.",
+            "keywords": [
+                "regulation",
+                "permitting",
+                "interconnection",
+                "utility franchise",
+                "IEEE 1547"
+            ]
+        },
+        {
+            "id": "bess-financial-incentives",
+            "category": "solar-financial",
+            "domain": [
+                "storage"
+            ],
+            "question": "What financial incentives are available for battery energy storage systems?",
+            "answer": "Battery storage qualifies for the federal Investment Tax Credit (ITC) at 30% of installed cost, whether paired with solar or installed standalone (since the Inflation Reduction Act). Additional federal bonuses include: domestic content bonus (+10%), energy community bonus (+10%), and low-income community bonus (+10-20%). State-level incentives add significantly: California SGIP offers $150-1,000/kWh for residential batteries, Massachusetts SMART program includes storage adder payments, and New York offers up to $350/kWh through Con Edison and NYSERDA programs. MACRS depreciation allows commercial systems to be depreciated over 5 years. For commercial projects, demand charge reduction alone can provide $50-200/kW/year in utility savings. Combined federal and state incentives can cover 40-60% of total installed cost in favorable markets.",
+            "keywords": [
+                "ITC",
+                "tax credit",
+                "SGIP",
+                "MACRS",
+                "incentives",
+                "demand charge savings"
+            ]
+        },
+        {
+            "id": "bess-payback-roi",
+            "category": "solar-financial",
+            "domain": [
+                "storage"
+            ],
+            "question": "What is the typical payback period for a battery storage system?",
+            "answer": "Battery payback periods vary dramatically based on use case and local economics. Residential systems in high-rate areas (California, Hawaii, Northeast) typically pay back in 5-8 years when combining self-consumption savings, time-of-use arbitrage, and incentives. In areas with flat rates and full net metering, batteries may not pay back within their warranty period purely on economics (resilience becomes the primary value). Commercial systems can achieve 3-6 year payback through demand charge management - a 200kW/400kWh system reducing demand charges by $15/kW/month saves $36,000/year. Utility-scale storage (4-hour duration) targets $50-100/kWh revenue through energy arbitrage and ancillary services, achieving payback in 5-10 years. Key factors improving payback: high demand charges, time-of-use rate spreads over $0.15/kWh, frequent outages (avoided losses), participation in virtual power plant programs, and stacking multiple revenue streams.",
+            "keywords": [
+                "payback",
+                "ROI",
+                "return on investment",
+                "demand charges",
+                "time of use",
+                "arbitrage"
+            ]
+        },
+        {
+            "id": "bess-grid-services",
+            "category": "grid-utility",
+            "domain": [
+                "storage"
+            ],
+            "question": "What grid services can battery storage provide to utilities?",
+            "answer": "Battery storage can provide numerous grid services, often simultaneously (revenue stacking). Frequency regulation maintains grid frequency at 60Hz by rapidly injecting or absorbing power (batteries excel here due to sub-second response). Peak shaving reduces grid strain during high-demand periods, deferring costly transmission and distribution upgrades. Voltage support maintains voltage levels on distribution feeders with high solar penetration. Capacity reserves provide guaranteed power during grid emergencies (replacing aging peaker plants). Energy arbitrage charges during low-price periods and discharges during high-price periods. Renewable integration smooths intermittent solar and wind output. Virtual Power Plants (VPPs) aggregate distributed batteries to act as a single large resource for grid operators. Revenue varies by market: frequency regulation pays $30-100/kW/year, capacity markets pay $50-150/kW/year, and energy arbitrage can earn $50-200/kW/year in volatile markets.",
+            "keywords": [
+                "grid services",
+                "frequency regulation",
+                "peak shaving",
+                "capacity",
+                "VPP",
+                "ancillary services"
+            ]
+        },
+        {
+            "id": "bess-grid-interconnection",
+            "category": "grid-utility",
+            "domain": [
+                "storage"
+            ],
+            "question": "What are the grid interconnection requirements for battery storage?",
+            "answer": "Battery storage interconnection follows IEEE 1547-2018 standards and local utility requirements. Residential systems (under 25kW) typically follow a simplified interconnection process - submit an application, pass electrical inspection, and utility installs a bidirectional meter. Turnaround is usually 2-6 weeks. Commercial systems (25kW-5MW) require a more detailed application including single-line diagrams, protection coordination studies, and potentially an interconnection impact study ($5,000-25,000). Large-scale systems may trigger distribution system upgrades at the developer's cost. Key technical requirements include: anti-islanding protection (UL 1741 SA/SB), ride-through capabilities for voltage and frequency disturbances, Smart Inverter functions (IEEE 1547 Category III), and communication for remote monitoring and curtailment (typically IEEE 2030.5 or SunSpec Modbus). States with streamlined processes (California Rule 21, New York SIR) typically have faster approval timelines.",
+            "keywords": [
+                "interconnection",
+                "IEEE 1547",
+                "UL 1741",
+                "utility approval",
+                "bidirectional meter",
+                "Rule 21"
+            ]
         }
     ]
 }
