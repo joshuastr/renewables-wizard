@@ -158,7 +158,7 @@ function renderSolarCalculator(container) {
             const max = parseFloat(slider.max || 100)
             const val = parseFloat(slider.value)
             const perc = ((val - min) / (max - min)) * 100
-            slider.style.background = `linear-gradient(to right, var(--accent) ${perc}%, var(--bg-subtle) ${perc}%)`
+            slider.style.background = `linear-gradient(to right, #7dc4ab ${perc}%, #e5e5e3 ${perc}%)`
         })
     }
 
@@ -338,7 +338,7 @@ function renderEvCalculator(container) {
             const max = parseFloat(slider.max || 100)
             const val = parseFloat(slider.value)
             const perc = ((val - min) / (max - min)) * 100
-            slider.style.background = `linear-gradient(to right, var(--accent) ${perc}%, var(--bg-subtle) ${perc}%)`
+            slider.style.background = `linear-gradient(to right, #7dc4ab ${perc}%, #e5e5e3 ${perc}%)`
         })
     }
 
