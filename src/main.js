@@ -3,6 +3,7 @@ import { initKnowledge, renderKnowledge } from './knowledge.js'
 import { initCalculator, renderCalculator } from './calculator.js'
 import { initComparison, renderComparison } from './comparison.js'
 import { initIncentives, renderIncentives } from './incentives.js'
+import { initOCPP, renderOCPP } from './ocpp.js'
 
 let activeDomain = 'solar'
 let activeCountry = 'US'
@@ -27,7 +28,8 @@ const tabContexts = {
     knowledge: { suffix: 'Knowledge Base', desc: 'Browse FAQs and reference guides organized by topic. Search for specific questions.' },
     calculator: { suffix: 'Calculators', desc: 'Adjust sliders to estimate system sizing, energy output, costs, and payback for your project.' },
     compare: { suffix: 'Product Comparison', desc: 'Filter by manufacturer and type, then select up to 3 products to compare specs side by side.' },
-    incentives: { suffix: 'Incentives', desc: 'Browse available rebates, tax credits, and grants filtered by your region.' }
+    incentives: { suffix: 'Incentives', desc: 'Browse available rebates, tax credits, and grants filtered by your region.' },
+    ocpp: { suffix: 'OCPP Software', desc: 'Compare EV charging management platforms that support the Open Charge Point Protocol.' }
 }
 let activeTab = 'advisor'
 
@@ -161,7 +163,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTabs()
     initDomainSelector()
     initSettingsBar()
-    const [treeData, faqData, solarData, bessData, evData, incentiveData, microgridData] = await Promise.all([
+    const [treeData, faqData, solarData, bessData, evData, incentiveData, microgridData, ocppData] = await Promise.all([
         loadJSON(`${BASE}data/decision-tree.json`),
         loadJSON(`${BASE}data/faq.json`),
         loadJSON(`${BASE}data/products-solar.json`),
@@ -169,6 +171,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadJSON(`${BASE}data/products-ev.json`),
         loadJSON(`${BASE}data/incentives.json`),
         loadJSON(`${BASE}data/products-microgrid.json`),
+        loadJSON(`${BASE}data/ocpp-providers.json`),
     ])
     const settings = getSettings()
     initWizard(treeData, activeDomain)
@@ -176,4 +179,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     initCalculator(activeDomain, settings)
     initComparison({ solar: solarData, bess: bessData, ev: evData, microgrid: microgridData }, activeDomain)
     initIncentives(incentiveData, activeDomain, settings)
+    initOCPP(ocppData)
 })

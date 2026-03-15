@@ -1,0 +1,51 @@
+/* ── OCPP Providers ── */
+.ocpp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 16px;
+}
+
+.ocpp-card:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ocpp-card.expanded .ocpp-card-details {
+    display: block !important;
+}
+
+.ocpp-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.ocpp-badge.wl {
+    background: #EEF2FF;
+    color: #4338CA;
+}
+
+.ocpp-badge.os {
+    background: #ECFDF5;
+    color: #059669;
+}
+
+.ocpp-badge.iso {
+    background: #FEF3C7;
+    color: #92400E;
+}
+
+.ocpp-badge.v2g {
+    background: #FCE7F3;
+    color: #BE185D;
+}
+
+@media (max-width: 640px) {
+    .ocpp-grid {
+        grid-template-columns: 1fr;
+    }
+}

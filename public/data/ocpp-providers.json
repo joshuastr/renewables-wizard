@@ -1,0 +1,643 @@
+{
+    "lastUpdated": "2026-03-14",
+    "providers": [
+        {
+            "name": "ChargePoint",
+            "hq": "Campbell, CA",
+            "founded": 2007,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Public",
+                "Workplace",
+                "Fleet"
+            ],
+            "features": [
+                "Network management",
+                "Real-time analytics",
+                "Driver mobile app",
+                "Roaming",
+                "Fleet management",
+                "Energy management"
+            ],
+            "pricing": "Subscription (per charger/month)",
+            "integrations": [
+                "Fleet management systems",
+                "Utility demand response",
+                "Building EMS"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.chargepoint.com",
+            "notes": "One of the largest global networks. Strong brand recognition. Hardware + software combined platform. Deep fleet management capabilities."
+        },
+        {
+            "name": "Driivz (Vontier)",
+            "hq": "Tel Aviv, Israel",
+            "founded": 2013,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "Utilities",
+                "OEMs",
+                "Large CPOs"
+            ],
+            "features": [
+                "White-label platform",
+                "Revenue management",
+                "Smart charging",
+                "Roaming",
+                "Driver app SDK",
+                "Advanced analytics"
+            ],
+            "pricing": "Enterprise licensing",
+            "integrations": [
+                "Hubject",
+                "GIREVE",
+                "Utility grid systems"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": true,
+            "website": "https://www.driivz.com",
+            "notes": "White-label-only platform used by major utilities and OEMs globally. Acquired by Vontier. Strong in large-scale deployments and roaming."
+        },
+        {
+            "name": "Ampeco",
+            "hq": "Sofia, Bulgaria",
+            "founded": 2018,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "eMSPs",
+                "Utilities"
+            ],
+            "features": [
+                "White-label apps",
+                "Billing & payments",
+                "Roaming integrations",
+                "Smart charging",
+                "Multi-tenant",
+                "API-first"
+            ],
+            "pricing": "Subscription (tiered)",
+            "integrations": [
+                "Hubject",
+                "OCPI roaming",
+                "Stripe",
+                "Payment gateways"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.ampeco.com",
+            "notes": "API-first EV charging platform with strong European presence. Supports multi-tenant architecture for large CPOs managing multiple brands."
+        },
+        {
+            "name": "EV Connect (Schneider Electric)",
+            "hq": "El Segundo, CA",
+            "founded": 2010,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "Utilities",
+                "Property managers",
+                "Public charging"
+            ],
+            "features": [
+                "Network management",
+                "Access controls",
+                "Mobile app",
+                "Reporting",
+                "Customer support tools",
+                "Energy management"
+            ],
+            "pricing": "Subscription",
+            "integrations": [
+                "Schneider Electric EcoStruxure",
+                "Utility DR programs"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.evconnect.com",
+            "notes": "Acquired by Schneider Electric in 2022. Popular with utilities and property managers. Strong integration with Schneider's broader energy ecosystem."
+        },
+        {
+            "name": "ChargeLab",
+            "hq": "Toronto, Canada",
+            "founded": 2016,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": true,
+            "focus": [
+                "Charger OEMs",
+                "Backend operators"
+            ],
+            "features": [
+                "API-first platform",
+                "OpenOCPP firmware",
+                "White-label apps",
+                "Remote diagnostics",
+                "Smart charging",
+                "Payment processing"
+            ],
+            "pricing": "Per-charger SaaS",
+            "integrations": [
+                "REST API",
+                "Webhooks",
+                "Custom integrations"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.chargelab.co",
+            "notes": "Creator of OpenOCPP, an open-source OCPP firmware. API-first approach makes it popular with charger manufacturers who want to embed software into their hardware."
+        },
+        {
+            "name": "Monta",
+            "hq": "Copenhagen, Denmark",
+            "founded": 2020,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "Installers",
+                "Fleet operators"
+            ],
+            "features": [
+                "Real-time monitoring",
+                "Remote control",
+                "Payment integration",
+                "White-label app",
+                "API access",
+                "Roaming"
+            ],
+            "pricing": "Subscription (tiered plans)",
+            "integrations": [
+                "Hubject",
+                "OCPI",
+                "Stripe",
+                "Apple Pay",
+                "Google Pay"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.monta.com",
+            "notes": "Fast-growing European platform with end-to-end services for managing and operating charging stations. Strong in the installer and small CPO segment."
+        },
+        {
+            "name": "GreenFlux",
+            "hq": "Amsterdam, Netherlands",
+            "founded": 2011,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "Utilities",
+                "Grid operators"
+            ],
+            "features": [
+                "Dynamic pricing",
+                "Demand response",
+                "Smart grid integration",
+                "Roaming",
+                "Real-time monitoring",
+                "ISO 27001 certified"
+            ],
+            "pricing": "Enterprise licensing",
+            "integrations": [
+                "Smart grid systems",
+                "OCPI roaming",
+                "Energy markets"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": true,
+            "website": "https://www.greenflux.com",
+            "notes": "Strong focus on smart grid integration and energy management. ISO 27001 certified. Popular in Netherlands and expanding across Europe."
+        },
+        {
+            "name": "Shell Recharge Solutions",
+            "hq": "The Hague, Netherlands",
+            "founded": 2008,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Enterprise",
+                "Fleet",
+                "Public charging"
+            ],
+            "features": [
+                "Enterprise network management",
+                "Fleet charging",
+                "Roaming across 500k+ points",
+                "Smart charging",
+                "Mobile app",
+                "Billing"
+            ],
+            "pricing": "Enterprise (custom)",
+            "integrations": [
+                "Shell fleet cards",
+                "Fuel card networks",
+                "Utility systems"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.shellrecharge.com",
+            "notes": "Formerly NewMotion, acquired by Shell. Access to one of the largest roaming networks globally. Strong enterprise and fleet play backed by Shell's energy infrastructure."
+        },
+        {
+            "name": "AmpUp",
+            "hq": "San Jose, CA",
+            "founded": 2018,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "Multifamily",
+                "Workplace",
+                "Fleet"
+            ],
+            "features": [
+                "Demand flexibility",
+                "Load management",
+                "UL certified EV load management",
+                "Driver app",
+                "Revenue sharing",
+                "Smart charging"
+            ],
+            "pricing": "Per-charger subscription",
+            "integrations": [
+                "Utility DR programs",
+                "Property management systems"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.ampup.io",
+            "notes": "UL Certified for EV load management (June 2024). Strong in multifamily and workplace charging. Demand flexibility features appeal to property managers with limited electrical capacity."
+        },
+        {
+            "name": "Ampcontrol",
+            "hq": "New York, NY",
+            "founded": 2021,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Public charging",
+                "Fleet",
+                "Energy optimization"
+            ],
+            "features": [
+                "AI-driven load management",
+                "Real-time monitoring",
+                "Predictive analytics",
+                "Dynamic pricing",
+                "Energy cost optimization"
+            ],
+            "pricing": "Per-charger SaaS",
+            "integrations": [
+                "Grid signals",
+                "Energy markets",
+                "DERMS"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.ampcontrol.io",
+            "notes": "AI-first approach to EV charging optimization. Uses machine learning for load management and predictive analytics. Strong focus on minimizing peak demand charges."
+        },
+        {
+            "name": "EVBox (Everon)",
+            "hq": "Amsterdam, Netherlands",
+            "founded": 2010,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Commercial",
+                "Public",
+                "Residential"
+            ],
+            "features": [
+                "Network management",
+                "Smart charging",
+                "Insights dashboard",
+                "Mobile app",
+                "Remote management",
+                "Roaming"
+            ],
+            "pricing": "Subscription (bundled with hardware)",
+            "integrations": [
+                "Building EMS",
+                "Solar inverters",
+                "Utility systems"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.evbox.com",
+            "notes": "Software (Everon) also sold separately from EVBox hardware. Strong European presence. Part of ENGIE group. Covers residential through commercial."
+        },
+        {
+            "name": "SWTCH Energy",
+            "hq": "Toronto, Canada",
+            "founded": 2016,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Multifamily",
+                "Workplace",
+                "Public"
+            ],
+            "features": [
+                "Turnkey managed services",
+                "Revenue sharing",
+                "Smart charging",
+                "Load management",
+                "Driver app",
+                "Reporting"
+            ],
+            "pricing": "Managed service or subscription",
+            "integrations": [
+                "Property management systems",
+                "Utility programs"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.swtchenergy.com",
+            "notes": "Focused on urban multifamily and condo EV charging in Canada. Offers fully managed service model where SWTCH handles everything from install to billing."
+        },
+        {
+            "name": "EVGateway",
+            "hq": "Irvine, CA",
+            "founded": 2015,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "Fleet",
+                "Utilities"
+            ],
+            "features": [
+                "White-label platform",
+                "Fleet management",
+                "Real-time monitoring",
+                "Billing",
+                "API access",
+                "Multi-site management"
+            ],
+            "pricing": "Subscription",
+            "integrations": [
+                "Fleet telematics",
+                "Utility DR programs",
+                "Payment gateways"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.evgateway.com",
+            "notes": "White-label EV charging platform for operators and fleets. Flexible platform that can be rebranded. Strong multi-site management capabilities."
+        },
+        {
+            "name": "Wevo Energy",
+            "hq": "Tel Aviv, Israel",
+            "founded": 2018,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": false,
+            "openSource": false,
+            "focus": [
+                "Building integration",
+                "Smart charging"
+            ],
+            "features": [
+                "Smart charging optimization",
+                "Building energy integration",
+                "Load balancing",
+                "Grid services",
+                "AI scheduling"
+            ],
+            "pricing": "Per-charger SaaS",
+            "integrations": [
+                "BMS systems",
+                "Solar inverters",
+                "Grid operators"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": true,
+            "website": "https://www.wevoenergy.com",
+            "notes": "Specializes in building-level energy management and EV charging optimization. AI-driven scheduling that coordinates charging with solar generation and building loads."
+        },
+        {
+            "name": "YoCharge",
+            "hq": "New Delhi, India",
+            "founded": 2020,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "OEMs",
+                "Public charging"
+            ],
+            "features": [
+                "White-label platform",
+                "Scan Pay & Charge",
+                "QR payments",
+                "Driver app",
+                "CMS dashboard",
+                "Remote diagnostics"
+            ],
+            "pricing": "Subscription (tiered)",
+            "integrations": [
+                "Payment gateways",
+                "UPI",
+                "Mobile wallets"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.yocharge.com",
+            "notes": "Growing presence in India and expanding internationally. White-label platform with strong mobile-first approach. QR-based Scan Pay & Charge concept."
+        },
+        {
+            "name": "Pulse Energy",
+            "hq": "Bangalore, India",
+            "founded": 2018,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1"
+            ],
+            "deployment": "Cloud",
+            "whiteLabel": true,
+            "openSource": false,
+            "focus": [
+                "CPOs",
+                "Utilities",
+                "Fleet"
+            ],
+            "features": [
+                "Unified monitoring",
+                "Energy intelligence",
+                "Predictive maintenance",
+                "Billing",
+                "Multi-network management",
+                "API access"
+            ],
+            "pricing": "Subscription",
+            "integrations": [
+                "Energy management systems",
+                "Utility APIs",
+                "Fleet platforms"
+            ],
+            "iso15118": false,
+            "smartCharging": true,
+            "v2g": false,
+            "website": "https://www.pulseenergy.io",
+            "notes": "Unified monitoring and energy intelligence platform. Strong in India and SE Asia. Good for managing mixed hardware networks with predictive maintenance."
+        },
+        {
+            "name": "Open Charge Alliance (Open Source)",
+            "hq": "Arnhem, Netherlands",
+            "founded": 2012,
+            "ocppVersions": [
+                "1.6",
+                "2.0.1",
+                "2.1"
+            ],
+            "deployment": "Self-hosted",
+            "whiteLabel": false,
+            "openSource": true,
+            "focus": [
+                "Standards body",
+                "Reference implementations"
+            ],
+            "features": [
+                "OCPP protocol specification",
+                "Reference server",
+                "Conformance testing",
+                "Protocol documentation"
+            ],
+            "pricing": "Free (open standard)",
+            "integrations": [
+                "Any OCPP-compliant hardware"
+            ],
+            "iso15118": true,
+            "smartCharging": true,
+            "v2g": true,
+            "website": "https://www.openchargealliance.org",
+            "notes": "Not a commercial provider — this is the standards body that maintains the OCPP protocol. Useful for understanding the spec and building custom implementations."
+        },
+        {
+            "name": "SteVe (Open Source)",
+            "hq": "Aachen, Germany",
+            "founded": 2013,
+            "ocppVersions": [
+                "1.6",
+                "2.0"
+            ],
+            "deployment": "Self-hosted",
+            "whiteLabel": false,
+            "openSource": true,
+            "focus": [
+                "Research",
+                "Small operators",
+                "DIY"
+            ],
+            "features": [
+                "Web-based management",
+                "User management",
+                "Transaction logs",
+                "RFID support",
+                "REST API"
+            ],
+            "pricing": "Free (open source, Java)",
+            "integrations": [
+                "RFID readers",
+                "Custom frontends via API"
+            ],
+            "iso15118": false,
+            "smartCharging": false,
+            "v2g": false,
+            "website": "https://github.com/steve-community/steve",
+            "notes": "Open-source Java-based OCPP server from RWTH Aachen University. Good for research, testing, and small deployments. Active community but limited production features."
+        }
+    ]
+}
