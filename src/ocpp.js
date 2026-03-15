@@ -25,6 +25,10 @@ export function renderOCPP() {
     let html = `<div class="section-intro">
         <h2>OCPP Software Providers</h2>
         <p>Compare EV charging management platforms that support the Open Charge Point Protocol (OCPP). Filter by deployment model, market focus, and capabilities.</p>
+    </div>
+    <div style="margin-bottom:24px; padding:20px; background:var(--bg-secondary); border-radius:var(--radius-lg); border:1px solid var(--border);">
+        <div style="font-weight:600; margin-bottom:8px; font-size:14px;">What is OCPP?</div>
+        <p style="font-size:13px; color:var(--ink-3); line-height:1.6; margin:0;">The Open Charge Point Protocol (OCPP) is an open standard for communication between EV charging stations and a central management system. It enables hardware-agnostic management, meaning you can mix charger brands while using a single software platform. OCPP 1.6 is widely deployed; OCPP 2.0.1 adds enhanced security, ISO 15118 Plug & Charge, and V2G support.</p>
     </div>`
 
     html += `<div class="comparison-filters" style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom: 24px; align-items:center;">
@@ -56,11 +60,6 @@ export function renderOCPP() {
     } else {
         html += `<div class="ocpp-grid">${filtered.map(p => renderCard(p)).join('')}</div>`
     }
-
-    html += `<div style="margin-top:32px; padding:20px; background:var(--bg-secondary); border-radius:var(--radius-lg); border:1px solid var(--border);">
-        <div style="font-weight:600; margin-bottom:8px; font-size:14px;">What is OCPP?</div>
-        <p style="font-size:13px; color:var(--ink-3); line-height:1.6; margin:0;">The Open Charge Point Protocol (OCPP) is an open standard for communication between EV charging stations and a central management system. It enables hardware-agnostic management, meaning you can mix charger brands while using a single software platform. OCPP 1.6 is widely deployed; OCPP 2.0.1 adds enhanced security, ISO 15118 Plug & Charge, and V2G support.</p>
-    </div>`
 
     container.innerHTML = html
 

@@ -60,6 +60,23 @@ function initTabs() {
     })
 }
 
+function updateDomainTabs() {
+    const ocppTab = document.querySelector('.tool-tab[data-tab="ocpp"]')
+    if (ocppTab) {
+        ocppTab.style.display = activeDomain === 'ev' ? '' : 'none'
+    }
+    if (activeDomain !== 'ev' && activeTab === 'ocpp') {
+        activeTab = 'advisor'
+        document.querySelectorAll('.tool-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false') })
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'))
+        const advisorTab = document.querySelector('.tool-tab[data-tab="advisor"]')
+        const advisorPanel = document.getElementById('advisorPanel')
+        if (advisorTab) { advisorTab.classList.add('active'); advisorTab.setAttribute('aria-selected', 'true') }
+        if (advisorPanel) advisorPanel.classList.add('active')
+        updateContextBar()
+    }
+}
+
 function initDomainSelector() {
     const btns = document.querySelectorAll('.domain-btn')
     btns.forEach(btn => {
@@ -72,6 +89,7 @@ function initDomainSelector() {
             document.body.dataset.domain = domain
             resetWizard()
             updateContextBar()
+            updateDomainTabs()
             refreshAllModules()
         })
     })
@@ -163,6 +181,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTabs()
     initDomainSelector()
     initSettingsBar()
+    updateDomainTabs()
     const [treeData, faqData, solarData, bessData, evData, incentiveData, microgridData, ocppData] = await Promise.all([
         loadJSON(`${BASE}data/decision-tree.json`),
         loadJSON(`${BASE}data/faq.json`),
