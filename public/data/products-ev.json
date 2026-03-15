@@ -580,6 +580,63 @@
                 "Multiple payment options"
             ],
             "notes": "Wallbox's third-generation DC fast charger delivers 180 kW in a compact footprint. The modular 6x30 kW architecture means if one power module fails, the unit continues operating at reduced power rather than going offline. Adds roughly 100 miles of range in under 10 minutes. The compact form factor offers one of the best power-to-footprint ratios in the mid-range DCFC segment."
+        },
+        {
+            "id": "alpi-hyc150",
+            "manufacturer": "Alpitronic",
+            "model": "Hypercharger HYC 150",
+            "category": "dcfc-standard",
+            "power": "Up to 150 kW",
+            "amperage": "Up to 375A",
+            "voltage": "200-920V DC",
+            "connector": "CCS1 / CCS2 / CHAdeMO",
+            "mounting": "Floor standing (compact)",
+            "connectivity": "4G, Ethernet, WiFi, OCPP 1.6J/2.0.1",
+            "operatingTemp": "-35C to 55C",
+            "cableLength": "Integrated, ~16 ft (5m)",
+            "warranty": "2 years (extended available)",
+            "certifications": [
+                "CE",
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$40,000-60,000 USD",
+            "features": [
+                "Ultra-compact footprint",
+                "Liquid cooled cables",
+                "Up to 3 connectors simultaneously",
+                "Dynamic power distribution"
+            ],
+            "notes": "Alpitronic's entry-level Hypercharger delivers 150 kW in one of the smallest form factors in the DCFC market. Extremely popular in Europe and rapidly expanding in North America. The compact design and multi-connector flexibility (CCS + CHAdeMO) make it a versatile choice for retail, fuel stations, and urban locations with space constraints."
+        },
+        {
+            "id": "alpi-hyc400",
+            "manufacturer": "Alpitronic",
+            "model": "Hypercharger HYC 400",
+            "category": "dcfc-high-power",
+            "power": "Up to 400 kW",
+            "amperage": "Up to 500A",
+            "voltage": "200-920V DC",
+            "connector": "CCS1 / CCS2 / CHAdeMO",
+            "mounting": "Floor standing (modular)",
+            "connectivity": "4G, Ethernet, WiFi, OCPP 1.6J/2.0.1",
+            "operatingTemp": "-35C to 55C",
+            "cableLength": "Integrated, liquid cooled",
+            "warranty": "2 years (extended available)",
+            "certifications": [
+                "CE",
+                "UL Listed",
+                "cUL"
+            ],
+            "msrp": "~$120,000-180,000 USD",
+            "features": [
+                "400 kW peak output",
+                "Modular power stacks",
+                "Liquid cooled cables",
+                "Up to 4 connectors",
+                "ISO 15118 Plug & Charge ready"
+            ],
+            "notes": "The HYC 400 is Alpitronic's flagship and one of the most deployed high-power chargers in Europe. Used extensively by Ionity, bp pulse, and Shell Recharge. Modular power stacks allow flexible configurations. ISO 15118 support enables seamless Plug & Charge authentication. The 400 kW output can add roughly 200 km of range in under 10 minutes on compatible vehicles."
         }
     ]
 }
