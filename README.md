@@ -31,6 +31,18 @@ Open [http://localhost:5174](http://localhost:5174)
 
 All product specs, incentive programs, and decision trees are stored as JSON in the `data/` directory. Contributions welcome.
 
+## Also Check Out
+
+- [Datacenter Wizard](https://joshuastr.github.io/datacenter-wizard/) — Open source knowledge tool for datacenter infrastructure planning
+
+## Author
+
+Built by **Joshua Strub** — Digital Operations & Custom Software
+
+- 🌐 [joshuastrub.com](https://www.joshuastrub.com)
+- 💼 [Consulting Services](https://www.joshuastrub.com/consulting.html)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/joshuastrub/)
+
 ## License
 
 MIT
